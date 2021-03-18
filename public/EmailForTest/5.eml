@@ -1,0 +1,795 @@
+Delivered-To: mohamedsofien.zitoun@esprit.tn
+Received: by 2002:a0d:ce06:0:0:0:0:0 with SMTP id q6csp6392860ywd;
+        Thu, 2 Jan 2020 05:56:18 -0800 (PST)
+X-Google-Smtp-Source: APXvYqxxU19jvMGOeuSN5mW4RbxEcTC6AS89gva/x3sycJ2iQ4Lpo9kuzB+RryQPKkIdvemcFizQ
+X-Received: by 2002:a92:911b:: with SMTP id t27mr69450973ild.142.1577973378352;
+        Thu, 02 Jan 2020 05:56:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1577973378; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CCb4Vt29c/8U5YwUDlJ27+SGPIGSzPOv4NGHacCOlACp9iEYPnF0PJYxj3bUb4XYO4
+         ocQn/UH19KPX9zyCVXuEobvITi7R6G3amG2UYMjNRxx5TWFQ4v+N0Mu+mzqg0wCZ+XX6
+         /FoZfX8RV5Wxhk1WnAMuGeF4PGc6qJXlsOcAlYnZMXwHmylew4cETFjNDLez0dKunyDO
+         SuT7mU2ftZ5+DucU3USab2ua0IG9H3MuDWT12wo7xl3WUq9LMkeQ6DooanXQr7t0s9YR
+         Hr0LpRSBORHpnyvwhqCsSZJVNRJPJlFWm6jih9viaviv8gOtJRLD4qFIMoXDF0DwHUv8
+         2MiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:from:to:message-id
+         :sender:date:dkim-signature;
+        bh=PhI2DrncsOkyDT64xZir2teUpnEsCvAZfwRFJbPEm0E=;
+        b=WoqMrlUnzzxcCMlRnsYWUV+gnFUr5U8sGyztTqgDim17490dDucnTbmJ2eKLm+F94E
+         akqWPqNWgUzoAoxCw2EVvta/Hcmz/SAhfgPor+/ZWi4Oef0q+rZ7KUhVgIQCeapw5e/8
+         QEtmlTGCblj9WkxWpbYAHcCsByZEUlXoT+Mvo78+zi0Yn6+LUd09q2alrRyjnqQilQOT
+         aFWeeIbyt2OfdX9T4PN07Qqu0e1AgLgd1a9rK5k28ZxNYaow4i8FCSBgs399q2+sUxxY
+         lA/k4VvouGElSG9aiqdbu41gKK3qZVbak3AVCFhUHpR0ZEw6f/ZyURuWdNiZtXiQ/PLy
+         fxRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.jumia.com header.s=mx header.b=H5xVsNCy;
+       spf=pass (google.com: domain of bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com designates 23.253.183.167 as permitted sender) smtp.mailfrom="bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com"
+Return-Path: <bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com>
+Received: from mail-183-167.mailgun.info (mail-183-167.mailgun.info. [23.253.183.167])
+        by mx.google.com with UTF8SMTPS id e9si40481005ile.17.2020.01.02.05.56.15
+        for <mohamedsofien.zitoun@esprit.tn>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 02 Jan 2020 05:56:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com designates 23.253.183.167 as permitted sender) client-ip=23.253.183.167;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.jumia.com header.s=mx header.b=H5xVsNCy;
+       spf=pass (google.com: domain of bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com designates 23.253.183.167 as permitted sender) smtp.mailfrom="bounce+3e8d53.c5009c-mohamedsofien.zitoun=esprit.tn@mg.jumia.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.jumia.com; q=dns/txt; s=mx;
+ t=1577973378; h=Content-Transfer-Encoding: Mime-Version: Content-Type:
+ Subject: From: To: Message-Id: Sender: Date;
+ bh=PhI2DrncsOkyDT64xZir2teUpnEsCvAZfwRFJbPEm0E=; b=H5xVsNCyKxIIETQg21vpkqcrvecJEMYrVdjK+Yw2Bqow4m5zMuDG/wFrMsCJo9FWkVwKaJLm
+ N26hyQeqIbQKOgORoShVVTLrljzmKRDEqD5B4imxkYUTOSdR8WhCUAGo96+Vi90JQYv6vwX/
+ vsgZ5eEts6tMCZnzXFmEQOyfyCk=
+X-Mailgun-Sending-Ip: 23.253.183.167
+X-Mailgun-Sid: WyIzNjliMiIsICJtb2hhbWVkc29maWVuLnppdG91bkBlc3ByaXQudG4iLCAiYzUwMDljIl0=
+Received: by luna.mailgun.net with HTTP; Thu, 02 Jan 2020 13:56:14 +0000
+Date: Thu, 02 Jan 2020 13:56:14 +0000
+Sender: jumia=jumia.com@mg.jumia.com
+Message-Id: <20200102135614.1.4F2B5E253FB6F830@mg.jumia.com>
+X-Mailgun-Variables: {"data": "{\n  \"network\": \"TN\"\n}"}
+X-Mailgun-Tag: Communication Module
+To: mohamedsofien.zitoun@esprit.tn
+From: jumia@jumia.com
+Subject: =?utf-8?q?Votre_commande_Jumia_305742252-_1_article=28s=29_en_co?=
+ =?utf-8?q?urs_de_pr=C3=A9paration_pour_exp=C3=A9dition=2E?=
+Content-Type: text/html; charset="utf-8"
+Mime-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml">
+
+    <head>
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />
+
+
+        <title>JUMIA</title>
+        <style type=3D"text/css">
+
+
+            a:hover {
+                text-decoration: underline !important;
+            }
+				.promocat {
+                color: #656565;
+                font-size:10px;
+                font-family:'Helvetica Neue', 'Helvetica','Arial', 'sans-se=
+rif';
+                margin-top:0;
+                margin-bottom:0;
+                padding-top:0;
+                padding-bottom:0;
+                font-weight: bold;
+            }
+				.skuholder {
+                max-width: 600px !important;
+                background-color: #fff;
+                -webkit-display: flex;
+                display: block;
+                -webkit-flex-direction: row;
+                -webkit-flex-wrap: wrap;
+                font-size: 12px;
+                text-align: left;
+            }
+            .skuitem {
+                display: inline-block;
+                flex: 80px 1;
+                text-align: left;
+                color: #000;
+                max-width: 48%;
+                padding-bottom: 10px;
+            }
+
+            .promocatmobile{
+                display: none;
+                overflow: hidden;
+                font-size: 0px;
+            }
+
+            .footer {
+                padding-top: 15px !important;
+            }
+
+            .bodycontent {
+                padding-top: 15px !important;
+            }
+            .header{
+                height: 80px!important;           =20
+            }
+
+            @media only screen and (max-width: 480px),  only screen and (de=
+vice-width: 360px) and (device-height: 592px) and (-webkit-device-pixel-rat=
+io: 3), only screen and (max-width: 360px){
+                .clickhere {
+                    font-size: 6px !important;
+                    padding-left: 2px !important;
+                }
+
+                .bodycontent {
+                    padding-top: 0px !important;
+                    padding-bottom: 0px! important;
+                }
+
+                .bodycontent_cell{
+                    font-size: 8px !important;
+                    padding: 10px 10px 10px 10px !important;
+                }
+
+                .tablewrapper{
+                    width: 300px !important;
+                    font-size: 10px !important;
+                }
+
+                .promocat{
+                    display: none !important;
+                }
+
+                .promocatmobile{
+                    text-align: center;
+                    display: inline-table !important;
+                    font-size: 6px !important;
+                    overflow: visible !important;
+
+                }
+                .header{
+                    height: 40px!important;
+                    vertical-align: middle !important;
+                }
+                .imageheader {
+                    max-width: 80% !important;
+                    max-height: 40% !important;
+                    height: auto !important;
+                    width: auto !important;
+                    text-align: center !important;
+                    vertical-align: middle !important;
+                }
+                .tableheader{
+
+                    vertical-align: middle !important;
+                    padding-bottom: 2px;
+                }
+                .itemimage {
+                        max-width: 70% !important;
+                        margin: 0% 0% 0 82% !important;=20
+                    /*transform: scaleX(-1); */
+                }
+                .itemImgCenter{
+                    max-width: 55% !important;
+                }
+                .signature{
+                    max-height: 30px;
+                }
+                .skuholder{
+                    max-width: 300px !important;
+                    display: block !important;
+                    font-size: 8px !important;
+                }
+                .skuitem{
+                    max-width: 100% !important;
+                    display: block !important;
+                    padding-bottom: 5px !important;
+                }
+                .skuimage{
+                    height: auto !important;
+                    width: 80% !important;
+                }
+                .buynowbtn{
+                    background-color: #000;
+                    border: none;
+                    color: white;
+                    text-align: center;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-weight: bold;
+                    cursor: pointer;
+                    text-decoration: none !important;
+                }
+                .orderinfotable{
+                    border: 0 !important;
+                }
+                .orderinfocaption {
+                    font-size: 8px  !important;
+                }
+                .orderinfohead {
+                    display: none !important;
+                    border: none !important;
+                    clip: rect(0 0 0 0) !important;
+                    height: 1px !important;
+                    margin: -1px !important;
+                    overflow: scroll !important;
+                    padding: 0 !important;
+                    position: absolute !important;
+                    width: 1px !important;
+                    top: -9999px !important;
+                    left: -9999px !important;
+                    display: flex;
+
+                }
+                .orderinfotr {
+                    border-bottom: 3px solid #ddd !important;
+                    display: block !important;
+                    margin-bottom: 5px !important;
+                }
+                .orderinfotd {
+                    border-bottom: 1px solid #ddd !important;
+                    display: block !important;
+                    font-size: 6px !important;
+                    text-align: right !important;
+                    vertical-align: middle !important;
+					 }
+		 .itemlabel{
+                    display:inline-block !important;
+                    float: left !important;
+                    text-transform: uppercase;
+                    font-weight: bold !important;
+                    padding-right: 20px !important;
+                    font-size: 6px !important;
+                    overflow: visible !important;
+                }
+                .orderinfotd:last-child {
+                    border-bottom: 0 !important;
+                    margin-bottom: 0px !important;
+
+                }
+				    .portfolio img{
+                    width: 33% !important;
+                    padding: 0.1px !important;
+                }
+                .portfolio td{
+                    width: 100% !important;
+                    font-size: 0px !important;
+                }
+					}
+        </style>
+
+    </head>
+
+    <body style=3D"background-color: #FFFFFF;-webkit-text-size-adjust:100%;=
+ width: 100%; margin: 10px 0 0 0;-webkit-font-smoothing: antialiased">
+        <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" bgcolor=3D"#e4e4e4" style=3D"font-family:'Helvetica Neue', 'Helvetica',=
+'Arial', 'sans-serif'; font-size: 13px">
+            <tr>
+                <td bgcolor=3D"#FFFFFF" width=3D"100%">
+
+                    <table width=3D"600" cellpadding=3D"0" cellspacing=3D"0=
+" border=3D"0" align=3D"center" class=3D"tablewrapper">
+                        <tr>
+                            <td width=3D"600" class=3D"wrappercell" style=
+=3D"border: 1px solid lightgrey">
+                            <!--
+                                <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" style=3D"table-layout: fixed;">
+                                    <tr>
+                                        <td class=3D"clickhere" style=3D"fo=
+nt-size: 10px; color: #565656; text-shadow: 0 1px 0 #ffffff; padding-bottom=
+: 5px; padding-left: 5px">
+                                            <a href=3D"##Online_Mailing_HTM=
+L##" style=3D"text-decoration: none; font-weight: bold; color: #565656; tex=
+t-shadow: 0 1px 0 #ffffff;">Cliquez-ici</a> si ce message ne s'affiche pas =
+correctement.
+                                        </td>
+                                    </tr>
+                                </table> -->
+                                <table class=3D"tableheader" width=3D"100%"=
+ cellspacing=3D"0" cellpadding=3D"0" style=3D"vertical-align: middle; /*bor=
+der-left: 5px solid lightgrey; border-right: 5px solid lightgrey*/">
+                                    <tr bgcolor=3D"#ffffff">
+                                        <td class=3D"header" align=3D"cente=
+r" style=3D"max-width: 100%; text-align: center; vertical-align: middle;">
+                                            <div style=3D"height:100%;width=
+: 100%; vertical-align:middle; display:table; text-align: center" valign=3D=
+"center">
+                                                <span style=3D"display:tabl=
+e-cell; vertical-align: middle; text-align: center"> <a href=3D"http://emai=
+l.mg.jumia.com/c/eJxFkMGKgzAQhp8mXkRJoknrwYO2lb20XWhPeylpTGt2TSIxQdin33Hpsj=
+AMw8838M30tWQYVzLRNcUUY4IpKRgnZU7ysqMtO1BWdC3vtgVGJTbP_DMaLXLpTDLUW_YgnEtac=
+EKqO73DXsmVILKX1aNSMhnrIYQJFQ2iHdSyLP_7ebBrWnTWTQ6YffBRIcpjMDejeh0NZMoIPb7C=
+2UUv1S8o7Cxk0M6K8bYSMyAvSgozCf20wK0XZZhkmF5JARKMQyPlxx_pbFA2AHg-XtIsPfte-fQ=
+y6GlS_YsJyq8a11OGWIvYPns7NNDeE18bNwjwnN1DK5t_6-CihRepefI6wHFJqHfOmGi1FKtqen=
+R9HFXSiyBqtGkRbtIUUWpVWJz_ggns1uB6WmfcoM3-ByoCf14" target=3D"_blank">      =
+                                  =20
+                                                <img class=3D"imageheader" =
+valign=3D"center" src=3D"http://jumia.co/nl-templates-kenya/uploads/buttons=
+/newTemp/jumia_logo_flat_design.png"/>
+                                                </a>
+                                                </span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class=3D"promocat" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" style=3D"background:#fff;padding-left: 5p=
+x; font-size: 10px; border-bottom: 1px solid lightgrey;border-top: 1px soli=
+d lightgrey;">
+                                    <tr>
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UctuwyAQ_Bp8sYwAGzs9-JCX1UuSQ3LqJaJAYloDFsay1K_vEqXqoaqE2GU0OzN=
+aVCs5IS8yMy0jjBBKGC15TStMcdWxDd8zXnabuluVBFXE3vHHbI3A0tusb9WKUSpuDZfvolKcNU=
+3NVpxXN7GqJchlQ9vHOKJyjVgHZ1mW33kcHUDWK1303lqdKGXn_OhhYBfDDEi9xKu26emwtsIMO=
+AbhJiGj8U4M1wRNOCUvCC0Iu9ASzHgNF63e8Olwzov8FJQO-bk346gVaM7RXq1WZk7CD9UnOPk5=
+SP0w_2PypEhhR2HuDkj_uf4wvYvaRSD-nyLqkDJcjgXimy2Md_ggpCygyMGnMvUe8V3xul_vstB=
+a3wtIPvmb0Q5_mehnB7-ipzGYCPvMYruFVc7OSJHC5wev5kFnSkTRomaDyDrPEWNOx8WHT-jAMw=
+GXY-rJGjW7bxrLo3w" target=3D"_blank" style=3D"text-decoration:none; color:i=
+nherit"><p>Mode Homme</p></a>
+                                        </td>
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UctuwyAQ_Bp8sYx4-JEcfHAeVi9JDsmpl4jgTUxrwMJYlvr1hShVD1UlxO6OZnZ=
+G0NWyIGQtE1UzwgihhFFelDTHFOct2xR7VvB2U7YrTlBO9AN_zFoJLK1O-poBpQArcbvzfF1Ryd=
+blnXFS8epWECB5MtS99yPiDWJtOMuy_OqxNwHStoPsDlpDpPDW2NEGwc67OSDl4q-g42gwaKEG7=
+J0wk5BeWSOGa4QmHJNnhGaEXSgPZkUZLpq_49PhnGbpyXXg0nOvxhG6sHP2-qqhU3Nc_Nz6Aic7=
+OwlP8z8mL4oUehTqYQLpP9cfpjUejA_E_1N4cDHD5ZihYrMN8hYfhJRZKHKwsUy9RcUue9s3u8T=
+V2vYiJJ_sXYHBX8rb2YRfgWl0yof3THy9tVrPRkkRw6cH280DJJ3wokbVBpEmTRFjBvxi3Wfogm=
+cELsfYkwZVu28GTaNu" target=3D"_blank" style=3D"text-decoration:none; color:=
+inherit"><p>Mode Femme</p></a>
+                                        </td>
+
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UcFu4yAQ_Rp8sYwwhjg9-JA0tfaS5NCceokono3ZNWDhsSzt1-9QdbWHqhJiZp7=
+em_cEQ2e1EE-2cJ0UUohayLrRu1rxmqteHvWL1E1_3PX7RjAl_IP_Wr0z3EZfjF2z13tpnoR9B5=
+Ia1SoYlBpEq7S0bVsXUzcizqw5MNnT2bbtv55jIAhhgnmMwUGmNH2IcyTBCdNKyG7DO_g8Bg7eu=
+IljMmExFl0MZrpnaOE5eSXqSshb3ZCZ3tFVqzd-Pb-WVXlNA6TydXTzDAPtXNHfPQxuzYs_tn6C=
+S1yThQ_zLyafFGv8bNwjEOk713_MGBACEvH7FAgpZ7hdKqaPzyTv-dlYW1GxU8xlGSPTp-rHy-F=
+UpM7H0VDyJf50EPgfh3EN9CuwzMkhvWeB3XP0fg3Omhy-PMdhnaAYDJqOtUcmDmXJpAyAW0y_qS=
+PPDNwuuRcH1p7-AiMTo4s" target=3D"_blank" style=3D"text-decoration:none; col=
+or:inherit"><p>T=C3=A9l=C3=A9phones</p></a>
+                                        </td>
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UctuwyAQ_Bp8sYwAPxIffIjrWr0kOSSnXiIKuKY14OK1LPXrC1WrHqpIiN0dzey=
+MQDaiJKQWiW4YYYRQwmheVrTAFBc9a8tHVuZ9W_X7nKCCmFf8thrNsXAmGZtBcFkzSQshq5oNNX=
+-hZTHUck9I_kLzOpmaEWBG-QGxPpxt2_70GGyAZpFpOzhvOOiPVUVe3ls3u6DqwEek2uCmTBwtV=
+obrCYPnduECtLN8ukVowTF-RmhG2JXmwbGswkWLZ3w-XtIsPXupfHoZ9TwrGXauYG5GSb3Gxd9b=
+f8DFrV6ob_N_Jj8Uwc3M9asNpHuuv0xnQVkIxPspQPmY4XrKUNk-BHmPj1yILBQxuViW0aGyy54=
+eD13iG-NGHpIvbtDK4k8NbrXha9Qyew3hURNoHpwxq9WCx_Dp0cl1UonkwBu0axE5pClizCrYnH=
+8PXfCMwPUUe3JAu-4LRe2mPQ" target=3D"_blank" style=3D"text-decoration:none; =
+color:inherit"><p>Informatique</p></a>
+                                        </td>
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UU1PxCAQ_TX00pQA_Vg99LDrbuNl14N78rJBYC1amIYONvHXC0bjwZiQmeHl8d7=
+LoHvVMnarCtsLJhjjTPC67XhDOW0GsWsPoq2HXTfc1Iw0zL3Q1-ispApcMfZ8o7TgWlx5JzfcCC=
+V1w03HdHurnpmWxdSPiPNC6i0RQzrruv4KUPQJwvdqHgGhklFbyLR68DDDTOo9hmiI6Fa8GJevn=
+hon7UQxSL9IhRa8nC4ZWmiOXzFeMXHmdTJsu1R480Qfjo9lVT4EbUL5ONp5NjppRnQXZ7SNWfhL=
+9RtcIAZlvsz_mHxTlHSztC8-kf5z_WGCR-MxEf9PgSbkDOdTRdrdXXo-0KNUqkpNTZDbMgJp99X=
+9YbsvQu9glCn5AldrPP2wCNGnrzHLHCymnRbY34Fz0Vslc_jyCDpOptASZU82O8K2ZUmE8AZXCG=
+9pSp4ZOJ_yzLZks_8EhyamYg" target=3D"_blank" style=3D"text-decoration:none; =
+color:inherit"><p>T=C3=A9l=C3=A9visions</p></a>
+                                        </td>
+                                        <td class=3D"promocat" style=3D"tex=
+t-align: center; width:15%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UTtvwyAY_DV4sYwAmzwGD87D6pJkSKYuEYEvMa0BC2NZ6q8vRKk6VJUQ33E67k6=
+gaskJWctM14wwQihhtOQLWmGKq5Zt-J7xst0s2lVJUEXMA39MRgssncm6Wt5hdZPL9UqAkqRaUk=
+mVkjfOq9saKqiyvu5CGEZUNoi1cc3z_GuAg42UEXp0CaCytW5wAyp3wU-A2GIOVzDpaDFEWY-DF=
+3YUMmhnRX9N1IhT7YLQgrALLWMQX8SNVu_4dDjnRX7yCnx-7vQwgIqeUzBXA0pPyfjp-iJHN3kJ=
+z_A_IS-JFGYQ-mGj6L_UH6WzAWyIwv9bBPCpw-VYIL7ZxustPggpizhk79IYO4f4rnjbN7vM18Z=
+1IjYf3V2DxV86uMnGL4Fx8DrEt8xCvXXGTFZLkcrnB6emHjIlgqjRcoNIk-eIMQthdv4zopiZiM=
+sxYdKg5e4boB-j6A" target=3D"_blank" style=3D"text-decoration:none; color:in=
+herit"><p>Maison</p></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class=3D"promocatmobile" width=3D"10=
+0%" cellspacing=3D"0" cellpadding=3D"0" style=3D"background:#fff;padding-le=
+ft: 5px; font-size: 0px; border-bottom: 1px solid lightgrey;border-top: 1px=
+ solid lightgrey; display: none; overflow: hidden">
+                                    <tr>
+                                        <td class=3D"promocatmobile" style=
+=3D"text-align: center; width:19%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UctuwyAQ_Bp8sYwAGzs9-JCX1UuSQ3LqJaJAYloDFsay1K_vEqXqoaqE2GU0OzN=
+aVCs5IS8yMy0jjBBKGC15TStMcdWxDd8zXnabuluVBFXE3vHHbI3A0tusb9WKUSpuDZfvolKcNU=
+3NVpxXN7GqJchlQ9vHOKJyjVgHZ1mW33kcHUDWK1303lqdKGXn_OhhYBfDDEi9xKu26emwtsIMO=
+AbhJiGj8U4M1wRNOCUvCC0Iu9ASzHgNF63e8Olwzov8FJQO-bk346gVaM7RXq1WZk7CD9UnOPk5=
+SP0w_2PypEhhR2HuDkj_uf4wvYvaRSD-nyLqkDJcjgXimy2Md_ggpCygyMGnMvUe8V3xul_vstB=
+a3wtIPvmb0Q5_mehnB7-ipzGYCPvMYruFVc7OSJHC5wev5kFnSkTRomaDyDrPEWNOx8WHT-jAMw=
+GXY-rJGjW7bxrLo3w" target=3D"_blank" style=3D"text-decoration:none; color:i=
+nherit"><p>Mode Homme</p></a>
+                                        </td>
+                                        <td class=3D"promocatmobile" style=
+=3D"text-align: center; width:19%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UctuwyAQ_Bp8sYx4-JEcfHAeVi9JDsmpl4jgTUxrwMJYlvr1hShVD1UlxO6OZnZ=
+G0NWyIGQtE1UzwgihhFFelDTHFOct2xR7VvB2U7YrTlBO9AN_zFoJLK1O-poBpQArcbvzfF1Ryd=
+blnXFS8epWECB5MtS99yPiDWJtOMuy_OqxNwHStoPsDlpDpPDW2NEGwc67OSDl4q-g42gwaKEG7=
+J0wk5BeWSOGa4QmHJNnhGaEXSgPZkUZLpq_49PhnGbpyXXg0nOvxhG6sHP2-qqhU3Nc_Nz6Aic7=
+OwlP8z8mL4oUehTqYQLpP9cfpjUejA_E_1N4cDHD5ZihYrMN8hYfhJRZKHKwsUy9RcUue9s3u8T=
+V2vYiJJ_sXYHBX8rb2YRfgWl0yof3THy9tVrPRkkRw6cH280DJJ3wokbVBpEmTRFjBvxi3Wfogm=
+cELsfYkwZVu28GTaNu" target=3D"_blank" style=3D"text-decoration:none; color:=
+inherit"><p>Mode Femme</p></a>
+                                        </td>
+
+                                        <td class=3D"promocatmobile" style=
+=3D"text-align: center; width:19%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UcFu4yAQ_Rp8sYwwhjg9-JA0tfaS5NCceokono3ZNWDhsSzt1-9QdbWHqhJiZp7=
+em_cEQ2e1EE-2cJ0UUohayLrRu1rxmqteHvWL1E1_3PX7RjAl_IP_Wr0z3EZfjF2z13tpnoR9B5=
+Ia1SoYlBpEq7S0bVsXUzcizqw5MNnT2bbtv55jIAhhgnmMwUGmNH2IcyTBCdNKyG7DO_g8Bg7eu=
+IljMmExFl0MZrpnaOE5eSXqSshb3ZCZ3tFVqzd-Pb-WVXlNA6TydXTzDAPtXNHfPQxuzYs_tn6C=
+S1yThQ_zLyafFGv8bNwjEOk713_MGBACEvH7FAgpZ7hdKqaPzyTv-dlYW1GxU8xlGSPTp-rHy-F=
+UpM7H0VDyJf50EPgfh3EN9CuwzMkhvWeB3XP0fg3Omhy-PMdhnaAYDJqOtUcmDmXJpAyAW0y_qS=
+PPDNwuuRcH1p7-AiMTo4s" target=3D"_blank" style=3D"text-decoration:none; col=
+or:inherit"><p>T=C3=A9l=C3=A9phones</p></a>
+                                        </td>
+                                        <td class=3D"promocatmobile" style=
+=3D"text-align: center; width:19%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UT1vwyAU_DV4sYwAf8WDBzuJ1SXJkExdIgI4pjXgYixL_fWFKFWHKst7j9O9uxO=
+P1yxHqGKRrAkiCGFEcJoXOIMYZh1p8z3J064tuk2KQIbUHX4sSlLIjIqGGjNciuJWFbS8VSXZ4C=
+rjtC-KqhSc8ryPxnpd178V6DQg3cQSqXtjFXXyaxEeAWmnzWQmkO6cDUixuqtQ4amhUFSO0FmqZ=
+8qcNJqO1wDNMCROEE4QueAUpE1e-IKzd3g6nOMkPlkubHwe5DQJ7jUXp65KcLkE4YfqE5zNYpl4=
+mP8zeVIYVROVd-1Jr1x_mUY7oZ0nvk7hhA0ZLscE5O3Wr3fwQBlLfGOjCW0eDMh3ydu-2UW2Vma=
+gPvlseik0_JbOLNpfQ8yTlc5_auTqrVFq0ZLRED4-GL6MIuLU0RqULUBNHANCtHCrsZ9-8p4BuB=
+zDjBpQ7n4ABeuiwQ" target=3D"_blank" style=3D"text-decoration:none; color:in=
+herit"><p>Informatique</p></a>
+                                        </td>
+                                        <td class=3D"promocatmobile" style=
+=3D"text-align: center; width:19%">
+                                            <a href=3D"http://email.mg.jumi=
+a.com/c/eJx1UU1PxCAQ_TX00pQA_Vg99LDrbuNl14N78rJBYC1amIYONvHXC0bjwZiQmeHl8d7=
+LoHvVMnarCtsLJhjjTPC67XhDOW0GsWsPoq2HXTfc1Iw0zL3Q1-ispApcMfZ8o7TgWlx5JzfcCC=
+V1w03HdHurnpmWxdSPiPNC6i0RQzrruv4KUPQJwvdqHgGhklFbyLR68DDDTOo9hmiI6Fa8GJevn=
+hon7UQxSL9IhRa8nC4ZWmiOXzFeMXHmdTJsu1R480Qfjo9lVT4EbUL5ONp5NjppRnQXZ7SNWfhL=
+9RtcIAZlvsz_mHxTlHSztC8-kf5z_WGCR-MxEf9PgSbkDOdTRdrdXXo-0KNUqkpNTZDbMgJp99X=
+9YbsvQu9glCn5AldrPP2wCNGnrzHLHCymnRbY34Fz0Vslc_jyCDpOptASZU82O8K2ZUmE8AZXCG=
+9pSp4ZOJ_yzLZks_8EhyamYg" target=3D"_blank" style=3D"text-decoration:none; =
+color:inherit"><p>T=C3=A9l=C3=A9visions</p></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table class=3D"bodycontent" width=3D"100%"=
+ cellspacing=3D"0" style=3D"padding-top: 15px">
+                                    <tr>
+                                        <td class=3D"bodycontent_cell" styl=
+e=3D"background-color: #ffffff; color: #565656;padding:  15px 15px 15px 15p=
+x; /*border-left: 5px solid lightgrey; border-right: 5px solid lightgrey*/"=
+ width=3D"100%">
+                                         <p>
+                                               Bonjour Sofienne,
+                                            </p>
+                                                 <p>
+                                                Les articles ci dessous de =
+votre commande <b>305742252</b> sont en cours de pr=C3=A9paration pour l'ex=
+p=C3=A9dition.
+                                            </p>
+                                            Vous allez recevoir un SMS le j=
+our de la livraison ou lorsque votre colis sera disponible au point relais =
+au <b>+21623357947</b>.
+                                                    <p>  =20
+                                                        Votre commande sera=
+ livr=C3=A9e =C3=A0 l'adresse suivante : <b>188fah/elmourouj6/ben arous</b>.
+                                                    </p>
+                                              Pour plus d'information sur n=
+os de d=C3=A9lais de livraison, cliquez <a href=3D"http://email.mg.jumia.co=
+m/c/eJxFTctOxSAU_BrYNCGHQyntgkWrdqcrfwABLdcCN4XaxK-XuzKZxcxkHk5bCTBZGjQCAnB=
+ALuTAe8ZZv-IiX1CKdRnWUQDpIX6x2xmDYTZHuunpA3kLD1KNchpBmEHB5BSAGFFZ0dNdb7XeCx=
+EzwbXhuq7_AVZTs_bwc5hQcipN0EPHvJnoXcmfwSf2G2o-U3v25X6E2iq06qcc45mCNTXk1L1md=
+-6eOlONJmohMHcdQUy-Xvn4bqy9P4z3tweHmajnP5qoSNo"  target=3D"_blank" style=3D=
+"color: #0000EE "> ici</a>.
+                                                    <!--<p>
+                                                           Vous allez recev=
+oir un appel du 20 00 61 61 sur votre num=C3=A9ro <b>+21623357947</b> afin =
+de programmer le jour de votre livraison. (Pour nos d=C3=A9lais de livraiso=
+n, cliquez <a href=3D"http://email.mg.jumia.com/c/eJx1UUFvgyAY_TV4MRJAsd3BQ=
+5311nZZPe1iGNDKJmAQZ7JfP2i67LA0IfC-l5f3HiAqThF64omqCCIIYURwTktcQAyLltR0T2je=
+1mW7zREokL7Cj0UrBrnVyVAJSjh6p1wghi60EHnBLnSLKZMYUXHByVgN3k8zyHeAtGGt6_pnAL0=
+JlJAjU3MmZDaqLxegjSzIW2MnO4G88W6RgJSr76WOo4FSMzVC75iZGffKGjb2kZphvEOGcIZIh_=
+OQSsuw4eINng7nNEtPTkiXngc1TVIEz8XrXkuhlmh8c72Ts10cl7fwfyF3CWd6YupqguhR6q_SG=
+i-ND8LHLbx0sUN3zACt932365v9uX85vXZhPnfxaBJXaTuwUHi2FyUN_FbeLiZ8i5wnp3x4z8RX=
+z1brxSjOYuf0YMUyykQwzyqwqQHapSkgxEi_WvcZUGgaie4YMdqBTfMDVwaltw"  target=3D"=
+_blank" style=3D"color: #0000EE "> ici</a>.)
+                                                    </p>-->
+                                           =20
+                                            <p style=3D"font-weight: bold">
+                                            Veuillez noter :
+                                            </p>
+                                                          <ul>
+                                                               =20
+                                                              <li>Si vous a=
+vez command=C3=A9 plusieurs articles, il se peut qu'ils soient livr=C3=A9s =
+en plusieurs fois. Il se peut en effet qu'ils soient vendus par des vendeur=
+s diff=C3=A9rents sur notre plate-forme, et nous souhaitons mettre chaque a=
+rticle =C3=A0 votre disposition d=C3=A8s que possible.=20
+Le paiement est cash =C3=A0 la livraison, nous vous encourageons =C3=A0 pr=
+=C3=A9parer le montant exact car nos agents de livraison ne disposent pas t=
+oujours de monnaie.</li><br>
+                                                           =20
+                                                                  <li>Soyez=
+ disponible pour la livraison afin d'=C3=A9viter l'annulation de la command=
+e.</li><br>
+                                                                 =20
+                                                          </ul>
+
+                                            <center>
+                                                <table class=3D"orderinfota=
+ble">=20
+                                                      <tr class=3D"orderinf=
+otr" style=3D"border-bottom:0px!important;">  =20
+                                                                      <td c=
+lass=3D"orderinfotd" style=3D"border-bottom:0px!important;"><center><a clas=
+s=3D"buynowbtn" href=3D"http://email.mg.jumia.com/c/eJx1UU1v3CAQ_TX4Yi3iw9j=
+twQdvdn2pkkhdH6peLAKzWdoFLIzlqr--Q5SqhyoSYmaent57MLY3irHPpnK9YIIxzgSXquUN5b=
+QZxVGdhZLjsR0_SUYa5l_pj807TU301a1XjZFgJVMNiE6-cMOZlVe4ms5Ae31pqnt_y3lZiRyIG=
+PHs-_5PgOaAUE7a_MTqgoVfWGOykELCDnW7RggliBxDXOJC5CmnDYho9zyDL2Og4LW7U1QJqzbZ=
+xaDvc4FWWh50YPzAxMQlRlAtXrz5Tp8fL_Whfi5G9eXmlgUsam7Zzx6s24rwm-o7uMYtGXgz_8_=
+knWK0X7R7DUj6yPUvM4YMISPx4xQZUskwPR2IOp7naZhP58s8nb9NOE9fH74QdapS7-NNY-A1Xh=
+0E-tvluAXcEaxLchk_t8r9Q_R-C87okrl-jHa7Q2V11j3pjoQNdU2ECJD3mHAH-NFDAaan0rOBd=
+Kc_IYaoow" style=3D"display:inline-block;margin:0px 20px;padding:10px 20px;=
+background-color:#000;font-weight:bold;font-color:#fff;color:#fff;text-deco=
+ration:none;width:125px!important;" target=3D"_blank">V=C3=A9rifier les d=
+=C3=A9tails de la commande</a></center></td>
+                                                                      <td c=
+lass=3D"orderinfotd" style=3D"border-bottom:0px!important;"><center><a clas=
+s=3D"buynowbtn" href=3D"http://email.mg.jumia.com/c/eJxFjk1uxCAMhU8Dm6gIzE-=
+SBYtJ2-zaVS9ACEnoDBAR0ko9fZnZjGQ9P9l-1jdrKyntLfYaKFDKKDAuFROEETHCIN9B8nFQY8=
+cpEjSs5PsM3hCbAt50P8sZJujoRC2fBIN2EmZhbmldv3STwje9lbIfiF8QjLV2Y69mdSXX7vLL4=
+fKPt-54Pn2c8apfn1WW_MxU94j5uFYrKWMMlBJK4qxD2kxw85EW7yL58yWdsdK6Y8--kBJx0a8p=
+hDN6a4pPsflI83lzeDbFaNQOiF6aBgFEV35TvlZXie-DOwXULWrf_gEa2FoD" style=3D"disp=
+lay:inline-block;margin:0px 20px;padding:10px 20px;background-color:#000;fo=
+nt-weight:bold;font-color:#fff;color:#fff;text-decoration:none;width: 125px=
+!important;text-align:center;" target=3D"_blank">Suivre votre colis command=
+=C3=A9</a></center></td>
+                                                                     </tr> =
+ =20
+                                                               </table>
+                                                           </center>
+                                               =20
+                                            <table class=3D"orderinfotable"=
+ style=3D"border: 1px solid #ccc;margin: 0;padding: 0; width: 100%;table-la=
+yout: fixed;">
+                                                <caption class=3D"orderinfo=
+caption" style=3D"font-weight: bold; text-align: left; padding-top: 10px">N=
+ous avons envoy=C3=A9 ce qui suit:</caption>
+
+                                                <thead class=3D"orderinfohe=
+ad" style=3D"text-align: center">
+                                                    <tr class=3D"orderinfoh=
+ead" style=3D"background: #f8f8f8;border: 1px solid #ddd;text-transform: up=
+percase">
+                                                        <th scope=3D"col" s=
+tyle=3D"width: 15%"></th>
+                                                        <th scope=3D"col" s=
+tyle=3D"width: 50%">Produit</th>
+                                                        <th scope=3D"col" s=
+tyle=3D"width: 15%">Quantit=C3=A9</th>
+                                                        <th scope=3D"col" s=
+tyle=3D"width: 20%">Prix</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class=3D"orderinfot=
+r" style=3D"border: 1px solid #ddd; text-align: center;">
+                                                         <td class=3D"order=
+infotd" data-label=3D""><center class=3D"itemImgCenter" style=3D"overflow: =
+hidden; max-width:100%;"><input type=3D"image" class=3D"itemimage"  style=
+=3D"max-width:400%; margin: 0% 0 0 3%;pointer-events: none;" src=3D"https:/=
+/static.jumia.tn//p/Huawei-000-436702-sprite.jpg"></center></td>
+                                                        <td class=3D"orderi=
+nfotd" data-label=3D"Item"><span class=3D"itemlabel" style=3D"display: none=
+; overflow: hidden; font-size: 0px">Produit</span>Nova 3i - 6.3" - 4 Go - 1=
+28 Go - Bleu - Garantie 1 an</td>
+                                                        <td class=3D"orderi=
+nfotd" data-label=3D"Quantity"><span class=3D"itemlabel" style=3D"display: =
+none; overflow: hidden; font-size: 0px">Quantit=C3=A9</span>1</td>
+                                                        <td class=3D"orderi=
+nfotd" data-label=3D"Price" style=3D"text-align:right"><span class=3D"iteml=
+abel" style=3D"display: none; overflow: hidden; font-size: 0px">Prix</span>=
+TND 698</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                           =20
+                                            <table style=3D"width: 100%; bo=
+rder: 1px solid #ccc; margin-top: 5px; table-layout: auto">
+                                                <tr><td style=3D"font-weigh=
+t: bold !important; text-transform: uppercase !important;">Frais de port</t=
+d><td style=3D"text-align: right">TND 7</td></tr>
+                                                <tr><td style=3D"font-weigh=
+t: bold !important; text-transform: uppercase !important">Remise</td><td st=
+yle=3D"text-align: right">TND 0</td></tr>
+                                                <tr><td style=3D"font-weigh=
+t: bold !important; text-transform: uppercase !important">TOTAL</td><td sty=
+le=3D"text-align: right">TND 705</td></tr>
+                                                <tr><td style=3D"font-weigh=
+t: bold !important; text-transform: uppercase !important">M=C3=89THODE DE P=
+AIEMENT</td><td style=3D"text-align: right">
+                                                        Paiement =C3=A0 la =
+livraison
+</td></tr>
+                                            </table>
+                                            <p>Si vous souhaitez en savoir =
+davantage sur nos services, veuillez consulter notre <a href=3D"http://emai=
+l.mg.jumia.com/c/eJxFjc1qwzAQhJ9GuhjE6i92DjrYbXxLT30BRavUaiMp2GsMffoqp8LADB=
+_DDLpgAc6BJ6dAAUhQUtuTNEIKM6vJXpTV83SaBw3MQP4S33tOXoSa-eIkeEQTNEgDOITB2nCTE=
+uP9HPub7T1_uIXouTE9MjU3HcfxPyCoNOQTxmZ8dbkuPkfc6j3FIn4T1b20z7g910StzMm91Zz3=
+koKnVEt3rbg_IkdP3rF-YjB2HVOqRDrq-tNS-32Bz49XhpH173-01Efq" target=3D"_blank"=
+ style=3D"color: #0000EE ">Foire aux Questions</a>.</p>
+
+<img src=3D"http://image.news.jumia.com/lib/fe8413727c6c0d7d7d/m/1/Banner_O=
+rder_Email.jpg" alt=3D"POD_PaymentReturn"   style=3D" width:100%;" />
+                                         =20
+                                          <!--<a href=3D"http://email.mg.ju=
+mia.com/c/eJxFjTtuxCAYhE8DjSX08zLegsJO1l1S5QK8EpMssMJ4LeX0YatIU8x80sx47STAx=
+eGoGTAACoxyOVJBKBErW-SVSb4u4zpxQALSF_k-UjTElYQ3raxTFwvGSqpGwS14PlnP6GSFsUxZ=
+fNNba_cd8Rmxtes8z_8B0nJHJuf4CHU3sYYecdWpbCYFv5fPGDL5ja0cuX-H_V5j6yXc9EtJ6cj=
+RmRZLHt6KP24Be9OMRmpBMA8DYiyHdpb6013_f4KP96eHGanXP0SZSys" target=3D"_blank">
+                            <img src=3D"http://jumia.co/nl-templates-nigeri=
+a/admin/images/newTemplates/JA_TN18.jpg" alt=3D"JumiaAnniversaire"  style=
+=3D"padding-top:2%;width:100%;" /></a>
+-->
+                                          <p>Bon Shopping!</p>
+
+                                            <p>Bonne journ=C3=A9e,</p>
+                                            <img class=3D"signature" src=3D=
+"http://jumia.co/nl-templates-morocco/uploads/201707/03/signature.png" alt=
+=3D"Tracker" style=3D" padding-left: 1px; width:25%"  />
+                                            <p>
+L'=C3=A9quipe de Jumia Tunisie</p>
+														  <p style=3D"font-weight: bold">Vous avez des questions?</p>
+                                            <ul style=3D"padding-left: 0px">
+                                                <li style=3D"margin-left: 1=
+=2E2em">Visitez notre page <a href=3D"ht=
+tp://email.mg.jumia.com/c/eJxFjc1qwzA=
+QhJ9GuhjE6i92DjrYbXxLT30BRavUaiMp2GsMffoqp8LADB_DDLpgAc6BJ6dAAUhQUtuTNEIKM6=
+vJXpTV83SaBw3MQP4S33tOXoSa-eIkeEQTNEgDOITB2nCTEuP9HPub7T1_uIXouTE9MjU3HcfxP=
+yCoNOQTxmZ8dbkuPkfc6j3FIn4T1b20z7g910StzMm91Zz3koKnVEt3rbg_IkdP3rF-YjB2HVOq=
+RDrq-tNS-32Bz49XhpH173-01Efq" target=3D"_blank" style=3D"color:#0000EE ">Be=
+soin d=E2=80=99aide</a></li>
+                                                 <!--<li style=3D"margin-le=
+ft: 1.2em">Contactez le +216 31320900 ou <a href=3D"mailto:customer@jumia.c=
+om.tn " style=3D"color:#0000EE ">customer@jumia.com.tn </a></li>>-->
+                                                <li style=3D"margin-left: 1=
+=2E2em">Pour contacter le service client=
+, veuillez <a href=3D"http://email.mg=
+=2Ejumia.com/c/eJxFjbFuxCAQRL8GGktoWQxnF=
+xR2EndJlR_ggItJDjjZa1nK14erIk3xNBrNC9=
+ZrgNHzZBEQQAJKpY3shRT9grN-Q62W2SyDAtZD_hLfR05O-Jr5ao2_jkoOPt6MDhBAuuAxDjCOV=
+4jOBH63K9FjZ2piuLSc5_l_IKi0ytdCzlMjvtlcV5dj2OstxSJ-E9WjNG3cH1uitudkX2rOR0ne=
+Uaqle6_huEceHDnLLjODqesYYol01u2nUVM_i8-PJ8PELq9_3_lJfA" target=3D"_blank" s=
+tyle=3D"color:#0000EE ">remplir le formulaire de contact</a> ou appelez le =
++216 31320900</li>
+                                                <li style=3D"margin-left: 1=
+=2E2em">Nous sommes =C3=A0 votre disposi=
+tion: Lun-Ven 08h00-20h00; Sam 09h00-=
+18h00</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                               <table class=3D"footer" width=3D"96%" cellsp=
+acing=3D"0" style=3D"margin-bottom: 15px;padding:0 0 0 4% !important;">
+                                    <tr style=3D"display: block;">
+                                        <td style=3D"width: 50%">
+                                            <table>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <a href=3D"http://e=
+mail.mg.jumia.com/c/eJw1kE1rwzAMhn-NcykJ_kzaQw7JutzW9tDTLsWzndZpbIdYZrBfP2d=
+0IIR4eRCPpFslMD6owrYUU4wJpoSJmvCKVHygvXingg19PewZRhy7ezUlZ2WlgisereGHpuGixv=
+JQM97gL2HMfhwbMu451awu5vYBsETEOkSHXHJZKqmnFGHbkIOpBvVktykJvmGDD0tYEDvCmgyid=
+QJ3c0bb5HJmnLTzK4whrcr8gdJHqcAGL-fbRsSMvCgl3SLt3Wduu67EpMT0Slj2EXVuhH_-k8GD=
+8ZBBHSWUo9blmHel9d8CzLo5XE8lEj0Sx3I4n69ld7kUa-vCQ2bLGEZrfPVjISSfn2XislqowBf=
+QvgXnkrdKbqK7j6DTbAotQbao6RHudjtEqTfwHdZnnrLbFlxP24w71Bx_AZJng1w" target=3D=
+"_blank"><img src=3D"http://jumia.co/nl-templates-ivorycoast/template-desig=
+n-elements/telechargez_app.png" style=3D"width: 100%"/></a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                         <td style=3D"width:25%; text-align=
+: center;padding-left: 5%">
+                                            <table>
+                                                <tr><td colspan=3D"12" styl=
+e=3D"column-span: 6; text-align: center; font-weight: bold; width: 100%;">s=
+uivez nous partout</td></tr>
+                                                <tr>
+                                                    <td align=3D"center">
+                                                        <a href=3D"http://e=
+mail.mg.jumia.com/c/eJwdjcFuwyAQRL8GLpbQsgbbPXCwm_jWnPIDZCExaYDIxqrUry-uNIc=
+3I82MM6QBPogHg4AAElC2upNKSKFmnPQZdTtP3Ty0wBTEh3juMVhBOfLFeNuTlRrpjkTK3by9gX=
+SDkjQgUKf4yyylvFk7MpyrQtqKfaw2Hv3q_7euF76amBcbvdvyPfgkfkPJe6p_fnuvoYiSeDGfO=
+cY9BbIl5NR8Zbe_PHe2WMP6icHYNAwx-fKT1-9K9fQIrpeDYWT96Q8AhUdg" target=3D"_bla=
+nk"><img src=3D"http://jumia.co/nl-templates-nigeria/admin/images/newTempla=
+tes/instagram1.png" style=3D"width: 100%" alt=3D"Instagram"></a>
+                                                    </td>
+                                                    <td align=3D"center">
+                                                        <a href=3D"http://e=
+mail.mg.jumia.com/c/eJwVjb1uwyAYRZ8GFksIPiAmA4Pd1kOlZsoLYH5imgCRjWWpT18s3eH=
+oDOc6bSWlV4ujBgqUMgqMywsThBExwSi_QPJpvEyKUyRoepDfPUVDbEl40YErG5iyTs4wBwhMWG=
+mCcIwp1Qt1xS-91PreEB8QTG3HcZBgrJ9LeZ6Npr7P3v2GV53KYpJ3WwnRZ_IXa9lz-_Tbe42V1=
+Iyr_igp7TlaU2PJ3U9x-8tjZ6rRqB8RHboOAWRfj7I-G7XfU9xvJ9MB9Z__5hhITw" target=
+=3D"_blank"><img src=3D"http://jumia.co/nl-templates-nigeria/admin/images/n=
+ewTemplates/facebook1.png" style=3D"width: 100%" alt=3D"facebook"></a>
+                                                    </td>
+                                                    <td align=3D"center">
+                                                        <a href=3D"http://e=
+mail.mg.jumia.com/c/eJwdTUtuwyAUPA1sLKHHzzYLFnZb75pVLkAwrmkDRPazIuX0wZVmMTO=
+az2y9BjCeRitAAHAQXOqWK8aZmsSov4SW09hOvQSiIP2w3yNFx3xJdLU3oW-L0cFoxcFoI3vpHa=
+iu7Y1bpO7o3a6Ij53IgYipAp8RMWxnvar_Kcx0s6msLoV5L0sMmb0iliPXu7A_toisRtB-lJSOH=
+L3DWHLzXebjHujs0FnSjQSGpiFC5IDPsv1VVi9P43o5OQyk-3wDCqVGEA" target=3D"_blank=
+"><img src=3D"http://jumia.co/nl-templates-nigeria/admin/images/newTemplate=
+s/twitter1.png" style=3D"width: 100%" alt=3D"twitter"></a>
+                                                    </td>
+                                                    <!--<td align=3D"center=
+">
+                                                        <!--<a href=3D"http=
+://email.mg.jumia.com/c/eJxtUctuwyAQ_Bp8iWLxchIffIjjOJc8Ds29whjHtAEse6mVfn1=
+xmyqVGjRCwyyzDFBnMsE4lZHOKKYYE0wJSxaExyTmJc2TLU1YmS_KFcOIY3OJ37zRIpbORG3Gac=
+UbQbjiVUOqNCUVrmgq06aSKVtxEl2zFqAbEFsjWgaM4_hoEKtLkL6XstVy2sFK6zrXIVZA7xWiC=
+w_m1ahaexM0ZYS-3sXB-V6qICKaTGDFB6KrEPFeoOmj9uOQwnRCX-xfT-l6IyAYX24DKFMIUGe3=
+d1JcJxr0oxvDTKZ2EzYzRJe3MA6Hug702THOgrLwJNlv5b8HVD_db7uboyRHSTEvT6fzPN-fdlG=
+fGdeK8ASDa7Sy8acG523opoau1xCDjSDbOGO81VKAdnZ2cLW_qqgWIDK0zBFez0JsahWMrn8PLH=
+zHJJyPE8drtCy-ACSMmXs" target=3D"_blank"><img src=3D"http://jumia.co/nl-tem=
+plates-nigeria/admin/images/newTemplates/blog1.png" style=3D"width: 100%" a=
+lt=3D"Blog"></a>
+                                                    </td>
+                                                    <td align=3D"center">
+                                                        -<a href=3D"http://=
+email.mg.jumia.com/c/eJwVTk1uhSAYPA1sTMjH_3PBQtu6a1e9ACo-eRUwAmnS0xeTmcxkkp=
+nMahYJ0C_YGwYMgAKjXCoqCCViYqP8YJJPo5oeHJCA8CSvGrwlSwp4Nw-7iR70yrd-5lbBYiX0a=
+ttmR7We5YoPs5dyZsQHxKaG86iZPFN6Hu6eaElthEYKQgglJVWMUwAOCpi-GymX3BRfJqTdBrfm=
+tHkXyZ8vqcb2yeXz8oWUiIt5SyHU6BdbfIrdZ1rr4fBqizVIjwiGrkOMRVd-0_XTXPt1B99ft4c=
+B6fd_yCFPBA" target=3D"_blank"><img src=3D"http://jumia.co/nl-templates-nig=
+eria/admin/images/newTemplates/gplus1.png" style=3D"width: 100%" alt=3D"Goo=
+gle+"></a>
+                                                    </td>
+                                                    <td align=3D"center">
+                                                        <a href=3D"http://e=
+mail.mg.jumia.com/c/eJwVjk1rxCAARH-NXgLiZ5IePCTbTaHQ0JbtpTdXTeM26jZRQvvra2A=
+Oj4EZnpFaYPygoZMUU4wJpoSJmnBEEB9oL85UsKGvh5ZhwLH_QrfsnUI6ejhLwqdaWdaWGW85aa=
+5cGE2JImwyvKYELnJO6b4B1gE6lOz7jn5jTvlqj4vS6FmFYJdCH6ef12H_HG_beCHv1vkn_Vyf-=
+ze4Sh9n5a3Z4uRsQH8uxRyKjd3uq0soBZjkKXqfg9MquRiql2jyYqFRSUnQ9AB3VQUoDTbtcf0u=
+VIyO4jIejDvQPP4DKhhQHA" target=3D"_blank"><img src=3D"http://jumia.co/nl-te=
+mplates-nigeria/admin/images/newTemplates/youtube1.png" style=3D"width: 100=
+%" alt=3D"Youtube"></a>
+                                                    </td>-->
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                   </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>

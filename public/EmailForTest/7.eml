@@ -1,0 +1,2205 @@
+Delivered-To: syw.orders@gmail.com
+Received: by 2002:a4f:aa01:0:0:0:0:0 with SMTP id t1csp1310983ive;
+        Fri, 10 Jan 2020 14:48:08 -0800 (PST)
+X-Received: by 2002:adf:ebc6:: with SMTP id v6mr5639009wrn.75.1578696488062;
+        Fri, 10 Jan 2020 14:48:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1578696488; cv=none;
+        d=google.com; s=arc-20160816;
+        b=JpAMWaFQNt5yaMfaWxlm9W1CwTLXSOflHWPi6NV3w9Q80meMgkl4QZD/Dt631ivMdR
+         /IUL2JKXkb7Ho5zHKxNBR+oFHk4XtGoBS4vPbliwLqBpjVwFHD+EfXe4iawBC2BvvxFT
+         G4D7aoBz+Szpr0vyzUKeoecuzWGyxMEPKKtAAsGinr9lhy7YJ0c+o3wQftuxzne6cT53
+         8W3eWkpxY+hTzW/z2SCwWPH5QMZ2U1NkklcOVUS3aXWc61OMuiewV7fX5hzrwhxMTIVa
+         vt1o85tsrDTSG+H9+5UoNzSjhhnZSgmHaZPV3PzRRzOsW5JbFJ9nMc3H86D4bcg8bL9/
+         uAXQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:to:references:message-id:subject:mime-version:from
+         :dkim-signature;
+        bh=NzrLWnWEaioLir9YmEsQ13xc8YozGZvCUuKNL1Px8SM=;
+        b=IDTcP+O7+Hks4+0bKFF64rUfn8XbsVD1Y/dhDhZmXKDhSIDzFQ25HGgsFbHpNoP9HX
+         gMcYzLUGtEarCm1A8xk2Uh3FxCcdLlPEG+9+RPU41kIIdPrX/fbxNpLsZKAL+NYU49+d
+         woIr1RD18OyB4LfpLCWQYe0tFfqn5boehlAsRj+PGI1//Mcwrgla8UJjNYXHaltW2PLh
+         Z6pK+PW1XxTVvXzY04/SL9vd6n6Ma2y0OIy5w5DXrS2evmkZF3pP/Fc2aAU4uhIGQUHj
+         3xUfAr2P1/kMBKgI83q1V924DjKcz44+b9MDxEaUN+Ktya7b5xemZyfoZzfJzmiGXfP8
+         WUlg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b="L/wKVLid";
+       spf=pass (google.com: domain of hasnakourdaa@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=hasnakourdaa@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <hasnakourdaa@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id g10sor2145425wmc.17.2020.01.10.14.48.07
+        for <syw.orders@gmail.com>
+        (Google Transport Security);
+        Fri, 10 Jan 2020 14:48:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of hasnakourdaa@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b="L/wKVLid";
+       spf=pass (google.com: domain of hasnakourdaa@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=hasnakourdaa@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:mime-version:subject:message-id:references:to:date;
+        bh=NzrLWnWEaioLir9YmEsQ13xc8YozGZvCUuKNL1Px8SM=;
+        b=L/wKVLidjU+bC+hFYykjoc27LQYW44G3k/8Y634zrxaIKqMjGI/QEPerizthaJPr5t
+         9/ZCCHQxTGf9YrDpTEScUCFUNl4Lu5DYS1IkW3lsVEPNfPrIqsd8iodzUcFf2I60pCXm
+         2TrmoAQDI1AHzLFUP5VkZABzmiiRqR3bDvzL2k0dT8LJkxpjISAGJjq4IvVu6xltUeNv
+         HsIUghbusu1ya5+6Yxwa8SCPuSB+IoG4J0pgqFjQSBhLeWzOe7thYK+IPhJZnEENU61Q
+         V4c/3g1hCEyUuNqDOMH7VE6JFcU6xjJ69XXCKqdlB/wcSaMDXHuQ8o3o9kWliSOrKDil
+         cGtg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:subject:message-id:references
+         :to:date;
+        bh=NzrLWnWEaioLir9YmEsQ13xc8YozGZvCUuKNL1Px8SM=;
+        b=IK0w9/kpornL21NulZ64ffVFk6sMhvuqvEH/IqTMNU1/Yz82IQrXu5WfAhuwMgaVNy
+         E7X805QzLPlQf308dtp4dlGvpZxLF0QbRQe+Nmu1OFqvgZmsP4arKmbCz/uBP5f0E5OA
+         AoodAwsno1iBzcwoD+KbLiY2bat2KarNw5DgXLmxYgm6UbB4g8TzYlapWldoP1NfIvKs
+         +izNVvplHTTNvaUNig2Nq1FzOrp420TKvZiddg44D2oER1R8yJQwM3apvo2R7csaxl0B
+         QW5f7N6QHftXl1MVY4NlwW9LHin4NqtRYLb56ivaNsUT+BdLIrSGpe8re2Del7mxA1dh
+         eCpg==
+X-Gm-Message-State: APjAAAX2QoJtNoZobCVQyBc0I8+spwuHmsMjW+arv4S8xARdPGaRcgWa
+	TgPgtoD6W7MSER94nOspQE1weOwa
+X-Google-Smtp-Source: APXvYqzqaRO6BYxHQFNS8+I3hWVQ5bsm9H8VXTCN8HrUBd8ctZutrJDt2VjDcZC2ul3aXd/rCEKvmw==
+X-Received: by 2002:a1c:de09:: with SMTP id v9mr6448068wmg.170.1578696486496;
+        Fri, 10 Jan 2020 14:48:06 -0800 (PST)
+Return-Path: <hasnakourdaa@gmail.com>
+Received: from hasnas-macbook.cable.virginmedia.net (cpc118160-lewi22-2-0-cust564.2-4.cable.virginm.net. [86.6.150.53])
+        by smtp.gmail.com with ESMTPSA id z11sm3996625wrt.82.2020.01.10.14.48.03
+        for <syw.orders@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 10 Jan 2020 14:48:05 -0800 (PST)
+From: hasna kourda <hasnakourdaa@gmail.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_05EC482A-634B-4B55-8862-05BD9FDC1874"
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.40.2.2.4\))
+Subject: Fwd: Thank you for placing your order. Here's what you can expect
+ next
+Message-Id: <96C6BED3-D672-47DB-985B-8B1633975646@gmail.com>
+References: <CAMxdApuF8SZx_M=zNAPtHug3q+URuAsho0cHDr2cK3Bwo9Q-Vw@mail.gmail.com>
+To: syw.orders@gmail.com
+Date: Fri, 10 Jan 2020 22:47:49 +0000
+X-Mailer: Apple Mail (2.3608.40.2.2.4)
+
+
+--Apple-Mail=_05EC482A-634B-4B55-8862-05BD9FDC1874
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> From: Viviane Paraschiv <viviane.paraschiv@farfetch.com>
+> Subject: Fwd: Thank you for placing your order. Here's what you can =
+expect next
+> Date: 10 January 2020 at 22:34:40 GMT
+> To: "hasna@saveyourwardrobe.com" <hasna@saveyourwardrobe.com>
+>=20
+>=20
+>=20
+> ---------- Forwarded message ---------
+> From: Farfetch <farfetch@email.farfetch.com =
+<mailto:farfetch@email.farfetch.com>>
+> Date: Thu, 4 Jul 2019 at 11:35
+> Subject: Thank you for placing your order. Here's what you can expect =
+next
+> To: <viviane.paraschiv@farfetch.com =
+<mailto:viviane.paraschiv@farfetch.com>>
+>=20
+>=20
+>=20
+>   =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWWAY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>
+> YOU=E2=80=99VE MADE A GREAT CHOICE
+> Order no: H2R5U4
+>=20
+> View Account =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWWCY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>=09
+> PLACED
+> IN PROGRESS
+> SHIPPED
+> =09
+>=20
+>=20
+> Hi Viviane P.,
+> Thanks for shopping with us. Your Farfetch order has been received and =
+will be processed shortly - this usually takes up to 2 business days. =
+Your package will be carefully prepared and sent on its way to you. Just =
+so you know, you=E2=80=99ll receive a confirmation email as soon as your =
+order has been shipped.
+>=20
+> Shopped pieces from multiple locations?
+> We=E2=80=99ve got it covered. We=E2=80=99ll confirm when each item has =
+been sent - please note you may receive more than one package.
+>=20
+> We hope you love your new find!
+>=20
+> FARFETCH
+>=20
+> Your delivery information
+>=20
+> 4th Floor, The Bower 211 Old Street =
+<https://www.google.com/maps/search/211+Old+Street?entry=3Dgmail&source=3D=
+g>=20
+> Farfetch=20
+> London=20
+> County (optional)=20
+> EC1V 9NR=20
+> United Kingdom=20
+> Your order summary
+>   =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DTUTWDCRY&_ei_=3DE=
+q2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5PhTNIOQ3OpE9=
+80bhg_I1JeR7l2meWW1ikXmdR9AzMqT_z2h-lR4l4X89VZ0xe8lcoD_r08qYzoSZ2PIYn7GgcZ=
+HDvdyNncYggkaVpJ5vWWmE6yk78wzS2MKzRmdE4J727Gbqeoxky2zRyN_FVpbcxJ4CYUU1jQn7=
+ztNfJlLErTVcd3bGcW1jL60y6Xez8foel36rxiuYzfOeS7ca6mv0yvuZB0ejsc5D590.>=09
+> Delivery between 08/07/2019 and 10/07/2019
+> Shipping from BROWNS
+> MANOLO BLAHNIK
+> Amazia 90mm Strappy Sandals
+> =C2=A3655.00
+>   =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DTUTWDCRY&_ei_=3DE=
+q2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5PhTNIOQ3OpE9=
+80bhg_I1JeR7l2meWW1ikXmdR9AzMqT_z2h-lR4l4X89VZ0xe8lcoDVkxwD0gdh0MLpQoaNNtp=
+N0UiXOiqJrXkYuRmFU_h_JpICDsUmySBlXDujLevIrvxnn6nwIHNXR4h3jcUl90Zlhp9ysNJY3=
+ngygh-tWC9wJAMbEChOQpe5DnKR8GC5i4hgt_wpLjvDcKDyoBjwDFAaYu9eBzvAQ1r0.>=09
+> Delivery between 08/07/2019 and 10/07/2019
+> Shipping from BROWNS
+> DORATEYMUR
+> Silver Integra 90 Leather Sandals
+> =C2=A3142.00
+> Shipping
+> Total
+> Payment method
+> =C2=A30.00
+> =C2=A3597.75
+> CREDITCARD
+>=20
+> WHAT HAPPENS NEXT?
+>=20
+>=20
+> NOT LONG TO WAIT
+> Your order has been placed and can take up to 48 hours to confirm
+>=20
+> WRAPPED JUST FOR YOU
+> It=E2=80=99s then carefully packaged with a personal touch
+>=20
+> IT=E2=80=99S ON ITS WAY!
+> You=E2=80=99ll receive dispatch confirmation and an estimated arrival =
+date
+>=20
+> CHANGED YOUR MIND?
+> Rest assured, we offer free returns within 14 days
+> NEED FURTHER HELP?
+>=20
+> Contact our friendly Customer Service team =E2=80=93 remember we=E2=80=99=
+ll need your order number.
+>    Email
+>=20
+> Click here =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBWY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.> to send
+> us an email
+>    Phone
+>=20
+> US =E2=80=8E+1 646 791 3768 <tel:+16467913768>
+> AU and NZ =E2=80=8E+61 488 839 167 <tel:+61488839167>
+> UK and rest of world
+> =E2=80=8E+44 (0) 20 3962 2362 <tel:+4402039622362>=09
+>    FAQ
+>=20
+> Find the answers you
+> need in our FAQs =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWYRY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>
+> Follow us
+>   =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWAWY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>	  =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWAAY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>	  =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWACY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>	  =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBRY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>	  =
+<https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzc=
+qudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBTY&_ei_=3DEq=
+2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph-X9rU7ivZB1=
+CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o1EKKdJ3LeNm=
+cJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0.>
+> Download our app
+> --=20
+> Viviane Paraschiv
+>=20
+> Augmented Retail Manager
+>=20
+> +44(0)7849 836164
+>=20
+> Farfetch UK Ltd
+>=20
+> 4th Floor, The Bower
+>=20
+> 211 Old Street =
+<https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&entry=3Dgmail=
+&source=3Dg>
+> London =
+<https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&entry=3Dgmail=
+&source=3Dg>
+> EC1V 9NR =
+<https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&entry=3Dgmail=
+&source=3Dg>
+> =20
+>=20
+>=20
+> http://farfetch.com <http://farfetch.com/>
+> Twitter:       https://twitter.com/farfetch =
+<https://twitter.com/farfetch>
+> Facebook:  https://www.facebook.com/Farfetch =
+<https://www.facebook.com/Farfetch>
+> Instagram: https://instagram.com/farfetch =
+<https://instagram.com/farfetch>
+> This email and any files transmitted with it are confidential and =
+intended solely for the use of the individual or entity to whom they are =
+addressed. If you have received this email in error please notify the =
+system manager. This message contains confidential information and is =
+intended only for the individual named. If you are not the named =
+addressee you should not disseminate, distribute or copy this e-mail. =
+Please notify the sender immediately by e-mail if you have received this =
+e-mail by mistake and delete this e-mail from your system. If you are =
+not the intended recipient you are notified that disclosing, copying, =
+distributing or taking any action in reliance on the contents of this =
+information is strictly prohibited.
+>=20
+
+
+--Apple-Mail=_05EC482A-634B-4B55-8862-05BD9FDC1874
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="Apple-Mail=_62148317-5087-493E-8E25-481F69C43F7F"
+
+
+--Apple-Mail=_62148317-5087-493E-8E25-481F69C43F7F
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" class=3D""><br =
+class=3D"">
+<div><br class=3D""><blockquote type=3D"cite" class=3D""><div =
+class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">Viviane Paraschiv &lt;<a =
+href=3D"mailto:viviane.paraschiv@farfetch.com" =
+class=3D"">viviane.paraschiv@farfetch.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Fwd: Thank you =
+for placing your order. Here's what you can expect next</b><br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">10 January 2020 at 22:34:40 =
+GMT<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"<a =
+href=3D"mailto:hasna@saveyourwardrobe.com" =
+class=3D"">hasna@saveyourwardrobe.com</a>" &lt;<a =
+href=3D"mailto:hasna@saveyourwardrobe.com" =
+class=3D"">hasna@saveyourwardrobe.com</a>&gt;<br =
+class=3D""></span></div><br class=3D""><div class=3D""><div class=3D""><br=
+ class=3D""></div><div class=3D""><br class=3D""><div =
+class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">---------- =
+Forwarded message ---------<br class=3D"">From: <strong =
+class=3D"gmail_sendername" dir=3D"auto">Farfetch</strong> <span =
+dir=3D"auto" class=3D"">&lt;<a href=3D"mailto:farfetch@email.farfetch.com"=
+ class=3D"">farfetch@email.farfetch.com</a>&gt;</span><br class=3D"">Date:=
+ Thu, 4 Jul 2019 at 11:35<br class=3D"">Subject: Thank you for placing =
+your order. Here's what you can expect next<br class=3D"">To:  &lt;<a =
+href=3D"mailto:viviane.paraschiv@farfetch.com" =
+class=3D"">viviane.paraschiv@farfetch.com</a>&gt;<br class=3D""></div><br =
+class=3D""><br class=3D"">
+  =20
+ =20
+  <div class=3D""><table cellpadding=3D"0" cellspacing=3D"0" =
+style=3D"border:0px;padding:0px;margin:0px;display:none;float:left" =
+class=3D"">
+<tbody class=3D""><tr class=3D"">
+<td height=3D"1" style=3D"font-size:1px;line-height:1px;padding:0px" =
+class=3D"">
+<img =
+src=3D"https://email.farfetch.com/pub/as?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo=
+8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXHkMX%3Dw&amp;_ei_=3D=
+EolaGGF4SNMvxFF7KucKuWOLyW2YSFOljUB7E7VSH3gtjXmnwQeVfUqv7SUAVMm4Yz0ZTRqmT9=
+K5b6dNT2S4mitv5e0E0_e9JUXPZxvouAjbgY2emVBj78GlWTxmiI58U_CgljvG2FI3ApyKIvDB=
+IQEWMo7_fRlc6mKMaoGdIzoP0JucW5bgQbg1WmP7Qwz5euA." class=3D"">
+<img =
+src=3D"https://tags.bluekai.com/site/64751?e_id_s64751=3D2e875bbd2f2c6b0ec=
+602be51bf3eb1bab4b1bf8aec07cb44cb60434fb5e5abb1&amp;e_id_m64751=3D2136eba2=
+6bb3dae7532b584d526e0adb" height=3D"1" width=3D"1" class=3D""><br =
+class=3D""><br class=3D"">
+</td>
+</tr>
+</tbody></table>
+
+<u class=3D""></u>
+
+   =20
+       =20
+        =20
+        =20
+       =20
+       =20
+       =20
+       =20
+       =20
+       =20
+       =20
+   =20
+    <div width=3D"100%" bgcolor=3D"#ffffff" =
+class=3D"m_-1400170665783617447white-bg" =
+style=3D"min-width:100%;margin:0;padding:0;box-sizing:border-box;color:#22=
+2222;font-family:'Polaris-Book',Helvetica,Arial,sans-serif;line-height:20p=
+x;text-align:left;font-size:13px;font-weight:normal;background-color:#ffff=
+ff;Margin:0;width:100%">
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+height=3D"100%" width=3D"100%" class=3D"m_-1400170665783617447body" =
+style=3D"border-spacing:0;padding:0;vertical-align:top;background:#ffffff;=
+height:100%;width:100%;color:#222222;font-family:'Polaris-Book',Helvetica,=
+Arial,sans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;=
+font-weight:normal;border-collapse:collapse" valign=3D"top" =
+align=3D"left">
+            <tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                <td align=3D"center" valign=3D"top" =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;font-size:13px;font-weigh=
+t:normal;margin:0 auto;Margin:0 auto;float:none;text-align:center" =
+class=3D"">
+                    <center style=3D"width:100%;min-width:640px" =
+class=3D"">
+	<table bgcolor=3D"#f8f8f8" align=3D"inherit" =
+class=3D"m_-1400170665783617447container" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;background-color:#f8f8f8;float:none;width:640px;margin:0 =
+auto;Margin:0 auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody=
+ class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+		<br class=3D"">
+	<center style=3D"width:100%;min-width:640px" class=3D"">
+		<a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWWAY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+align=3D"center" =
+style=3D"text-decoration:none;color:#222222;font-family:'Polaris-Book',Hel=
+vetica,Arial,sans-serif;line-height:20px;text-align:left;font-size:13px;Ma=
+rgin:0;font-weight:normal" target=3D"_blank" class=3D"">
+			<img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/logotipo.png" =
+width=3D"130" height=3D"17" alt=3D"farfetch logo" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center" class=3D"">
+		</a>
+	</center>
+<br class=3D"">
+		<h1 class=3D"m_-1400170665783617447no-gutter" =
+style=3D"color:#222222;Margin:0;line-height:35px;letter-spacing:2px;font-f=
+amily:'PolarisCondensed-Bold','Arial =
+Narrow',sans-serif;font-weight:bold;font-size:24px;padding-bottom:10px;pad=
+ding-top:10px;text-transform:uppercase;text-align:center">
+			YOU=E2=80=99VE MADE A GREAT CHOICE=20
+		</h1>
+		    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+	<th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:20px;padding-top:5px;width:624px;margin:0 auto;Margin:0 =
+auto;padding-left:0;padding-right:0" width=3D"624" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+	      	Order no:  H2R5U4
+	    </div>
+		<br class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+	    	<a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWWCY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"font-family:'Polaris-Book',Helvetica,Arial,sans-serif;line-height=
+:20px;text-align:left;font-size:13px;Margin:0;font-weight:normal;color:#22=
+2222;text-decoration:underline" target=3D"_blank" class=3D"">View =
+Account</a>
+	    </div>
+	</th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+</tr></tbody></table>
+        <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-4" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:10px;padding-top:20px;vertical-align:bottom;width:197.33333px;m=
+argin:0 auto;Margin:0 auto;padding-left:0;padding-right:0" =
+width=3D"197.33333" valign=3D"bottom" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"margin: 0px; line-height: =
+18px; color: rgb(0, 0, 1); letter-spacing: 2px; text-transform: =
+uppercase; font-family: PolarisCondensed-Bold, &quot;Arial Narrow&quot;, =
+sans-serif; font-weight: bold; font-size: 12px; text-align: right;" =
+class=3D"">
+                    Placed
+                </div>
+    </th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-4" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:10px;padding-top:20px;vertical-align:bottom;width:197.33333px;m=
+argin:0 auto;Margin:0 auto;padding-left:0;padding-right:0" =
+width=3D"197.33333" valign=3D"bottom" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"margin: 0px; line-height: =
+18px; letter-spacing: 2px; text-transform: uppercase; font-family: =
+PolarisCondensed-Bold, &quot;Arial Narrow&quot;, sans-serif; =
+font-weight: bold; font-size: 12px; color: rgb(204, 204, 204); =
+text-align: center;" class=3D"">
+                    In Progress
+                </div>
+    </th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-4" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:10px;padding-top:20px;vertical-align:bottom;width:197.33333px;m=
+argin:0 auto;Margin:0 auto;padding-left:0;padding-right:0" =
+width=3D"197.33333" valign=3D"bottom" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"margin: 0px; line-height: =
+18px; letter-spacing: 2px; text-transform: uppercase; font-family: =
+PolarisCondensed-Bold, &quot;Arial Narrow&quot;, sans-serif; =
+font-weight: bold; font-size: 12px; color: rgb(204, 204, 204); =
+text-align: left;" class=3D"">
+                    Shipped
+                </div>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+<table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447no-gutter m_-1400170665783617447columns =
+m_-1400170665783617447show-for-large" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;text-align:center;wi=
+dth:624px;margin:0 auto;Margin:0 =
+auto;padding:0;padding-left:0;padding-right:0" width=3D"624" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;padding:0" align=3D"left" class=3D"">
+                <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/pbar_placed_dtp.png" =
+width=3D"640" alt=3D"placed step image" =
+class=3D"m_-1400170665783617447white-bg" border=3D"0" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;background-color:#ffffff">
+    </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447no-gutter m_-1400170665783617447columns =
+m_-1400170665783617447hide-for-large" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;font-weight:normal;overflow:hidden;max-height:0;font-size:0;line-height=
+:0;text-align:center;width:624px;margin:0 auto;Margin:0 =
+auto;display:none;padding:0;padding-left:0;padding-right:0" width=3D"624" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;padding:0" align=3D"left" class=3D"">
+                <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/pbar_placed_mob.png" =
+alt=3D"in progress steps image" =
+class=3D"m_-1400170665783617447step-fullsize =
+m_-1400170665783617447white-bg" border=3D"0" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;background-color:#ffffff;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center">
+    </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+</tr></tbody></table>
+    </td></tr></tbody></table>
+    <table align=3D"inherit" class=3D"m_-1400170665783617447container" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;float:none;width:640px;margin:0 auto;Margin:0 =
+auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+		<table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+			<th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+				<br class=3D""><br class=3D""><div =
+style=3D"color: rgb(34, 34, 34); font-family: Polaris-Book, Helvetica, =
+Arial, sans-serif; line-height: 20px; text-align: left; font-size: 13px; =
+margin: 0px; font-weight: normal;" class=3D"">
+    Hi Viviane P.,
+</div>
+				<table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+					<th =
+class=3D"m_-1400170665783617447small-12 m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:10px;padding-top:20px;margin:0 auto;Margin:0 =
+auto;width:100%;padding-left:0;padding-right:0" width=3D"100%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; text-align: left; font-size: 13px; margin: 0px; font-weight: =
+normal;" class=3D"">Thanks for shopping with us. Your Farfetch order has =
+been received and will be processed shortly - this usually takes up to 2 =
+business days. Your package will be carefully prepared and sent on its =
+way to you. Just so you know, you=E2=80=99ll receive a confirmation =
+email as soon as your order has been shipped.<br class=3D""><br =
+class=3D""><span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">Shopped pieces from multiple locations?</span><br =
+class=3D"">We=E2=80=99ve got it covered. We=E2=80=99ll confirm when each =
+item has been sent - please note you may receive more than one =
+package.</div>
+                        <br class=3D""><div style=3D"color: rgb(34, 34, =
+34); font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; text-align: left; font-size: 13px; margin: 0px; =
+font-weight: normal;" class=3D"">We hope you love your new find!</div>
+                        <br class=3D""><div style=3D"color: rgb(34, 34, =
+34); font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; text-align: left; font-size: 13px; margin: 0px; =
+font-weight: normal;" class=3D"">FARFETCH</div>
+					</th></tr></tbody></table></th>
+				</tr></tbody></table>
+			</th></tr></tbody></table></th>
+		</tr></tbody></table>
+    </td></tr></tbody></table>
+	<table align=3D"inherit" class=3D"m_-1400170665783617447container"=
+ =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;float:none;width:640px;margin:0 auto;Margin:0 =
+auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+	<br class=3D"">
+	<table bgcolor=3D"#f8f8f8" =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;background-color:#f8f8f8;padding:0;width:100%;display:table" =
+width=3D"100%" valign=3D"top" align=3D"left" class=3D""><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D"">
+		<th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:30px;padding-top:30px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+			<h3 =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;Margin:0;font-weight:normal;font-size:16px;text-align:=
+left" class=3D"">
+            Your delivery information
+			</h3>
+			<br class=3D""><div style=3D"color: rgb(34, 34, =
+34); font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; text-align: left; font-size: 13px; margin: 0px; =
+font-weight: normal;" class=3D"">4th Floor, The Bower <a =
+href=3D"https://www.google.com/maps/search/211+Old+Street?entry=3Dgmail&am=
+p;source=3Dg" class=3D"">211 Old Street</a>
+<br class=3D"">Farfetch
+<br class=3D"">London
+<br class=3D"">County (optional)
+<br class=3D"">EC1V 9NR
+<br class=3D"">United Kingdom
+<br class=3D""></div>
+		</th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+	</tr></tbody></table>
+</td></tr></tbody></table>
+    <table align=3D"inherit" class=3D"m_-1400170665783617447container" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;float:none;width:640px;margin:0 auto;Margin:0 =
+auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+                <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:30px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        <h3 =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;Margin:0;font-weight:normal;font-size:=
+16px;padding-bottom:20px" class=3D"">
+                        Your order summary
+        </h3>
+        <hr style=3D"border:0;border-top:solid 1px =
+#cccccc;color:#eeeeee;background:#eeeeee;margin:0;padding:0" class=3D"">
+    </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+</tr></tbody></table>
+    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+        <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:20px;padding-top:24px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+            <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                <th class=3D"m_-1400170665783617447small-4 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:5px;margin:0 auto;Margin:0 =
+auto;width:25%;padding-left:0;padding-right:0" width=3D"25%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                    <a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DTUTWDCRY&a=
+mp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5P=
+hTNIOQ3OpE980bhg_I1JeR7l2meWW1ikXmdR9AzMqT_z2h-lR4l4X89VZ0xe8lcoD_r08qYzoS=
+Z2PIYn7GgcZHDvdyNncYggkaVpJ5vWWmE6yk78wzS2MKzRmdE4J727Gbqeoxky2zRyN_FVpbcx=
+J4CYUU1jQn7ztNfJlLErTVcd3bGcW1jL60y6Xez8foel36rxiuYzfOeS7ca6mv0yvuZB0ejsc5=
+D590." =
+style=3D"text-decoration:none;color:#222222;font-family:'Polaris-Book',Hel=
+vetica,Arial,sans-serif;line-height:20px;text-align:left;font-size:13px;Ma=
+rgin:0;font-weight:normal" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://cdn-images.farfetch.com/13/57/20/72/13572072_18429387_200.j=
+pg" width=3D"92" height=3D"110" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0" class=3D"">
+                    </a>
+                </th></tr></tbody></table></th>
+                <th class=3D"m_-1400170665783617447small-8 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:75%;padding-left:0;padding-right:0" =
+width=3D"75%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                        <th class=3D"m_-1400170665783617447pb10-xs =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:12px;margin:0 auto;Margin:0 =
+auto;width:100%;padding-left:0;padding-right:0" width=3D"100%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; text-align: left; font-weight: =
+normal; padding-bottom: 12px;" class=3D"">
+                        Delivery between <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">08/07/2019</span> and <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">10/07/2019</span>
+                            </div><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; text-align: left; font-weight: =
+normal;" class=3D"">
+                        Shipping from=20
+                     BROWNS
+                            </div>
+                        </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+                    </tr></tbody></table>
+                    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                        <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:50%;padding-left:0;padding-right:0" =
+width=3D"50%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; padding-bottom: 5px; line-height: 20px; text-align: left; =
+letter-spacing: 2px; text-transform: uppercase; font-family: =
+PolarisCondensed-Bold, &quot;Arial Narrow&quot;, sans-serif; font-size: =
+16px; font-weight: bold;" class=3D"">
+                                MANOLO BLAHNIK
+                            </div><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; padding-bottom: 5px; text-transform: capitalize; =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; text-align: left; font-weight: normal;" class=3D"">=
+
+                                Amazia 90mm strappy sandals
+                            </div>
+                        </th></tr></tbody></table></th>
+                        <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;vertical-align:middle;f=
+ont-weight:bold;margin:0 auto;Margin:0 =
+auto;width:50%;padding-left:0;padding-right:0" width=3D"50%" =
+valign=3D"middle" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Bold, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; font-weight: bold; letter-spacing: =
+2px; text-transform: uppercase; text-align: right;" class=3D"">
+                                =C2=A3655.00
+                            </div>
+                        </th></tr></tbody></table></th>
+                    </tr></tbody></table>
+                </th></tr></tbody></table></th>
+            </tr></tbody></table>
+        </th></tr></tbody></table></th>
+    </tr></tbody></table>
+    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+        <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                        <hr style=3D"border:0;border-top:solid 1px =
+#cccccc;color:#eeeeee;background:#eeeeee;margin:0;padding:0" class=3D"">
+        </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+    </tr></tbody></table>
+    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+        <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:20px;padding-top:24px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+            <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                <th class=3D"m_-1400170665783617447small-4 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:5px;margin:0 auto;Margin:0 =
+auto;width:25%;padding-left:0;padding-right:0" width=3D"25%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                    <a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DTUTWDCRY&a=
+mp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5P=
+hTNIOQ3OpE980bhg_I1JeR7l2meWW1ikXmdR9AzMqT_z2h-lR4l4X89VZ0xe8lcoDVkxwD0gdh=
+0MLpQoaNNtpN0UiXOiqJrXkYuRmFU_h_JpICDsUmySBlXDujLevIrvxnn6nwIHNXR4h3jcUl90=
+Zlhp9ysNJY3ngygh-tWC9wJAMbEChOQpe5DnKR8GC5i4hgt_wpLjvDcKDyoBjwDFAaYu9eBzvA=
+Q1r0." =
+style=3D"text-decoration:none;color:#222222;font-family:'Polaris-Book',Hel=
+vetica,Arial,sans-serif;line-height:20px;text-align:left;font-size:13px;Ma=
+rgin:0;font-weight:normal" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://cdn-images.farfetch.com/12/97/02/73/12970273_13728169_200.j=
+pg" width=3D"92" height=3D"110" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0" class=3D"">
+                    </a>
+                </th></tr></tbody></table></th>
+                <th class=3D"m_-1400170665783617447small-8 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:75%;padding-left:0;padding-right:0" =
+width=3D"75%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                        <th class=3D"m_-1400170665783617447pb10-xs =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:12px;margin:0 auto;Margin:0 =
+auto;width:100%;padding-left:0;padding-right:0" width=3D"100%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; text-align: left; font-weight: =
+normal; padding-bottom: 12px;" class=3D"">
+                        Delivery between <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">08/07/2019</span> and <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">10/07/2019</span>
+                            </div><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Book, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; text-align: left; font-weight: =
+normal;" class=3D"">
+                        Shipping from=20
+                     BROWNS
+                            </div>
+                        </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+                    </tr></tbody></table>
+                    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+                        <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:50%;padding-left:0;padding-right:0" =
+width=3D"50%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; padding-bottom: 5px; line-height: 20px; text-align: left; =
+letter-spacing: 2px; text-transform: uppercase; font-family: =
+PolarisCondensed-Bold, &quot;Arial Narrow&quot;, sans-serif; font-size: =
+16px; font-weight: bold;" class=3D"">
+                                DORATEYMUR
+                            </div><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; padding-bottom: 5px; text-transform: capitalize; =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; text-align: left; font-weight: normal;" class=3D"">=
+
+                                silver Integra 90 leather sandals
+                            </div>
+                        </th></tr></tbody></table></th>
+                        <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447p-start-10-xs m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;vertical-align:middle;f=
+ont-weight:bold;margin:0 auto;Margin:0 =
+auto;width:50%;padding-left:0;padding-right:0" width=3D"50%" =
+valign=3D"middle" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"color: rgb(34, 34, 34); =
+margin: 0px; font-family: Polaris-Bold, Helvetica, Arial, sans-serif; =
+line-height: 20px; font-size: 13px; font-weight: bold; letter-spacing: =
+2px; text-transform: uppercase; text-align: right;" class=3D"">
+                                =C2=A3142.00
+                            </div>
+                        </th></tr></tbody></table></th>
+                    </tr></tbody></table>
+                </th></tr></tbody></table></th>
+            </tr></tbody></table>
+        </th></tr></tbody></table></th>
+    </tr></tbody></table>
+    <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+        <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                        <hr style=3D"border:0;border-top:solid 1px =
+#cccccc;color:#eeeeee;background:#eeeeee;margin:0;padding:0" class=3D"">
+        </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+    </tr></tbody></table>
+    	<table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:20px;padding-top:20px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:64px;padding-right:64px" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+            <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-6" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:50%;padding-left:0;padding-right:0" =
+width=3D"50%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"font-family: Polaris-Book, =
+Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; =
+font-size: 13px; margin: 0px; font-weight: normal; padding-bottom: 5px; =
+color: rgb(229, 199, 165); text-transform: capitalize;" class=3D"">
+                        Shipping
+                    </div><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; text-align: left; font-size: 13px; margin: 0px; padding-bottom: =
+5px; font-weight: bold;" class=3D"">
+                    Total
+                </div><div style=3D"color: rgb(34, 34, 34); font-family: =
+Polaris-Book, Helvetica, Arial, sans-serif; line-height: 20px; =
+text-align: left; font-size: 13px; margin: 0px; font-weight: normal; =
+padding-top: 10px;" class=3D"">
+                    Payment method
+                </div>
+            </th></tr></tbody></table></th>
+            <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-6" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 auto;width:50%;padding-left:0;padding-right:0" =
+width=3D"50%" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D""><div style=3D"font-family: Polaris-Book, =
+Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; =
+margin: 0px; font-weight: normal; padding-bottom: 5px; color: rgb(229, =
+199, 165); text-align: right;" class=3D"">=C2=A30.00</div><div =
+style=3D"color: rgb(34, 34, 34); font-family: Polaris-Book, Helvetica, =
+Arial, sans-serif; line-height: 20px; font-size: 13px; margin: 0px; =
+padding-bottom: 5px; font-weight: bold; text-align: right;" =
+class=3D"">=C2=A3597.75</div><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; padding-top: =
+10px; text-transform: uppercase; text-align: right;" =
+class=3D"">CreditCard</div>
+            </th></tr></tbody></table></th>
+        </tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+    </td></tr></tbody></table>
+    <table align=3D"inherit" class=3D"m_-1400170665783617447container" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;float:none;width:640px;margin:0 auto;Margin:0 =
+auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+    	<hr style=3D"border:0;border-top:solid 1px =
+#cccccc;color:#eeeeee;background:#eeeeee;margin:0;padding:0" =
+class=3D""><br class=3D"">
+<h2 =
+style=3D"color:#222222;Margin:0;line-height:25px;letter-spacing:2px;font-f=
+amily:'PolarisCondensed-Bold','Arial =
+Narrow',sans-serif;font-weight:bold;font-size:18px;text-transform:uppercas=
+e;text-align:center" class=3D"">
+    WHAT HAPPENS NEXT?
+</h2><br class=3D"">
+<table class=3D"m_-1400170665783617447collapse" =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left"><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-6 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:20px;=
+text-align:center;margin:0 auto;Margin:0 =
+auto;padding-left:0;padding-right:0;width:168px" width=3D"168" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+    			<center style=3D"width:100%;min-width:112px" =
+class=3D"">
+            		<img border=3D"0" =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/four_steps_1.png" =
+width=3D"57" height=3D"73" alt=3D"Step 1 - order placed" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;padding-bottom:20px;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center" class=3D"">
+            	</center>
+	            <h3 =
+style=3D"Margin:0;padding-bottom:5px;font-weight:bold;line-height:20px;col=
+or:#000001;text-align:center;letter-spacing:2px;text-transform:uppercase;f=
+ont-family:'PolarisCondensed-Bold','Arial =
+Narrow',sans-serif;font-size:13px;padding-left:10px;padding-right:10px" =
+class=3D"">
+	                NOT LONG TO WAIT
+	            </h3><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; margin: 0px; =
+font-weight: normal; font-size: 11px; text-align: center; line-height: =
+16px; padding-left: 10px; padding-right: 10px;" class=3D"">
+            		Your order has been placed and can take up to 48 =
+hours to confirm
+            	</div>
+    </th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447small-6 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:20px;=
+text-align:center;margin:0 auto;Margin:0 =
+auto;padding-left:0;padding-right:0;width:160px" width=3D"160" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        		<center style=3D"width:100%;min-width:112px" =
+class=3D"">=20
+            		<img border=3D"0" =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/four_steps_2.png" =
+width=3D"57" height=3D"73" alt=3D"Step 2 - order wrapped" align=3D"center"=
+ =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;padding-bottom:20px;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center" class=3D"">
+            	</center>
+	            <h3 =
+style=3D"Margin:0;padding-bottom:5px;font-weight:bold;line-height:20px;tex=
+t-align:center;letter-spacing:2px;text-transform:uppercase;font-family:'Po=
+larisCondensed-Bold','Arial =
+Narrow',sans-serif;font-size:13px;color:#888888;padding-left:10px;padding-=
+right:10px" class=3D"">
+	                WRAPPED JUST FOR YOU
+	            </h3><div style=3D"font-family: Polaris-Book, =
+Helvetica, Arial, sans-serif; margin: 0px; font-weight: normal; color: =
+rgb(136, 136, 136); font-size: 11px; text-align: center; line-height: =
+16px; padding-left: 10px; padding-right: 10px;" class=3D"">
+            		It=E2=80=99s then carefully packaged with a =
+personal touch
+            	</div>
+    </th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447small-6 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:20px;=
+text-align:center;margin:0 auto;Margin:0 =
+auto;padding-left:0;padding-right:0;width:160px" width=3D"160" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        		<center style=3D"width:100%;min-width:112px" =
+class=3D"">
+            		<img border=3D"0" =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/four_steps_3.png" =
+width=3D"57" height=3D"73" alt=3D"Step 3 - order on the way" =
+align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;padding-bottom:20px;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center" class=3D"">
+            	</center>
+	            <h3 =
+style=3D"Margin:0;padding-bottom:5px;font-weight:bold;line-height:20px;tex=
+t-align:center;letter-spacing:2px;text-transform:uppercase;font-family:'Po=
+larisCondensed-Bold','Arial =
+Narrow',sans-serif;font-size:13px;color:#888888;padding-left:10px;padding-=
+right:10px" class=3D"">
+	                IT=E2=80=99S ON ITS WAY!
+	            </h3><div style=3D"font-family: Polaris-Book, =
+Helvetica, Arial, sans-serif; margin: 0px; font-weight: normal; color: =
+rgb(136, 136, 136); font-size: 11px; text-align: center; line-height: =
+16px; padding-left: 10px; padding-right: 10px;" class=3D"">
+            		You=E2=80=99ll receive dispatch confirmation and =
+an estimated arrival date
+            	</div>
+    </th></tr></tbody></table></th>
+    <th class=3D"m_-1400170665783617447small-6 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:20px;=
+text-align:center;margin:0 auto;Margin:0 =
+auto;padding-left:0;padding-right:0;width:168px" width=3D"168" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        		<center style=3D"width:100%;min-width:112px" =
+class=3D"">
+            		<img border=3D"0" =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/four_steps_4.png" =
+width=3D"57" height=3D"73" alt=3D"Step 4 - retun service" align=3D"center"=
+ =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;display:block;border:0;padding-bottom:20px;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center" class=3D"">
+            	</center>
+	            <h3 =
+style=3D"Margin:0;padding-bottom:5px;font-weight:bold;line-height:20px;tex=
+t-align:center;letter-spacing:2px;text-transform:uppercase;font-family:'Po=
+larisCondensed-Bold','Arial =
+Narrow',sans-serif;font-size:13px;color:#888888;padding-left:10px;padding-=
+right:10px" class=3D"">
+	                CHANGED YOUR MIND?
+	            </h3><div style=3D"font-family: Polaris-Book, =
+Helvetica, Arial, sans-serif; margin: 0px; font-weight: normal; color: =
+rgb(136, 136, 136); font-size: 11px; text-align: center; line-height: =
+16px; padding-left: 10px; padding-right: 10px;" class=3D"">
+            		Rest assured, we offer free returns within 14 =
+days
+            	</div>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+        <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;width:100%;display:table" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447columns =
+m_-1400170665783617447no-gutter m_-1400170665783617447small-12" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;widt=
+h:624px;margin:0 auto;Margin:0 auto;padding-left:0;padding-right:0" =
+width=3D"624" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <hr style=3D"border:0;border-top:solid 1px =
+#cccccc;color:#eeeeee;background:#eeeeee;margin:0;padding:0" class=3D"">
+        <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+            <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-container m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:30px;margin:0 auto;Margin:0 =
+auto;width:544px;padding-left:0;padding-right:0" width=3D"544" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <h2 class=3D"m_-1400170665783617447no-gutter" =
+style=3D"color:#222222;Margin:0;line-height:25px;letter-spacing:2px;font-f=
+amily:'PolarisCondensed-Bold','Arial =
+Narrow',sans-serif;font-weight:bold;font-size:18px;text-align:center">NEED=
+ FURTHER HELP?</h2>
+                <br class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+                    Contact our friendly Customer Service team =E2=80=93 =
+remember we=E2=80=99ll need your order number.
+                </div>
+            </th>
+<th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;width:0;padding:0" align=3D"left" =
+class=3D""></th></tr></tbody></table></th>
+        </tr></tbody></table>
+        <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+            <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447pb20-xs m_-1400170665783617447columns =
+m_-1400170665783617447pt10-xs" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:30px;=
+padding-top:20px;text-align:center;margin:0 auto;Margin:0 =
+auto;width:33.33333%;padding-left:0;padding-right:0" width=3D"33.33333%" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <center =
+style=3D"width:100%;vertical-align:middle;min-width:none" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/email.png" alt=3D"email =
+icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/spacer.png" width=3D"5" =
+height=3D"5" alt=3D"spacer icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;vertical-align:middle;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <span align=3D"center" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;Margin:0;font-weight:bold;font-size:13=
+px" class=3D"">
+                        Email
+                    </span>
+                </center>
+                <br class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+                    <a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBWY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;text-decoration:underline" target=3D"_blank" class=3D"">Click =
+here</a> to send<br class=3D""> us an email
+                </div>
+            </th></tr></tbody></table></th>
+            <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447pb20-xs m_-1400170665783617447columns =
+m_-1400170665783617447pt10-xs" dir=3D"ltr" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:30px;=
+padding-top:20px;text-align:center;margin:0 auto;Margin:0 =
+auto;width:33.33333%;padding-left:0;padding-right:0" width=3D"33.33333%" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <center =
+style=3D"width:100%;vertical-align:middle;min-width:none" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/phone.png" alt=3D"phone =
+icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/spacer.png" width=3D"5" =
+height=3D"5" alt=3D"spacer icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <span align=3D"center" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;Margin:0;font-weight:bold;font-size:13=
+px" class=3D"">
+                        Phone
+                    </span>
+                </center>
+                <br class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+                            <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">US</span>
+                            <a href=3D"tel:+16467913768" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;text-decoration:underline" target=3D"_blank" class=3D"">=E2=80=8E+1 =
+646 791 3768</a><br class=3D"">
+                            <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">AU and NZ</span>
+                            <a href=3D"tel:+61488839167" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;text-decoration:underline" target=3D"_blank" class=3D"">=E2=80=8E+61 =
+488 839 167</a><br class=3D"">
+                            <span =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:bo=
+ld" class=3D"">UK and rest of world</span><br class=3D"">
+                            <a href=3D"tel:+4402039622362" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;text-decoration:underline" target=3D"_blank" class=3D"">=E2=80=8E+44 =
+(0) 20 3962 2362</a>
+                        </div>
+            </th></tr></tbody></table></th>
+            <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447pb20-xs m_-1400170665783617447columns =
+m_-1400170665783617447pt10-xs" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:30px;=
+padding-top:20px;text-align:center;margin:0 auto;Margin:0 =
+auto;width:33.33333%;padding-left:0;padding-right:0" width=3D"33.33333%" =
+align=3D"center"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <center =
+style=3D"width:100%;vertical-align:middle;min-width:none" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/faq.png" alt=3D"faq =
+icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/spacer.png" width=3D"5" =
+height=3D"5" alt=3D"spacer icon" align=3D"center" =
+style=3D"outline:none;text-decoration:none;width:auto;max-width:100%;clear=
+:both;border:0;margin:0 auto;Margin:0 =
+auto;float:none;text-align:center;display:inline-block" class=3D"">
+                    <span align=3D"center" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;Margin:0;font-weight:bold;font-size:13=
+px" class=3D"">
+                        FAQ
+                    </span>
+                </center>
+                <br class=3D""><div style=3D"color: rgb(34, 34, 34); =
+font-family: Polaris-Book, Helvetica, Arial, sans-serif; line-height: =
+20px; font-size: 13px; margin: 0px; font-weight: normal; text-align: =
+center;" class=3D"">
+                    Find the answers you<br class=3D""> need in our=20
+                    <a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWYRY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal;text-decoration:underline" target=3D"_blank" class=3D"">FAQs</a>
+                </div>
+            </th></tr></tbody></table></th>
+        </tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+    </td></tr></tbody></table>   =20
+   =20
+<table bgcolor=3D"#f8f8f8" align=3D"inherit" =
+class=3D"m_-1400170665783617447container" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;float:none;width:640px;margin:0 auto;Margin:0 =
+auto;text-align:inherit" width=3D"640" valign=3D"top"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;text-align:left;font-size=
+:13px;Margin:0;font-weight:normal" valign=3D"top" align=3D"left" =
+class=3D"">
+    <table class=3D"m_-1400170665783617447menu-footer" =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding-left:0;padding-right:0;font-size:16px;padding:0;width:=
+100%;display:table" width=3D"100%" valign=3D"top" align=3D"left"><tbody =
+class=3D""><tr style=3D"padding:0;vertical-align:top;text-align:left" =
+valign=3D"top" align=3D"left" class=3D"">
+        <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447padded m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;marg=
+in:0 auto;Margin:0 =
+auto;width:624px;padding-top:15px;padding-bottom:0;padding-left:56px;paddi=
+ng-right:56px" width=3D"624" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+            <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447columns m_-1400170665783617447pt10-xs =
+m_-1400170665783617447show-for-large" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-bottom:20px;padding-top:20px;vertical-align:middle;margin:0 =
+auto;Margin:0 auto;width:50%;padding-left:0;padding-right:0" width=3D"50%"=
+ valign=3D"middle" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        <h4 =
+style=3D"color:#222222;Margin:0;font-weight:normal;font-size:14px;padding-=
+left:5px;line-height:36px;text-align:left;font-family:'Polaris-Bold',Helve=
+tica,Arial,sans-serif;letter-spacing:1px" class=3D"">
+            Follow us
+        </h4>
+    </th></tr></tbody></table></th>=20
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447small-text-center m_-1400170665783617447columns =
+m_-1400170665783617447pt10-xs" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;padding-bottom:20px;=
+padding-top:20px;text-align:left;margin:0 auto;Margin:0 =
+auto;width:50%;padding-left:0;padding-right:0" width=3D"50%" =
+align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+                <table class=3D"m_-1400170665783617447menu" =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:center;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"center"><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:center" valign=3D"top" =
+align=3D"center" class=3D""><td =
+style=3D"padding:0;vertical-align:top;color:#222222;font-family:'Polaris-B=
+ook',Helvetica,Arial,sans-serif;line-height:20px;font-size:13px;Margin:0;f=
+ont-weight:normal;text-align:center" valign=3D"top" align=3D"center" =
+class=3D""><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:center" valign=3D"top" =
+align=3D"center" class=3D"">
+                    <th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center;padding:10px 10px 10px =
+0" align=3D"center" class=3D""><a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWAWY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"text-decoration:none;font-family:'Polaris-Book',Helvetica,Arial,s=
+ans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;font-we=
+ight:normal;color:#999999" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/instagram2.png" =
+class=3D"m_-1400170665783617447instagram m_-1400170665783617447icon" =
+alt=3D"instagram icon" =
+style=3D"outline:none;text-decoration:none;max-width:100%;clear:both;displ=
+ay:block;border:0;padding-right:10px;padding-left:0;width:19px" =
+width=3D"19">
+                    </a></th>
+                    <th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center;padding:10px" =
+align=3D"center" class=3D""><a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWAAY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"text-decoration:none;font-family:'Polaris-Book',Helvetica,Arial,s=
+ans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;font-we=
+ight:normal;color:#999999" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/facebook2.png" =
+class=3D"m_-1400170665783617447icon m_-1400170665783617447facebook" =
+alt=3D"facebook icon" =
+style=3D"outline:none;text-decoration:none;max-width:100%;clear:both;displ=
+ay:block;border:0;padding-left:10px;padding-right:10px;width:10px" =
+width=3D"10">
+                    </a></th>
+                    <th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center;padding:10px" =
+align=3D"center" class=3D""><a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWACY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"text-decoration:none;font-family:'Polaris-Book',Helvetica,Arial,s=
+ans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;font-we=
+ight:normal;color:#999999" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/snapchat2.png" =
+class=3D"m_-1400170665783617447snapchat m_-1400170665783617447icon" =
+alt=3D"snapchat icon" =
+style=3D"outline:none;text-decoration:none;max-width:100%;clear:both;displ=
+ay:block;border:0;padding-left:10px;padding-right:10px;width:20px" =
+width=3D"20">
+                    </a></th>
+                    <th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center;padding:10px" =
+align=3D"center" class=3D""><a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBRY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"text-decoration:none;font-family:'Polaris-Book',Helvetica,Arial,s=
+ans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;font-we=
+ight:normal;color:#999999" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/twitter2.png" =
+class=3D"m_-1400170665783617447icon m_-1400170665783617447twitter" =
+alt=3D"twitter icon" =
+style=3D"outline:none;text-decoration:none;max-width:100%;clear:both;displ=
+ay:block;border:0;padding-left:10px;padding-right:10px;width:24px" =
+width=3D"24">
+                    </a></th>=20
+                    <th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;font-size:13px;font-weight:normal;margin:0 =
+auto;Margin:0 auto;float:none;text-align:center;padding:10px 0 10px =
+10px" align=3D"center" class=3D""><a =
+href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGse=
+o8O8Rzcqudh3df5d4uoWJTzaS0uiXzcPzc4U8M1Pbzfr0UszeIKkq9KVXtpKX%3DYABWBTY&am=
+p;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbmj456-GYBVt0mFkXAPAMjVjm8HJmG-mN5EsaWVkl5Ph=
+-X9rU7ivZB1CiFDKzwBbSyWav_tysp11cZ7EZrRzb-1e4A0PuU12rRE2uJiTRJeVr_WLBqqF5o=
+1EKKdJ3LeNmcJV1QHls3OHYzhdyOrLgKLi9gRQn-UYPLeZxjKVm1c2M3OaND-Zda0r0." =
+style=3D"text-decoration:none;font-family:'Polaris-Book',Helvetica,Arial,s=
+ans-serif;line-height:20px;text-align:left;font-size:13px;Margin:0;font-we=
+ight:normal;color:#999999" target=3D"_blank" class=3D"">
+                        <img =
+src=3D"https://static.cdn.responsys.net/i5/responsysimages/farfetch/conten=
+tlibrary/ff_transactional_emails/resources/images/pinterest.png" =
+class=3D"m_-1400170665783617447pinterest m_-1400170665783617447icon" =
+alt=3D"pintrest icon" =
+style=3D"outline:none;text-decoration:none;max-width:100%;clear:both;displ=
+ay:block;border:0;padding-left:10px;padding-right:10px;width:15px" =
+width=3D"15">
+                    </a></th>
+                </tr></tbody></table></td></tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+            <hr style=3D"border:0.3px solid #cccccc" class=3D"">
+            <table =
+style=3D"border-spacing:0;border-collapse:collapse;vertical-align:top;text=
+-align:left;padding:0;display:table;width:100%" width=3D"100%" =
+valign=3D"top" align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D"">
+    <th class=3D"m_-1400170665783617447small-12 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:20px;vertical-align:middle;margin:0 auto;Margin:0 =
+auto;width:50%;padding-left:0;padding-right:0" width=3D"50%" =
+valign=3D"middle" align=3D"left"><table =
+style=3D"border-spacing:0;border-collapse:collapse;padding:0;vertical-alig=
+n:top;text-align:left;width:100%" width=3D"100%" valign=3D"top" =
+align=3D"left" class=3D""><tbody class=3D""><tr =
+style=3D"padding:0;vertical-align:top;text-align:left" valign=3D"top" =
+align=3D"left" class=3D""><th =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;Margin:0;font-weight:no=
+rmal" align=3D"left" class=3D"">
+        <h4 class=3D"m_-1400170665783617447small-text-center" =
+style=3D"color:#222222;line-height:20px;Margin:0;font-weight:normal;font-s=
+ize:14px;padding-left:5px;text-align:left;font-family:'Polaris-Bold',Helve=
+tica,Arial,sans-serif;letter-spacing:1px">
+            Download our app
+        </h4>
+    </th></tr></tbody></table></th>
+            <th class=3D"m_-1400170665783617447small-6 =
+m_-1400170665783617447columns" =
+style=3D"color:#222222;font-family:'Polaris-Book',Helvetica,Arial,sans-ser=
+if;line-height:20px;text-align:left;font-size:13px;font-weight:normal;padd=
+ing-top:20px;vertical-align:middle;margin:0 auto;Margin:0 =
+auto;width:25%;padding-left:0;padding-right:0" width=3D"25%" =
+valign=3D"middle" =
+align=3D"left"></th></tr></tbody></table></th></tr></tbody></table></th></=
+tr></tbody></table></td></tr></tbody></table></center></td></tr></tbody></=
+table></div></div></div></div>-- <br class=3D""><div dir=3D"ltr" =
+class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><div =
+dir=3D"ltr" class=3D""><div class=3D""><div dir=3D"ltr" class=3D""><div =
+dir=3D"ltr" class=3D""><p =
+style=3D"font-size:12.8px;background-image:initial;background-position:ini=
+tial;background-repeat:initial" class=3D""><b class=3D""><span =
+style=3D"font-size:12pt;color:rgb(45,45,45)" class=3D"">Viviane =
+Paraschiv</span></b></p><p =
+style=3D"font-size:12.8px;background-image:initial;background-position:ini=
+tial;background-repeat:initial" class=3D""><b class=3D""><span =
+style=3D"font-size:12pt;color:rgb(45,45,45)" class=3D"">Augmented Retail =
+Manager</span></b></p><p style=3D"font-size:12.8px" class=3D""><i =
+class=3D""><span style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">+44(0)7849 836164</span></i></p><p style=3D"font-size:12.8px" =
+class=3D""><i class=3D""><span style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">Farfetch UK Ltd</span></i></p><p style=3D"font-size:12.8px" =
+class=3D""><i class=3D""><span style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">4<sup class=3D"">th</sup>&nbsp;Floor, The =
+Bower</span></i></p><p style=3D"font-size:12.8px" class=3D""><i =
+class=3D""><span style=3D"font-size:9pt;color:rgb(62,0,63)" class=3D""><a =
+href=3D"https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&amp;en=
+try=3Dgmail&amp;source=3Dg" style=3D"color:rgb(17,85,204)" =
+target=3D"_blank" class=3D"">211 Old Street</a></span></i></p><p =
+style=3D"font-size:12.8px" class=3D""><i class=3D""><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" class=3D""><a =
+href=3D"https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&amp;en=
+try=3Dgmail&amp;source=3Dg" style=3D"color:rgb(17,85,204)" =
+target=3D"_blank" class=3D"">London</a></span></i></p><p =
+style=3D"font-size:12.8px" class=3D""><i class=3D""><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" class=3D""><a =
+href=3D"https://maps.google.com/?q=3D211+Old+Street+London+EC1V+9NR&amp;en=
+try=3Dgmail&amp;source=3Dg" style=3D"color:rgb(17,85,204)" =
+target=3D"_blank" class=3D"">EC1V 9NR</a></span></i></p><div =
+style=3D"font-size: 12.8px;" class=3D""><span style=3D"color:rgb(62,0,63)"=
+ class=3D"">&nbsp;</span><span style=3D"color:rgb(62,0,63)" =
+class=3D""></span><br class=3D"webkit-block-placeholder"></div><p =
+style=3D"font-size:12.8px" class=3D""><span style=3D"" class=3D""><img =
+width=3D"200" height=3D"26" src=3D"cid:image001.png@01D326F5.40567FD0" =
+class=3D""></span><span style=3D"color:rgb(62,0,63)" =
+class=3D""></span></p><p style=3D"font-size:12.8px" class=3D""><a =
+href=3D"http://farfetch.com/" style=3D"font-size:9pt;color:rgb(17,85,204)"=
+ target=3D"_blank" class=3D"">http://farfetch.com</a></p><p =
+style=3D"font-size:12.8px" class=3D""><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">Twitter:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span =
+style=3D"font-size: 9pt;" class=3D""><a =
+href=3D"https://twitter.com/farfetch" style=3D"color:rgb(17,85,204)" =
+target=3D"_blank" class=3D""><span style=3D"color:rgb(16,60,192)" =
+class=3D"">https://twitter.com/farfetch</span></a></span><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" class=3D""></span></p><p =
+style=3D"font-size:12.8px" class=3D""><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">Facebook:&nbsp;&nbsp;</span><span style=3D"font-size: 9pt;" =
+class=3D""><a href=3D"https://www.facebook.com/Farfetch" =
+style=3D"color:rgb(17,85,204)" target=3D"_blank" class=3D""><span =
+style=3D"color:rgb(16,60,192)" =
+class=3D"">https://www.facebook.com/Farfetch</span></a></span><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" class=3D""></span></p><p =
+style=3D"font-size:12.8px" class=3D""><span =
+style=3D"font-size:9pt;color:rgb(62,0,63)" =
+class=3D"">Instagram:&nbsp;</span><span style=3D"font-size: 9pt;" =
+class=3D""><a href=3D"https://instagram.com/farfetch" =
+style=3D"color:rgb(17,85,204)" target=3D"_blank" class=3D""><span =
+style=3D"color:rgb(16,60,192)" =
+class=3D"">https://instagram.com/farfetch</span></a></span></p></div></div=
+></div></div></div>
+
+<br class=3D""><p class=3D""><span =
+style=3D"font-size:7.0pt;font-family:&quot;Letter Gothic&quot;" =
+class=3D"">This email and any files transmitted
+with it are confidential and intended solely for the use of the =
+individual or
+entity to whom they are addressed. If you have received this email in =
+error
+please notify the system manager. This message contains confidential
+information and is intended only for the individual named. If you are =
+not the
+named addressee you should not disseminate, distribute or copy this =
+e-mail.
+Please notify the sender immediately by e-mail if you have received this =
+e-mail
+by mistake and delete this e-mail from your system. If you are not the =
+intended
+recipient you are notified that disclosing, copying, distributing or =
+taking any
+action in reliance on the contents of this information is strictly =
+prohibited.</span></p><img class=3D"" apple-inline=3D"no" =
+id=3D"180BDB3F-3311-46C6-87C5-7D38BC04AF8C" =
+src=3D"cid:7f32ca789d67d15d_0.1"></div></blockquote></div><br =
+class=3D""></body></html>=
+
+--Apple-Mail=_62148317-5087-493E-8E25-481F69C43F7F
+Content-Transfer-Encoding: base64
+Content-Disposition: inline;
+	filename=image001.png
+Content-Type: image/png;
+	x-unix-mode=0644;
+	name="image001.png"
+Content-Id: <7f32ca789d67d15d_0.1>
+
+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
+--Apple-Mail=_62148317-5087-493E-8E25-481F69C43F7F--
+
+--Apple-Mail=_05EC482A-634B-4B55-8862-05BD9FDC1874--

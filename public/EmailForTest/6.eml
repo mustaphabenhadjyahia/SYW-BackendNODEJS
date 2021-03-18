@@ -1,0 +1,566 @@
+Delivered-To: mehdi@saveyourwardrobe.com
+Received: by 2002:a0c:cb83:0:0:0:0:0 with SMTP id p3csp824085qvk;
+        Thu, 2 Jan 2020 07:25:26 -0800 (PST)
+X-Received: by 2002:adf:dfd2:: with SMTP id q18mr82552242wrn.152.1577978726164;
+        Thu, 02 Jan 2020 07:25:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1577978726; cv=none;
+        d=google.com; s=arc-20160816;
+        b=NDkrxg9InxsANMRkgxl8qGmrzvqxF4jb4DiljhQ5SL0FC+eCo8/3+YU4+l5ni6LlR1
+         HtHF9sfNdSpMTgZ7xLOnf7ANQdM1/QBSu4KCLCbjqzwM2hO9xzV5nj+FbZ8BNmMSErUG
+         XKM8y4zNpPKLlHQW747u314NVxweZqfonlgMiKEA4abkecItzTfWPpi1zJPrZXZ1jik3
+         Dv8xooPUu0I0QaSAcs56k/atEcts+6WQMZl+NjypC76/CfRphR1+9a3D1/LXqVW+JmHA
+         ZTLXprQDxKLEJ2Xwu/ToOv+tFY8km75DmbFuxPNejreKs8HuLuSiWvr3N1LNaoDquSHX
+         xszg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:to:references:message-id:subject:mime-version:from
+         :dkim-signature;
+        bh=/Y4FH80FX7gR+rETycJPsuiUjwz45iPdyoEurLgCnr0=;
+        b=VyvvdgqIkJIviDuX3K9foq3cimhGOODcocYNP5QGZbHHmLT6ocNq1mTqyz+PHcUPnu
+         DEk4LZ3LguBQR4pH0+2aWttBpSekccvKHZeB/i/13wqeU69wNB5Mthl/Zkn/YEriFkJ2
+         PyP1O2IoqrCfIJOLqBJqiVx3Qo+e9JrwhZPjJcWSz803ilK+WdMR34CXJFgvII/P4EtM
+         6h9kLj3ghEusfRQfBs2QC39oIjzmQAV3AJvR9fgVSb8fJUPBPCZiraRkJ6nUY/9tDG8Z
+         yeZp3FSW9CAWa762i8v8Hd+qwz9MD7ZBoDpzZ/j6X6TbVcuTkQukbEMTl2a7YJnRmyt3
+         D2Bw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@saveyourwardrobe.com header.s=google header.b=FOgMrvIs;
+       spf=pass (google.com: domain of hasna@saveyourwardrobe.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=hasna@saveyourwardrobe.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=saveyourwardrobe.com
+Return-Path: <hasna@saveyourwardrobe.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id z2sor23317993wrp.65.2020.01.02.07.25.25
+        for <mehdi@saveyourwardrobe.com>
+        (Google Transport Security);
+        Thu, 02 Jan 2020 07:25:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of hasna@saveyourwardrobe.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@saveyourwardrobe.com header.s=google header.b=FOgMrvIs;
+       spf=pass (google.com: domain of hasna@saveyourwardrobe.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=hasna@saveyourwardrobe.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=saveyourwardrobe.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=saveyourwardrobe.com; s=google;
+        h=from:mime-version:subject:message-id:references:to:date;
+        bh=/Y4FH80FX7gR+rETycJPsuiUjwz45iPdyoEurLgCnr0=;
+        b=FOgMrvIssQmYUejgzLQAyynO5GaBvGRkNpJS03XU51TkWRSUYSePlSmWw2wXPVCo8v
+         cXM/CFuagsCh+tG+PPLn4Icb7UXtgNYbRlOQBeQFebPfHxrejJ8KHh0ar51E5m1UD7Xh
+         OT1JfjvM+lFbnJTqK2ResaXbVlUM1+Iq4CyOSkXYb3lu3zD634q1y636ll2lJ1TlW1rk
+         t16c4oIAfv59VuzIIRp5n2oJX+CqySgBeI/axVOBWZqovf2wTLGv5NvHkAvS8hXtZpAU
+         f1fN2UlvFb6NZ5VyQXyCJ267OFte2rxGiMeC0Yi80eJOStO1SrjB5JGLuDrUFt0IrhfU
+         6Oyg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:mime-version:subject:message-id:references
+         :to:date;
+        bh=/Y4FH80FX7gR+rETycJPsuiUjwz45iPdyoEurLgCnr0=;
+        b=FReWU44AgC2IbyU8ZbGaVMqCjv1vcMMb9Uc2wiDagdm+iA4zr0GD4C6GpcCOWWlEfu
+         Njbd3BejP2Bq6bNiZCThHWLbdFhj6Q87KR+PTIlc4W6k2fRgIAuGmYUmOsKGj0gWUyiK
+         UdcquQXldNJMgLbIgPCZyEOPW9DTdkmTmrvCoW8wCyAGmxBENICOke20IlvtjuQQTVyJ
+         7mzwoclIM8p4DG9Z9kFac0+myjJy6VGFITdpe3pncHkDVD/n/7GyjAif2EHo3QOasY8u
+         1zRQxLTDQS3IxTOARlUANiDDteqJscjjTLKaurA1YsbzbwGt0Hhf4NDftAO1KmOqDkwW
+         imUQ==
+X-Gm-Message-State: APjAAAURLsEOYnhYY8fDlV7u2wGTP2ef7CuFeWNxxC7/YwROKkaqBtjm
+	cTZtR1zia+58DjBHzbZZT2uB6PZzXtj6DA==
+X-Google-Smtp-Source: APXvYqzCZAhf/y8mSptLQpfukacUvUVbAE0PY7pd2Ga8VQEYKdENbOp4WCb2ij4bRMSlBQJ6hHHyYg==
+X-Received: by 2002:adf:82f3:: with SMTP id 106mr85329747wrc.69.1577978725324;
+        Thu, 02 Jan 2020 07:25:25 -0800 (PST)
+Return-Path: <hasna@saveyourwardrobe.com>
+Received: from hasnas-macbook.cable.virginmedia.net (cpc118160-lewi22-2-0-cust564.2-4.cable.virginm.net. [86.6.150.53])
+        by smtp.gmail.com with ESMTPSA id c17sm57477789wrr.87.2020.01.02.07.25.24
+        for <mehdi@saveyourwardrobe.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 02 Jan 2020 07:25:24 -0800 (PST)
+From: Hasna Kourda <hasna@saveyourwardrobe.com>
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_EEAF3940-77BA-4DB0-B6F5-7332AC587326"
+Mime-Version: 1.0 (Mac OS X Mail 13.0 \(3608.40.2.2.4\))
+Subject: Fwd: Your MATCHESFASHION.COM order is on its way
+Message-Id: <81E05670-F48F-4BD3-AE67-6591A80337A2@saveyourwardrobe.com>
+References: <53fe10d3.854bb40a.267a.ffffa254SMTPIN_ADDED_MISSING@mx.google.com>
+To: Mehdi Doghri <mehdi@saveyourwardrobe.com>
+Date: Thu, 2 Jan 2020 15:25:24 +0000
+X-Mailer: Apple Mail (2.3608.40.2.2.4)
+
+
+--Apple-Mail=_EEAF3940-77BA-4DB0-B6F5-7332AC587326
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+--
+Hasna Kourda <https://www.linkedin.com/in/hasnakourda/>
+CEO & Co-founder at Save Your Wardrobe =
+<https://www.saveyourwardrobe.com/>
++44 7913 983188
+
+Twitter <https://twitter.com/saveyrwardrobe> | Facebook =
+<https://www.facebook.com/saveyourwardrobe/> | Instagram =
+<https://www.instagram.com/saveyourwardrobe/>
+
+They are talking about us:=20
+- Harper=E2=80=99s Bazaar Arabia: How Tunisian=C2=A0Entrepreneur Hasna =
+Kourda is Making=C2=A0Fashion More Sustainable Through=C2=A0Tech and AI =
+<https://www.harpersbazaararabia.com/people/culture/tunisian-hasna-kourda-=
+sustainable-fashion-app-save-your-wardrobe>
+- Euronews: The Voices of Sustainable Fashion to Follow =
+<http://www.livingit.euronews.com/2019/03/08/the-voices-of-sustainable-fas=
+hion-to-follow>
+- Forbes Interview with Katie Baron: Save Your Wardrobe Fashion =
+App=C2=A0Promises Double Whammy Of More=C2=A0Streamlined & Sustainable =
+Living <http://bit.ly/2sgbR23>
+- Forbes: Twilight Tech: The Illusory LFW=C2=A0Project Revealing An =
+Iceberg Of Virtual=C2=A0Fashion Innovation =
+<https://www.forbes.com/sites/katiebaron/2018/09/13/twilight-tech-the-illu=
+sory-lfw-project-revealing-an-iceberg-of-virtual-fashion-innovation/#1f548=
+7831cb4>
+- UAL  London College of Fashion interview - Meet the fash tech stars =
+of=C2=A0the future=E2=80=A6 Save Your Wardrobe =
+<http://blogs.arts.ac.uk/fashion/2018/03/27/meet-fash-tech-stars-future-sa=
+ve-wardrobe/>
+
+> Begin forwarded message:
+>=20
+> From: "MATCHESFASHION.COM Orders" <orders@matchesfashion.com>
+> Subject: Your MATCHESFASHION.COM order is on its way
+> Date: 27 August 2014 at 18:09:10 BST
+> To: "hasna.kourdaa@gmail.com" <hasna.kourdaa@gmail.com>
+>=20
+> Your order has been dispatched - we'll now take payment.
+>=20
+>=20
+>=20
+> Dear Hasna Kourdaa,=20
+>=20
+> Your MATCHESFASHION.COM <http://matchesfashion.com/> order has been =
+dispatched. Payment will be taken shortly. Your delivery tracking =
+details will arrive in a separate email soon.=20
+>=20
+> Here's a reminder of your order:
+>=20
+> ORDER NUMBER: OMF1277356
+>=20
+>=20
+>=20
+> SHIPPING ADDRESS
+> Hasna Kourdaa
+> Flat 36
+> Grenbeck Court
+> 30-34 Trebovir Road
+> London
+> SW5 9NL
+> United Kingdom	BILLING ADDRESS
+> Hasna Kourdaa
+> Flat 36
+> Grenbeck Court
+> 30-34 Trebovir Road
+> London
+> SW5 9NL
+> United Kingdom
+>=20
+>=20
+>=20
+> =EF=BB=BF
+> Item		Description	Size	Colour	Qty	Price
+>=20
+>  <http://www.matchesfashion.com/Product/192306>		ANTHONY =
+PETO HATS
+> Gervaise straw fedora
+> (192306)	S	Beige Multi	1	=C2=A3 90.00
+>=20
+>=20
+>=20
+> =09
+> UNIT PRICE TOTAL:	=C2=A3 90.00
+> EXPRESS DELIVERY:	=C2=A3 5.00
+> VAT:	=C2=A3 15.83
+> TOTAL:	=C2=A3 95.00
+> PAID BY CARD:	=C2=A3 95.00
+>=20
+>=20
+>=20
+> Best wishes,
+> the MATCHESFASHION.COM <http://matchesfashion.com/> team=20
+>=20
+>=20
+> PS This inbox isn't checked by our team so please don't reply to this =
+email.=20
+> If you'd like to ask us anything it's simple to contact us =
+<mailto:customercare@matchesfashion.com>.
+>=20
+>=20
+> Registered in England and Wales: 02717838
+> VAT registration no: GB318406959
+> If you have any queries about your order, please call 0800 009 4123 =
+(UK Toll Free) or +44 (0) 207 022 0828or email =
+customercare@matchesfashion.com <mailto:customercare@matchesfashion.com> =
+- 24 hours a day, seven days a week
+> Delivery <http://matchesfashion.com/customer-services#delivery>     	 =
+   Returns <http://matchesfashion.com/customer-services#returns>
+
+--Apple-Mail=_EEAF3940-77BA-4DB0-B6F5-7332AC587326
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; =
+charset=3Dutf-8"></head><body style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" class=3D""><br =
+class=3D""><div class=3D"">
+<div dir=3D"auto" style=3D"caret-color: rgb(0, 0, 0); color: rgb(0, 0, =
+0); letter-spacing: normal; text-align: start; text-indent: 0px; =
+text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none; word-wrap: =
+break-word; -webkit-nbsp-mode: space; line-break: after-white-space;" =
+class=3D""><div dir=3D"auto" style=3D"caret-color: rgb(0, 0, 0); color: =
+rgb(0, 0, 0); letter-spacing: normal; text-align: start; text-indent: =
+0px; text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none; word-wrap: =
+break-word; -webkit-nbsp-mode: space; line-break: after-white-space;" =
+class=3D""><div dir=3D"auto" style=3D"caret-color: rgb(0, 0, 0); color: =
+rgb(0, 0, 0); letter-spacing: normal; text-align: start; text-indent: =
+0px; text-transform: none; white-space: normal; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; text-decoration: none; word-wrap: =
+break-word; -webkit-nbsp-mode: space; line-break: after-white-space;" =
+class=3D""><div dir=3D"auto" style=3D"word-wrap: break-word; =
+-webkit-nbsp-mode: space; line-break: after-white-space;" class=3D""><div =
+style=3D"caret-color: rgb(0, 0, 0); color: rgb(0, 0, 0); font-family: =
+Helvetica; font-size: 12px; font-style: normal; font-variant-caps: =
+normal; font-weight: normal; letter-spacing: normal; text-align: start; =
+text-indent: 0px; text-transform: none; white-space: normal; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: =
+none;">--<br class=3D""><a =
+href=3D"https://www.linkedin.com/in/hasnakourda/" class=3D"">Hasna =
+Kourda</a><br class=3D"">CEO &amp; Co-founder at&nbsp;<a =
+href=3D"https://www.saveyourwardrobe.com/" class=3D"">Save Your =
+Wardrobe</a><br class=3D"">+44 7913 983188<br class=3D""><br class=3D""><a=
+ href=3D"https://twitter.com/saveyrwardrobe" =
+class=3D"">Twitter</a>&nbsp;|&nbsp;<a =
+href=3D"https://www.facebook.com/saveyourwardrobe/" =
+class=3D"">Facebook</a>&nbsp;|&nbsp;<a =
+href=3D"https://www.instagram.com/saveyourwardrobe/" =
+class=3D"">Instagram</a><br class=3D""><br class=3D"">They are talking =
+about us:&nbsp;</div><div style=3D"caret-color: rgb(0, 0, 0); color: =
+rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: =
+normal; font-variant-caps: normal; font-weight: normal; letter-spacing: =
+normal; text-align: start; text-indent: 0px; text-transform: none; =
+white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+text-decoration: none;">- Harper=E2=80=99s Bazaar Arabia:&nbsp;<a =
+href=3D"https://www.harpersbazaararabia.com/people/culture/tunisian-hasna-=
+kourda-sustainable-fashion-app-save-your-wardrobe" class=3D"">How =
+Tunisian&nbsp;Entrepreneur Hasna Kourda is Making&nbsp;Fashion More =
+Sustainable Through&nbsp;Tech and AI</a><br class=3D"">- =
+Euronews:&nbsp;<a =
+href=3D"http://www.livingit.euronews.com/2019/03/08/the-voices-of-sustaina=
+ble-fashion-to-follow" class=3D"">The Voices of Sustainable Fashion to =
+Follow</a><br class=3D"">- Forbes Interview with Katie Baron:&nbsp;<a =
+href=3D"http://bit.ly/2sgbR23" class=3D"">Save Your Wardrobe Fashion =
+App&nbsp;Promises Double Whammy Of More&nbsp;Streamlined &amp; =
+Sustainable Living</a><br class=3D"">- Forbes: Twilight Tech:&nbsp;<a =
+href=3D"https://www.forbes.com/sites/katiebaron/2018/09/13/twilight-tech-t=
+he-illusory-lfw-project-revealing-an-iceberg-of-virtual-fashion-innovation=
+/#1f5487831cb4" class=3D"">The Illusory LFW&nbsp;Project Revealing An =
+Iceberg Of Virtual&nbsp;Fashion Innovation</a><br class=3D"">- UAL =
+&nbsp;London College of Fashion&nbsp;interview -&nbsp;<a =
+href=3D"http://blogs.arts.ac.uk/fashion/2018/03/27/meet-fash-tech-stars-fu=
+ture-save-wardrobe/" class=3D"">Meet the fash tech stars of&nbsp;the =
+future=E2=80=A6 Save Your Wardrobe</a></div></div></div></div></div>
+</div>
+<div><br class=3D""><blockquote type=3D"cite" class=3D""><div =
+class=3D"">Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">From: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"<a =
+href=3D"http://MATCHESFASHION.COM" class=3D"">MATCHESFASHION.COM</a> =
+Orders" &lt;<a href=3D"mailto:orders@matchesfashion.com" =
+class=3D"">orders@matchesfashion.com</a>&gt;<br =
+class=3D""></span></div><div style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Subject: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D""><b class=3D"">Your <a =
+href=3D"http://MATCHESFASHION.COM" class=3D"">MATCHESFASHION.COM</a> =
+order is on its way</b><br class=3D""></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;" class=3D""><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif; =
+color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">Date: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">27 August 2014 at 18:09:10 =
+BST<br class=3D""></span></div><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;" class=3D""><span=
+ style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);" class=3D""><b class=3D"">To: =
+</b></span><span style=3D"font-family: -webkit-system-font, Helvetica =
+Neue, Helvetica, sans-serif;" class=3D"">"<a =
+href=3D"mailto:hasna.kourdaa@gmail.com" =
+class=3D"">hasna.kourdaa@gmail.com</a>" &lt;<a =
+href=3D"mailto:hasna.kourdaa@gmail.com" =
+class=3D"">hasna.kourdaa@gmail.com</a>&gt;<br class=3D""></span></div><br =
+class=3D""><div class=3D""><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"533" align=3D"center" style=3D"caret-color: =
+rgb(0, 0, 0); font-family: Helvetica; letter-spacing: normal; orphans: =
+auto; text-indent: 0px; text-transform: none; widows: auto; =
+word-spacing: 0px; -webkit-text-size-adjust: auto; =
+-webkit-text-stroke-width: 0px; text-decoration: none; text-align: left; =
+border-left-width: 33px; border-left-style: solid; border-left-color: =
+rgb(231, 237, 235); background-color: rgb(231, 237, 235); =
+border-right-width: 33px; border-right-style: solid; border-right-color: =
+rgb(231, 237, 235);" class=3D""><tbody class=3D""><tr class=3D""><td =
+height=3D"82" width=3D"533" class=3D""><table border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" width=3D"533" height=3D"82" =
+class=3D""><tbody class=3D""><tr class=3D""><td valign=3D"bottom" =
+class=3D""><span style=3D"padding-bottom: 8px; font-family: Helvetica; =
+font-size: 11px;" class=3D"">Your order has been dispatched - we'll now =
+take payment.</span></td></tr><tr class=3D""><td align=3D"middle" =
+class=3D""><br class=3D""><img title=3D"MATCHES" alt=3D"MATCHES" =
+src=3D"http://assets.matchesfashion.com/content/img/ReLogoNew.jpg" =
+width=3D"404" height=3D"23" =
+class=3D""></td></tr></tbody></table></td></tr><tr class=3D""><td =
+height=3D"19" valign=3D"bottom" class=3D""></td></tr><tr class=3D""><td =
+valign=3D"top" width=3D"533" align=3D"middle" style=3D"background-color: =
+rgb(255, 255, 255);" class=3D""><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"444" class=3D""><tbody class=3D""><tr =
+class=3D""><td height=3D"88" width=3D"444" align=3D"middle" =
+class=3D""><img alt=3D"THANK YOU" =
+src=3D"http://assets.matchesfashion.com/content/img/velocity2aa_06.jpg" =
+width=3D"179" height=3D"22" class=3D""></td></tr><tr class=3D""><td =
+width=3D"444" style=3D"text-align: left;" class=3D""><span =
+style=3D"text-align: left; font-family: Helvetica; font-size: 11px;" =
+class=3D"">Dear Hasna Kourdaa,<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><br class=3D""><br =
+class=3D""><span style=3D"text-align: left; font-family: Helvetica; =
+font-size: 11px;" class=3D"">Your<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"http://matchesfashion.com/" class=3D"">MATCHESFASHION.COM</a><span=
+ class=3D"Apple-converted-space">&nbsp;</span>order has been dispatched. =
+Payment will be taken shortly. Your delivery tracking details will =
+arrive in a separate email soon.<span =
+class=3D"Apple-converted-space">&nbsp;</span></span><span =
+style=3D"text-align: left; font-family: Helvetica; font-size: 11px;" =
+class=3D""></span><br class=3D""><br class=3D""><span style=3D"text-align:=
+ left; font-family: Helvetica; font-size: 11px;" class=3D"">Here's a =
+reminder of your order:<br class=3D""><br class=3D""></span></td></tr><tr =
+class=3D""><td width=3D"444" style=3D"text-align: left; font-family: =
+Helvetica; border-top-width: 9px; border-top-style: solid; =
+border-top-color: rgb(231, 237, 235);" class=3D""><span =
+style=3D"text-transform: uppercase; letter-spacing: 1px; color: rgb(153, =
+153, 153); font-size: 12px; font-weight: bold;" class=3D"">ORDER =
+NUMBER:</span><span class=3D"Apple-converted-space">&nbsp;</span><span =
+style=3D"text-transform: uppercase; letter-spacing: 1px; color: rgb(51, =
+51, 51); font-size: 11px; font-weight: bold;" =
+class=3D"">OMF1277356</span><span style=3D"text-transform: uppercase; =
+color: rgb(51, 51, 51); font-size: 12px;" class=3D""></span></td></tr><tr =
+class=3D""><td valign=3D"top" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td bgcolor=3D"#e7edeb" valign=3D"top"=
+ align=3D"left" class=3D""><img border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"2" style=3D"display: block;" class=3D""></td></tr><tr =
+class=3D""><td valign=3D"top" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td class=3D""><table border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" width=3D"444" style=3D"text-align: =
+left; padding-bottom: 20px; font-family: Helvetica; font-size: 11px;" =
+class=3D""><tbody class=3D""><tr class=3D""><td valign=3D"top" =
+class=3D""><span style=3D"text-align: left; text-transform: uppercase; =
+letter-spacing: 1px; color: rgb(153, 153, 153); font-size: 12px; =
+font-weight: bold;" class=3D"">SHIPPING ADDRESS</span><br class=3D"">Hasna=
+ Kourdaa<br class=3D"">Flat 36<br class=3D"">Grenbeck Court<br =
+class=3D"">30-34 Trebovir Road<br class=3D"">London<br class=3D"">SW5 =
+9NL<br class=3D"">United Kingdom</td><td valign=3D"top" class=3D""><span =
+style=3D"text-align: left; text-transform: uppercase; letter-spacing: =
+1px; color: rgb(153, 153, 153); font-size: 12px; font-weight: bold;" =
+class=3D"">BILLING ADDRESS</span><br class=3D"">Hasna Kourdaa<br =
+class=3D"">Flat 36<br class=3D"">Grenbeck Court<br class=3D"">30-34 =
+Trebovir Road<br class=3D"">London<br class=3D"">SW5 9NL<br =
+class=3D"">United Kingdom</td></tr></tbody></table></td></tr><tr =
+class=3D""><td valign=3D"top" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td bgcolor=3D"#e7edeb" valign=3D"top"=
+ align=3D"left" class=3D""><img border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"2" style=3D"display: block;" class=3D""></td></tr><tr =
+class=3D""><td valign=3D"top" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td width=3D"444" class=3D""><table =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"444" =
+style=3D"text-align: center; font-family: Helvetica; font-size: 11px;" =
+class=3D""><tbody class=3D""><tr class=3D""><td valign=3D"top" =
+colspan=3D"2" align=3D"left" class=3D"">=EF=BB=BF<table border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" width=3D"443" class=3D""><tbody =
+class=3D""><tr class=3D""><td valign=3D"top" width=3D"75" align=3D"middle"=
+ class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">Item</span></font></td><td valign=3D"top" width=3D"10" =
+align=3D"middle" class=3D""></td><td valign=3D"top" width=3D"110" =
+align=3D"middle" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">Description</span></font></td><td valign=3D"top" =
+width=3D"46" align=3D"middle" class=3D""><font color=3D"#666666" =
+size=3D"2" face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span =
+style=3D"font-size: 11px;" class=3D"">Size</span></font></td><td =
+valign=3D"top" width=3D"101" align=3D"middle" class=3D""><font =
+color=3D"#666666" size=3D"2" face=3D"Helvetica,Arial,Sans-Serif" =
+class=3D""><span style=3D"font-size: 11px;" =
+class=3D"">Colour</span></font></td><td valign=3D"top" width=3D"35" =
+align=3D"middle" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">Qty</span></font></td><td valign=3D"top" width=3D"66" =
+align=3D"middle" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">Price</span></font></td></tr><tr class=3D""><td =
+valign=3D"top" colspan=3D"7" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"18" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td align=3D"center" valign=3D"top" =
+class=3D""><a href=3D"http://www.matchesfashion.com/Product/192306" =
+class=3D""><img border=3D"0" alt=3D"ANTHONY PETO HATS Gervaise straw =
+fedora - 192306" =
+src=3D"http://assets.matchesfashion.com/products/WOATHA850004BGM_1_small.j=
+pg" width=3D"75" height=3D"100" style=3D"display: block;" =
+class=3D""></a></td><td align=3D"center" valign=3D"top" class=3D""><img =
+border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"10" =
+height=3D"1" style=3D"display: block;" class=3D""></td><td align=3D"left" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Times,Times New Roman,Serif" class=3D""><span =
+style=3D"line-height: 18px; font-size: 11px;" class=3D"">ANTHONY PETO =
+HATS<br class=3D""><font face=3D"Helvetica,Arial,Sans-Serif" =
+class=3D"">Gervaise straw fedora<br =
+class=3D"">(192306)</font></span></font></td><td align=3D"center" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">S</span></font></td><td align=3D"center" valign=3D"top" =
+class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">Beige Multi</span></font></td><td align=3D"center" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">1</span></font></td><td align=3D"center" valign=3D"top" =
+class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+11px;" class=3D"">=C2=A3 90.00</span></font></td></tr><tr class=3D""><td =
+valign=3D"top" colspan=3D"7" align=3D"left" class=3D""><img border=3D"0" =
+alt=3D"" src=3D"http://assets.matchesfashion.com/content/img/bit.gif" =
+width=3D"1" height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr><tr class=3D""><td bgcolor=3D"#e7edeb" valign=3D"top"=
+ colspan=3D"7" align=3D"left" class=3D""><img border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"2" style=3D"display: block;" class=3D""></td></tr><tr =
+class=3D""><td valign=3D"top" colspan=3D"7" align=3D"left" class=3D""><img=
+ border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr></tbody></table></td></tr></tbody></table></td></tr><=
+tr class=3D""><td width=3D"444" class=3D""><table border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" width=3D"443" class=3D""><tbody =
+class=3D""><tr class=3D""><td valign=3D"top" align=3D"left" =
+class=3D""><img border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"100"=
+ height=3D"1" style=3D"display: block;" class=3D""></td><td valign=3D"top"=
+ align=3D"left" class=3D""><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" width=3D"343" class=3D""><tbody class=3D""><tr =
+class=3D""><td align=3D"left" valign=3D"top" class=3D""><font =
+color=3D"#999999" size=3D"2" face=3D"Helvetica,Arial,Sans-Serif" =
+class=3D""><span style=3D"font-size: 12px;" class=3D"">UNIT PRICE =
+TOTAL:</span></font></td><td align=3D"right" valign=3D"top" =
+class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D""><b class=3D"">=C2=A3 =
+90.00</b></span></font></td></tr><tr class=3D""><td align=3D"left" =
+valign=3D"top" class=3D""><font color=3D"#999999" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D"">EXPRESS DELIVERY:</span></font></td><td align=3D"right" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D""><b class=3D"">=C2=A3 =
+5.00</b></span></font></td></tr><tr class=3D""><td align=3D"left" =
+valign=3D"top" class=3D""><font color=3D"#999999" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D"">VAT:</span></font></td><td align=3D"right" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D""><b class=3D"">=C2=A3 =
+15.83</b></span></font></td></tr><tr class=3D""><td align=3D"left" =
+valign=3D"top" class=3D""><font color=3D"#999999" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D"">TOTAL:</span></font></td><td align=3D"right" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D""><b class=3D"">=C2=A3 =
+95.00</b></span></font></td></tr><tr class=3D""><td align=3D"left" =
+valign=3D"top" class=3D""><font color=3D"#999999" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D"">PAID BY CARD:</span></font></td><td align=3D"right" =
+valign=3D"top" class=3D""><font color=3D"#666666" size=3D"2" =
+face=3D"Helvetica,Arial,Sans-Serif" class=3D""><span style=3D"font-size: =
+12px;" class=3D""><b class=3D"">=C2=A3 =
+95.00</b></span></font></td></tr></tbody></table></td></tr><tr =
+class=3D""><td valign=3D"top" colspan=3D"2" align=3D"left" class=3D""><img=
+ border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"15" style=3D"display: block;" class=3D""></td></tr><tr =
+class=3D""><td bgcolor=3D"#e7edeb" valign=3D"top" colspan=3D"2" =
+align=3D"left" class=3D""><img border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"2" style=3D"display: block;" class=3D""></td></tr><tr =
+class=3D""><td valign=3D"top" colspan=3D"2" align=3D"left" class=3D""><img=
+ border=3D"0" alt=3D"" =
+src=3D"http://assets.matchesfashion.com/content/img/bit.gif" width=3D"1" =
+height=3D"15" style=3D"display: block;" =
+class=3D""></td></tr></tbody></table></td></tr><tr class=3D""><td =
+height=3D"198" width=3D"444" style=3D"text-align: left; font-size: =
+11px;" class=3D""><span style=3D"text-align: left; line-height: 1.8; =
+font-family: Helvetica; font-size: 11px;" class=3D"">Best wishes,<br =
+class=3D""></span><span style=3D"text-align: left; font-family: =
+Helvetica; font-size: 11px;" class=3D"">the<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"http://matchesfashion.com/" class=3D"">MATCHESFASHION.COM</a><span=
+ class=3D"Apple-converted-space">&nbsp;</span>team</span><span =
+class=3D"Apple-converted-space">&nbsp;</span><br class=3D""><br =
+class=3D""><br class=3D""><span style=3D"text-align: left; font-family: =
+Helvetica; font-size: 11px;" class=3D"">PS This inbox isn't checked by =
+our team so please don't reply to this email.<span =
+class=3D"Apple-converted-space">&nbsp;</span><br class=3D"">If you'd =
+like to ask us anything it's simple to<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"mailto:customercare@matchesfashion.com" target=3D"_blank" =
+style=3D"" class=3D"">contact us</a>.<br class=3D""><br class=3D""><br =
+class=3D""></span><span style=3D"text-align: left; font-family: =
+Helvetica; color: rgb(153, 153, 153); font-size: 11px;" =
+class=3D"">Registered in England and Wales: 02717838<br class=3D"">VAT =
+registration no: =
+GB318406959</span></td></tr></tbody></table></td></tr><tr class=3D""><td =
+height=3D"151" width=3D"533" align=3D"middle" class=3D""><table =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"533" =
+height=3D"151" style=3D"font-family: Helvetica; color: rgb(153, 153, =
+153); font-size: 11px;" class=3D""><tbody class=3D""><tr class=3D""><td =
+height=3D"46" width=3D"533" colspan=3D"2" align=3D"middle" class=3D"">If =
+you have any queries about your order, please call 0800 009 4123 (UK =
+Toll Free) or +44 (0) 207 022 0828or email<span =
+class=3D"Apple-converted-space">&nbsp;</span><a =
+href=3D"mailto:customercare@matchesfashion.com" target=3D"_blank" =
+style=3D"font-family: Helvetica; color: rgb(153, 153, 153); font-size: =
+11px;" class=3D"">customercare@matchesfashion.com</a><span =
+class=3D"Apple-converted-space">&nbsp;</span>- 24 hours a day, seven =
+days a week</td></tr><tr class=3D""><td height=3D"50" width=3D"267" =
+align=3D"right" class=3D""><a =
+href=3D"http://matchesfashion.com/customer-services#delivery" =
+style=3D"font-family: Helvetica; color: rgb(153, 153, 153); font-size: =
+11px;" class=3D"">Delivery</a>&nbsp;&nbsp;&nbsp;&nbsp;<span =
+class=3D"Apple-converted-space">&nbsp;</span></td><td height=3D"50" =
+width=3D"266" align=3D"left" class=3D"">&nbsp;&nbsp;&nbsp;&nbsp;<a =
+href=3D"http://matchesfashion.com/customer-services#returns" =
+style=3D"font-family: Helvetica; color: rgb(153, 153, 153); font-size: =
+11px;" =
+class=3D"">Returns</a></td></tr></tbody></table></td></tr></tbody></table>=
+</div></blockquote></div><br class=3D""></body></html>=
+
+--Apple-Mail=_EEAF3940-77BA-4DB0-B6F5-7332AC587326--

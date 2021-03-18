@@ -1,0 +1,459 @@
+Delivered-To: syw.orders@gmail.com
+Received: by 2002:a9d:748a:0:0:0:0:0 with SMTP id t10-v6csp3905684otk;
+        Sat, 21 Jul 2018 08:24:16 -0700 (PDT)
+X-Received: by 2002:adf:96b2:: with SMTP id u47-v6mr4262007wrb.204.1532186656058;
+        Sat, 21 Jul 2018 08:24:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1532186656; cv=none;
+        d=google.com; s=arc-20160816;
+        b=vRhMK5PzNMfKbwhFsR3IZDf0G5ipuULsT2MZZ+VRovMIrnOH4A/OS2t3kQ4VLGlXf0
+         THmp9KuW7vrC/+Dwq5RWyDvMehFlhL087nsD22PknrkDKII28BpzTIgdzWQeG9FsTX2D
+         ReUZHqZd8MAEkdmCKM6iPYjYHC047ErP3Zz5S2czJEzUuaF2Xpcqh/tcJb3S8Bu90TDR
+         BHjufTF7LTTJ1/BOgdf+rK+5UGwy3rgPBWVVFIx4hbaOel4t+tHAJXaDN3owb8Zsylue
+         9PJLtEr1rFxNbNj7thxMGspyilQy5r7TqyKDR5nTYCC1SGGQ+QGRMy/aOh49xGoMlV7m
+         PSow==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:references:message-id:subject:date:mime-version
+         :content-transfer-encoding:from:dkim-signature
+         :arc-authentication-results;
+        bh=SDUCO4V4xBf7ULxuIO8C4cmqnZCvqEtr2ScPGpGQoCk=;
+        b=DkO4B4r9btEnt6dT+9tKFk6JgOne19QVahPNUORTVy9n1DYRfB2HI6HmN2wLo90E1J
+         4QK9YeB3WZsj+QxQ2OhjNBwd22s+Awdu8r056QeclNNd9Ag5eaUWt+kafe1sGebbZblh
+         7eB98PsM1F0eWhY895YQWe4PNituxzr2isKCQhs0r/z2W2+mjEHYLS6wj+gPdrzTx9Zd
+         lBQfo8LmAl/Qg+qmjSk9S84C+6d+jvnVRUeddkkzBmdkB0JEpSPZB/gQkqq9WtPBO10V
+         jZu2ES/tGp3GJdimAPC7pGz3pFe67KjuFS7QVLE4TMXamOLZfdeZ64Ym2keo07vV9JGp
+         xhFw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=sr4BfI6+;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id z185-v6sor1040345wmb.55.2018.07.21.08.24.15
+        for <syw.orders@gmail.com>
+        (Google Transport Security);
+        Sat, 21 Jul 2018 08:24:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=sr4BfI6+;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:content-transfer-encoding:mime-version:date:subject:message-id
+         :references:to;
+        bh=SDUCO4V4xBf7ULxuIO8C4cmqnZCvqEtr2ScPGpGQoCk=;
+        b=sr4BfI6+MCcK0VycByiiulEg9RoG1F9/BxYinnY6X3IIbSPUph371g78OQrydoosK+
+         kHaT0Wc91Y2AENNgd4rG6uI33BkcBkIKxjWQDql/dtb6KB/PTFEBhRz7S7TByqe4Dt3c
+         AFER3wiE3Qql5u/ZjD8RqNIRf9M7CGvdCVAPkER7XD8LB0faExQ2qF3H8Ctk28p0SWpF
+         q+GD4sn28ImlMxkWuRqWTq9HOAY4kVjlqbQ2IicdLDHkH5XHaVx/fHPsSieFu6itjlmU
+         Rm8ISw0wckSTioE6W/+0jWDW2gJNtqJreIWDJPvRHPu7ERsd0YcdbOIXRtVjfpGBd/6L
+         v6Bg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version:date
+         :subject:message-id:references:to;
+        bh=SDUCO4V4xBf7ULxuIO8C4cmqnZCvqEtr2ScPGpGQoCk=;
+        b=XLAZ207NK4o2ljjtMqcCLYuu/aCD2hC+xX2giFntiIBB7yWJgTa/fdZfg7gTywDocK
+         MSUx6fyJe0qXP5JbBWOPh5zcZ2poOCk57+47UrrCNSxtgkHglLucChlZ7aZqxF+tCCMf
+         g8Xx/N1SABgbJMoAyhmDqDgvTB/kjG3ZIzckOd3w9HKBXT8nefZIddDxN48jJmZxWuLt
+         2Zr1xom8/u4e3b3iRTmqi754LJaCI/iXcisfPdTFd5Jci5aeLqG27S5jzIhH9YoqB4Ae
+         HXUxy7izXBiSbl85/9AThbQVIWLBJJVSYv6wWk1EymQCIRIagDczaWTTz1sLNfvAWEQ+
+         6BuA==
+X-Gm-Message-State: AOUpUlEEaumeGQkTseQHcgvHtgJxSxUUZc/CJIGv+UZTmQcGVIO7TwcA
+	l9jO39kes1xZ5D80oxNayR63Y4ZM
+X-Google-Smtp-Source: AAOMgpdizuSdE9kfvO2SfCy0eHVfTRrel2lPT/dOW6cnndfguEuGG+z/4r5doDJ70zwHleOLWw7n2w==
+X-Received: by 2002:a1c:cc16:: with SMTP id h22-v6mr4028167wmb.73.1532186655444;
+        Sat, 21 Jul 2018 08:24:15 -0700 (PDT)
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from [10.27.242.7] ([85.255.232.44])
+        by smtp.gmail.com with ESMTPSA id 35-v6sm4678304wrh.52.2018.07.21.08.24.14
+        for <syw.orders@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Jul 2018 08:24:14 -0700 (PDT)
+From: Mehdi Doghri <mehdi.doghri@gmail.com>
+Content-Type: multipart/alternative;
+	boundary=Apple-Mail-96886AEA-DBAD-4197-94DA-6BBD6D4E2FC7
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (1.0)
+Date: Sat, 21 Jul 2018 16:24:13 +0100
+Subject: Fwd: ORDER CONFIRMATION
+Message-Id: <EAB1E178-5DAD-48AE-99FA-6BE9468A0539@gmail.com>
+References: <109315716.195691532181358012.JavaMail.wcsadmin@ieec2zwcs9.central.inditex.grp>
+To: syw.orders@gmail.com
+X-Mailer: iPhone Mail (15G77)
+
+
+--Apple-Mail-96886AEA-DBAD-4197-94DA-6BBD6D4E2FC7
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Mehdi
+
+Begin forwarded message:
+
+> From: Zara <noreply@zara.com>
+> Date: 21 July 2018 at 14:55:58 BST
+> To: mehdi.doghri@gmail.com
+> Subject: ORDER CONFIRMATION
+>=20
+>=20
+> Thank you for your purchase
+>=20
+> WE WILL SEND YOU AN EMAIL WHEN IT IS IN TRANSIT.
+>=20
+> BELOW, YOU WILL FIND THE DETAILS OF YOUR ORDER.
+>=20
+> =EF=BB=BF
+> DESCRIPTION	REFERENCE	COLOUR	SIZE	UNITS	AMOUNT
+> 	SHIRT WITH BUTTONED SLEEVE TABS
+> 0/7545/329/401/06	Navy blue	XXL	1	25.99 GBP
+> TOTAL PRODUCTS:	25.99 GBP
+> DELIVERY COSTS:	0.00 GBP
+> TOTAL:	25.99 GBP
+> *INCLUDING VAT
+> =EF=BB=BF=EF=BB=BF
+> ORDER NUMBER: 557768695
+> ORDER DATE: 21/07/18
+> DELIVERY: PICK-UP IN STORE. TUESDAY 24 - WEDNESDAY 25.
+> PAYMENT METHOD: APPLEPAY
+> BILLING ADDRESS
+>=20
+> Mehdi Doghri-Bouchut=20
+> Flat 36 30-34 Trebovir Road=20
+> SW5 9NL   London=20
+> UK=20
+> United Kingdom=20
+> Telephone:=20
+> Mobile phone: +44 7704746553=20
+> SHIPPING ADDRESS
+>=20
+> Zara
+> 48-52, KENSINGTON HIGH STREET=20
+> W8 4PE   LONDON=20
+> GREATER LONDON=20
+> United Kingdom=20
+> Mobile phone: +44 2073684680=20
+> Woman, Man, Kid
+> PURCHASE CONDITIONS.
+>=20
+> =EF=BB=BF
+> FOR ANY QUERIES, PLEASE CONTACT US. YOUR CASE WILL BE REGISTERED UNDER YOU=
+R ORDER NUMBER.
+>=20
+> +INFO ZARA.COM, CONTACT US.
+>=20
+
+--Apple-Mail-96886AEA-DBAD-4197-94DA-6BBD6D4E2FC7
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto"><br><br><div id=3D"AppleMailSignature">Mehd=
+i</div><div><br>Begin forwarded message:<br><br></div><blockquote type=3D"ci=
+te"><div><b>From:</b> Zara &lt;<a href=3D"mailto:noreply@zara.com">noreply@z=
+ara.com</a>&gt;<br><b>Date:</b> 21 July 2018 at 14:55:58 BST<br><b>To:</b> <=
+a href=3D"mailto:mehdi.doghri@gmail.com">mehdi.doghri@gmail.com</a><br><b>Su=
+bject:</b> <b>ORDER CONFIRMATION</b><br><br></div></blockquote><blockquote t=
+ype=3D"cite"><div>
+
+  	=09
+	<title>ZARA</title>
+	<link href=3D"favicon.ico" rel=3D"shortcut icon">
+  =09
+  		=09
+	<div style=3D"height: 21px; padding-bottom: 11px; margin-bottom: 50=
+px;">
+		<h1 style=3D"text-align: center;"><img alt=3D"ZARA" src=3D"=
+http://static.zara.net/wcsstore/ZaraStorefrontAssetStore/images/logo_Zara.pn=
+g"></h1>
+	</div> =09
+	<div style=3D"padding:45px 0">
+		<h2 style=3D"font-size:22px; margin-bottom:50px;">Thank you=
+ for your purchase</h2>
+			<div style=3D"font-size:12px; margin-bottom:40px; t=
+ext-transform:uppercase;">	=09
+						=09
+
+							=09
+									=
+										=
+	=09
+				<p>WE WILL SEND YOU AN EMAIL WHEN IT IS IN T=
+RANSIT.</p>=09
+					=09
+			=09
+			=09
+				<p>BELOW, YOU WILL FIND THE DETAILS OF YOUR=
+ ORDER.</p>
+			=09
+			</div>
+	=09
+			=09
+		=EF=BB=BF<div style=3D"padding-bottom:11px;">
+		<table cellspacing=3D"0" cellpadding=3D"0" style=3D"width: 1=
+00%; margin-top: 20px; font-size: 12px;">		=09
+						<thead style=3D"text-transf=
+orm: uppercase; font-size: 12px;">
+				<tr>
+					<th style=3D"height: 35px; border-b=
+ottom: 1px solid rgb(15, 15, 15); text-align: left; padding: 0pt 10px 0pt 0p=
+t;">Description</th>
+					<th style=3D"border-bottom: 1px sol=
+id rgb(15, 15, 15); text-align: left; padding: 0pt 10px 0pt 0pt;">Reference<=
+/th>
+					<th style=3D"border-bottom: 1px sol=
+id rgb(15, 15, 15); text-align: left; padding: 0pt 10px 0pt 0pt;">Colour</th=
+>
+					<th style=3D"border-bottom: 1px sol=
+id rgb(15, 15, 15); text-align: left; padding: 0pt 10px 0pt 0pt;">Size</th>
+					<th style=3D"text-align: right; bor=
+der-bottom: 1px solid rgb(15, 15, 15); padding: 0pt 10px 0pt 0pt;">Units</th=
+>=09
+									=
+	<th style=3D"text-align: right; border-bottom: 1px solid rgb(15, 15, 15);">=
+Amount</th>			=09
+									</t=
+r>
+			</thead>
+					=09
+							<tbody>
+									=
+		<tr style=3D"height: 32px;">
+							<td style=3D"border=
+-bottom: 1px solid rgb(15, 15, 15); padding: 0pt 10px 0pt 0pt;">
+									=
+										=
+								<table><tbody><tr><=
+td><img height=3D"83px" src=3D"https://static.zara.net/photos//2018/I/0/2/p/=
+7545/329/401/2/c-215-0-2048-3072/w/400/7545329401_1_1_1.jpg?ts=3D15307120705=
+20" alt=3D""></td><td><span style=3D"vertical-align:middle;font-size: 12px;"=
+>SHIRT WITH BUTTONED SLEEVE TABS                                            =
+                                                     </span></td></tr></tbod=
+y></table>
+									=
+										=
+					</td>
+							<td style=3D"border=
+-bottom: 1px solid rgb(15, 15, 15); padding: 0pt 10px 0pt 0pt;">0/7545/329/4=
+01/06</td>
+							<td style=3D"border=
+-bottom: 1px solid rgb(15, 15, 15); padding: 0pt 10px 0pt 0pt;">Navy blue</t=
+d>
+					<td style=3D"border-bottom: 1px sol=
+id rgb(15, 15, 15); padding: 0pt 10px 0pt 0pt;">XXL</td>		=
+			=09
+							<td style=3D"text-a=
+lign: right; border-bottom: 1px solid rgb(15, 15, 15); padding: 0pt 10px 0pt=
+ 0pt;">1</td>=09
+									=
+						<td style=3D"text-align: right; tex=
+t-transform: uppercase; border-bottom: 1px solid rgb(15, 15, 15);">25.99&nbs=
+p;GBP</td>
+									=
+				</tr>						=
+									=09
+									=
+=09
+									=
+					=09
+									=
+			=09
+									=
+					</tbody>				=
+=09
+					=09
+						<tfoot style=3D"text-align:=
+ right; text-transform: uppercase;">
+				<tr>
+					<td style=3D"padding-top: 30px; pad=
+ding-right: 10px;" colspan=3D"5">Total products:</td>
+					<td style=3D"padding-top: 30px;" co=
+lspan=3D"1">25.99&nbsp;GBP</td>=09
+				</tr>
+			=09
+							=09
+				<tr>
+					<td style=3D"padding-top: 3px; padd=
+ing-right: 10px;" colspan=3D"5">Delivery costs:</td>
+					<td style=3D"padding-top: 3px;" col=
+span=3D"1">0.00&nbsp;GBP</td>
+				</tr>
+			=09
+							=09
+									=
+=09
+							=09
+							=09
+									=
+								=09
+				<tr>
+					<td style=3D"padding-top: 3px; padd=
+ing-right: 10px;" colspan=3D"5"><strong>Total:</strong></td>
+					<td style=3D"text-transform: upperc=
+ase; padding-top: 3px;" colspan=3D"1">				=09
+						<strong>
+							25.99&nbsp;GBP	=
+			=09
+						</strong>
+					</td>
+				</tr>=09
+			=09
+				<tr style=3D"color: rgb(96, 99, 103);"><td s=
+tyle=3D"padding-bottom: 50px; font-size: 11px; border-bottom: 1px solid rgb(=
+15, 15, 15);" colspan=3D"6"><em>*Including VAT</em></td></tr>
+			=09
+			</tfoot>=09
+					=09
+		</table>
+	</div>				=EF=BB=BF=EF=BB=BF	<div style=3D=
+"text-transform: uppercase; font-size: 12px; border-bottom: 1px solid rgb(15=
+, 15, 15); padding-bottom: 15px;">
+				<p style=3D"margin: 0pt; font-weight: bold;=
+"><label>Order number: </label> <span>557768695</span></p>		=
+				=09
+				<p style=3D"margin: 0pt; color: rgb(109, 11=
+0, 113);"><label>Order date: </label><span>21/07/18</span></p>
+				<p style=3D"margin: 0pt; color: rgb(109, 11=
+0, 113);"><label>Delivery: </label> <span>Pick-up in store</span>. <span>Tue=
+sday 24 - Wednesday 25</span>.</p>=09
+				<p style=3D"margin: 0pt; color: rgb(109, 11=
+0, 113);"><label>Payment method: </label> <span>ApplePay </span></p>
+	</div>=09
+=09
+	<div style=3D"font-size: 12px; border-bottom: 1px solid rgb(15, 15,=
+ 15); padding-bottom: 11px; margin: 15px 0pt;">
+			<table style=3D"width:100%">
+				<tbody>
+				<tr>
+					<td style=3D"vertical-align: top; p=
+adding: 0pt 10px 0pt 0pt; font-size:12px;">
+						<h3 style=3D"font-size:12px=
+">BILLING ADDRESS</h3>
+						<div>			=
+							=09
+									=
+							Mehdi Doghri-Bouchut
+								<br> 	=
+				=09
+						    =09
+						    			=
+					    					=
+						Flat 36
+30-34 Trebovir Road <br>
+									=
+										=
+					=09
+									=
+								=09
+								=09
+									SW5=
+ 9NL &nbsp; London <br>
+									=
+							=09
+									=
+										UK <=
+br>
+									=
+								=09
+									=
+						=09
+								United King=
+dom <br>=09
+								=09
+								<span style=
+=3D"color: rgb(149, 149, 149); margin-top: 3px; display: block; font-size: 1=
+1px;">
+									Tel=
+ephone:
+									=
+									<br>
+									Mob=
+ile phone:
+									=
+										+44=
+ 7704746553
+									=
+									<br>
+								</span>=
+										=
+					=09
+						</div>			=
+						=09
+					</td>				=
+=09
+					<td style=3D"vertical-align: top; f=
+ont-size:12px;">
+									=
+		<h3 style=3D"font-size:12px">SHIPPING ADDRESS</h3>		=
+		=09
+								Zara<br>
+								48-52, KENS=
+INGTON HIGH STREET
+<br>
+									=
+										=
+						W8 4PE     &nbsp;
+									=
+							LONDON <br>
+									=
+								GREATER LONDON <br>=
+
+									=
+							United Kingdom <br>	=
+										=
+	=09
+								<span style=
+=3D"color: rgb(149, 149, 149); margin-top: 3px; display: block; font-size: 1=
+1px;">
+									=
+										=
+									Mobile phon=
+e:
+									=
+	+44 2073684680 <br>
+									=
+										=
+									Woman, Man,=
+ Kid<br>
+									=
+								</span>=09
+									=
+	</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>							 =
+				 						=
+=09
+	</div>
+	<div style=3D"font-size:12px; margin-bottom:20px">
+			<p><a style=3D"text-decoration: underline; color: r=
+gb(15, 15, 15);" href=3D"https://static.zara.net/static//pdfs/UK/terms-and-c=
+onditions/terms-and-conditions-en_UK-20180305.pdf">PURCHASE CONDITIONS</a>.<=
+/p>
+	</div>			=EF=BB=BF<div>	=09
+	<p style=3D"font-size:12px; margin-bottom: 40px">FOR ANY QUERIES, P=
+LEASE CONTACT US. YOUR CASE WILL BE REGISTERED UNDER YOUR ORDER NUMBER.</p>
+	<div style=3D"font-size: 12px;">
+		<p>+INFO <a href=3D"http://ZARA.COM">ZARA.COM</a>, CONTACT U=
+S.</p>
+	</div>							=09
+</div>=09
+=09
+<div style=3D"border-top: 2px solid rgb(15, 15, 15); height: 21px; color: rg=
+b(149, 149, 149); font-size: 11px; padding-top: 11px;">
+	<span>
+		</span>
+</div>		=09
+=09
+=09
+	  =20
+=09
+   =20
+</div></blockquote></body></html>=
+
+--Apple-Mail-96886AEA-DBAD-4197-94DA-6BBD6D4E2FC7--

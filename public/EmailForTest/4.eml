@@ -1,0 +1,634 @@
+Delivered-To: syw.orders@gmail.com
+Received: by 10.140.28.99 with SMTP id 90csp31591qgy;
+        Tue, 20 Feb 2018 15:28:42 -0800 (PST)
+X-Received: by 10.28.58.79 with SMTP id h76mr478382wma.139.1519169322108;
+        Tue, 20 Feb 2018 15:28:42 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1519169322; cv=none;
+        d=google.com; s=arc-20160816;
+        b=zWohRgQAMbx3iRYhzyGe9zeEyBKsMaJTZuGPUpnqSuIJXfZGm8YQ6hPrRAv94M94fH
+         QS5iRTMGYqpv2NfC7Z5BhHcqF5vlgTCznOBQwRaB+DNXNRzAaTAG66C6WnDfv2QT8U6p
+         eokI3g1Gc9UHhM0px3Y9ATZSyfyWGxpo7y4iSxgARgqxmxA00GBe7s1DalTvWsIdBbnn
+         5BtmtV7J6+SN5+iNq0fGjIFaqq8z8p6gJd90ylJp3w4J1x8jA62PJkP4UXGKF4pmcP9h
+         q6+zucdynKeftIkHWujco8PEUTImd8VYevy389/ZAvKfqTmp+gNxgpnsBT11glI8MPob
+         h7Rw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:references:in-reply-to:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=HaaAP8MeJ/4thRnHbOu0n6e6k6LGzjl6t1hrzshGOwU=;
+        b=wOlMX7BkC7yuyIOhbmAgMlIl7CeXJo/mYmWhFejK4tRqrDi0tcRg4sF5cWstXDkD78
+         TwfRfNBf4xkJOBPmcaAVlNClJPcY9wmjskPeugYGXGvr9T84qm7RJ1Sc0uptlObdVjVz
+         pbUbzI/TCUKVHJEGm/s1eB7WnWfpM19jYbdtAFcgTUVVjO6Mi1YcF5MFUaJo9Ug9v9/4
+         8F2KYXlA6S19kfo/k8J65Sm0/LU5ybizAgEyOIMxlxs93Dh4U/AaLvTUlbyeX55ZCwe5
+         062kzU5KTFxYHDooOTNVmzMddX8bZlFJL0dAdXxFXIGAUtoXyGzG6OTwoSaSyAxSoCgv
+         vjiA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=HxpfHeeX;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id h13sor6174407wma.88.2018.02.20.15.28.41
+        for <syw.orders@gmail.com>
+        (Google Transport Security);
+        Tue, 20 Feb 2018 15:28:42 -0800 (PST)
+Received-SPF: pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=HxpfHeeX;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:in-reply-to:references:from:date:message-id:subject:to;
+        bh=HaaAP8MeJ/4thRnHbOu0n6e6k6LGzjl6t1hrzshGOwU=;
+        b=HxpfHeeXbZrOL2hn4LPnaxsKSvio1ZnyIiNRhwJthiOWOMHNGEjRpuEUT7gKXcm9Jf
+         KjtrgkMVTpVmgoropNyAL4aejGWnCHD6P+fco4lIBxe3n7uhBBAjbuEQxN7xfopN3JoP
+         3rgHiB2I7Uz+GG2ih9FcmKgiOpwL8r6OPbN4QkVVyblT2vmM52+aX/qZ/hdSQWG87+xp
+         hUN1bfjwsyVoFvZVTfnnNtPipehorit7p13xqdxufLapMun54QAlgtM7UhW9DkOUXlZf
+         BzT1fT+S93+eBZauJGnYClGN6hgvDacOvTL5QjP+xdI8Fenq3iscRle02dXb/g/BCn0l
+         4lBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:in-reply-to:references:from:date
+         :message-id:subject:to;
+        bh=HaaAP8MeJ/4thRnHbOu0n6e6k6LGzjl6t1hrzshGOwU=;
+        b=sggkA0aSD77MkdviC5d0vr1eze5KH2Wp4Atrp04ruyLCNpHXzzOYG++6+12+OP7+O4
+         IMDKYLOWqtyqJ9PbA+m04izpR/m/Ti3gNSqBBYENnfDKBFPhGcsksQIShkEW07l6QXS6
+         GEQtC/PNtj2yHhGTIS9lJq5g+DuyFkS9202vXtL7D+a98L299QaHVRWdSDSFEAkRgdPK
+         VHchqta+fvFV6q8PT4qf8W4hF5QxTzsZrwz1TUvzCbjG/LveTD66RFyj8UrsaxUKx/71
+         gdZ6mfRYhIDZlLBCBor2tKrZm/VS2gsFDISLORg3vGituG/uZ6K10k98uCpib99r59NN
+         aAjw==
+X-Gm-Message-State: APf1xPB7gu4lV7gU9zK40RGB4XKsCFOgEKhSW61zBJhMetdd95Z/XmHB
+	mBugvt05+goNreigyGC0ohe+rHB6Q3oD3FrKP8OAkQ==
+X-Google-Smtp-Source: AH8x2254Z9yc3VBT/YhsggtIRHXLje5iq3TrOBHk659TgQEoKQJMW5xGST8UvhwPYVbYp7+u6lxKV5OEY6tB3AtRV78=
+X-Received: by 10.28.48.11 with SMTP id w11mr510661wmw.88.1519169321420; Tue,
+ 20 Feb 2018 15:28:41 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.28.18.201 with HTTP; Tue, 20 Feb 2018 15:28:25 -0800 (PST)
+In-Reply-To: <490828851.1362163084146.JavaMail.tomcat@app04.gs2.nap>
+References: <490828851.1362163084146.JavaMail.tomcat@app04.gs2.nap>
+From: Mehdi Doghri <mehdi.doghri@gmail.com>
+Date: Tue, 20 Feb 2018 23:28:25 +0000
+Message-ID: <CAKYEDegESnNqDoG8LhqYuTQ=M9rF+SiZoEdHmq165LYosLJ-_g@mail.gmail.com>
+Subject: Fwd: Your NET-A-PORTER.COM order confirmation - 2776905
+To: syw.orders@gmail.com
+Content-Type: multipart/alternative; boundary="001a11424762c1cd740565ad2b26"
+
+--001a11424762c1cd740565ad2b26
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ----------
+From: <customercare@net-a-porter.com>
+Date: 1 March 2013 at 18:38
+Subject: Your NET-A-PORTER.COM order confirmation - 2776905
+To: mehdi.doghri@gmail.com
+
+
+<http://www.net-a-porter.com?cm_mmc=3DEmailPurchaseConfirmation-_-PCHeaderA=
+ndFooter-_-intl-_-NAPLogo>
+What's New
+<http://www.net-a-porter.com/Shop/Whats-New?cm_mmc=3DEmailPurchaseConfirmat=
+ion-_-PCHeaderAndFooter-_-intl-_-WhatsNewNav>
+Designers
+<http://www.net-a-porter.com/Shop/AZDesigners?cm_mmc=3DEmailPurchaseConfirm=
+ation-_-PCHeaderAndFooter-_-intl-_-Designers>
+Clothing
+<http://www.net-a-porter.com/Shop/Clothing?cm_mmc=3DEmailPurchaseConfirmati=
+on-_-PCHeaderAndFooter-_-intl-_-Clothing>
+Bags
+<http://www.net-a-porter.com/Shop/Bags?cm_mmc=3DEmailPurchaseConfirmation-_=
+-PCHeaderAndFooter-_-intl-_-Bags>
+Shoes
+<http://www.net-a-porter.com/Shop/Shoes?cm_mmc=3DEmailPurchaseConfirmation-=
+_-PCHeaderAndFooter-_-intl-_-Shoes>
+emailHeader.theEdit
+<http://www.net-a-porter.com/magazine?cm_mmc=3DEmailPurchaseConfirmation-_-=
+PCHeaderAndFooter-_-intl-_-Edit>
+=E2=80=8C
+Order Number: 2776905 Customer Number: 1603132
+
+Dear Mehdi,
+
+Thank you for shopping at NET-A-PORTER.COM.
+
+Here is a summary of the item(s) you have ordered:
+Description Quantity Price
+Arty gold-plated glass ring 1 =E2=82=AC195.00
+DHL Standard - Europe Group 1 1 =E2=82=AC15.00
+Total =E2=82=AC210.00
+Your Shipping Address Your Invoice/Billing Address Shipping Method
+Mr Mehdi Doghri
+10 Avenue De L'Europe
+Aeon Consulting
+Ramonville St Agne
+31520
+France Mr Mehdi Doghri
+7 rue Jacques Cros
+Toulouse
+31400
+France DHL Standard - Europe Group 1
+
+To help us make sure your order arrives on time, please check that:
+
+- Your billing address matches the address shown on your card statement
+- The shipping address is correct as we are unable to re-direct packages
+once dispatched
+- You will be available to sign for your order at the above shipping
+address between Monday to Friday, 9am-5pm
+- Your shipping address is either your billing or corporate address if you
+are shopping with us for the first time
+
+Once your order has been dispatched, we will send you an email with your
+air waybill number so you can follow its progress.
+In the meantime, if you need to make any changes to the above information,
+please contact us as soon as possible.
+
+We hope you love your new purchase(s)!
+
+Kind regards,
+Customer Care
+
+Need Help? Call 0800 044 5700 (UK) or +44 330 022 5700
+<+44%20330%20022%205700> (from a mobile or internationally), 24 hours a
+day, seven days a week
+
+Email Customer Care <customercare@net-a-porter.com> Shipping Information
+<http://www.net-a-porter.com/Help/ShippingRatesAndPolicies?cm_mmc=3DEmailPu=
+rchaseConfirmation-_-Shipping-_-PC-_-INTL>
+Returns
+Policy
+<http://www.net-a-porter.com/Help/ReturnsAndExchanges?cm_mmc=3DEmailPurchas=
+eConfirmation-_-Returns-_-PC-_-INTL>
+Help
+& FAQs
+<http://www.net-a-porter.com/Help/FrequentlyAskedQuestions?cm_mmc=3DEmailPu=
+rchaseConfirmation-_-FAQ-_-PC-_-INTL>
+
+Shop Now
+<http://www.net-a-porter.com?cm_mmc=3DEmailPurchaseConfirmation-_-ShopNow-_=
+-PC-_-INTL>
+<http://www.net-a-porter.com/Shop/List/Back_In_Stock?cm_mmc=3DEmailPurchase=
+Confirmation-_-PCPromo-_-BISpromo-_-INTL>
+=E2=80=8C
+=E2=80=8C [image: NET-A-PORTER TV]
+<http://www.net-a-porter.com/tv?cm_mmc=3DEmailPurchaseConfirmation-_-PCHead=
+erAndFooter-_-intl-_-NAPTVFooter>
+=E2=80=8C
+Shipping Options
+<http://www.net-a-porter.com/Help/ShippingRatesAndPolicies?cm_mmc=3DEmailPu=
+rchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Shipping>
+Returns
+<http://www.net-a-porter.com/Help/ReturnsAndExchanges?cm_mmc=3DEmailPurchas=
+eConfirmation-_-PCHeaderAndFooter-_-intl-_-Returns>
+Help
+<http://www.net-a-porter.com/Help/Contact-Us?cm_mmc=3DEmailPurchaseConfirma=
+tion-_-PCHeaderAndFooter-_-intl-_-Help>
+Magazine
+<http://www.net-a-porter.com/magazine?cm_mmc=3DEmailPurchaseConfirmation-_-=
+PCHeaderAndFooter-_-intl-_-Magazine>
+My
+Account
+<https://www.net-a-porter.com/intl/signin.nap?cm_mmc=3DEmailPurchaseConfirm=
+ation-_-PCHeaderAndFooter-_-intl-_-Account>
+<http://www.facebook.com/netaporter?cm_mmc=3DEmailPurchaseConfirmation-_-PC=
+HeaderAndFooter-_-intl-_-Facebook>
+<http://twitter.com/netaporter?cm_mmc=3DEmailPurchaseConfirmation-_-PCHeade=
+rAndFooter-_-intl-_-Twitter>
+=E2=80=8C =E2=80=8C
+
+NET-A-PORTER GROUP LTD
+1 The Village Offices, Westfield, Ariel Way, London, W12 7GF.
+VAT Registration Number: 743 7967 86. Company registered in London number:
+3820604
+
+=C2=A9 1999 - 2013 NET-A-PORTER.COM <http://www.net-a-porter.com>
+
+
+------------------------------
+
+CONFIDENTIALITY NOTICE
+The information in this email is confidential and is intended solely for
+the addressee. Access to this email by anyone else is unauthorised. If you
+are not the intended recipient, you must not read, use or disseminate the
+information. Any views expressed in this message are those of the
+individual sender, except where the sender specifically states them to be
+the views of Net-A-Porter Group Limited.
+
+The Net-A-Porter Group Limited is a company registered in England & Wales
+Number: 3820604 Registered Office: 1 The Village Offices, Westfield, Ariel
+Way, London, W12 7GF
+------------------------------
+
+--001a11424762c1cd740565ad2b26
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><div class=3D"gmail_quote">---------- Forwarded messag=
+e ----------<br>From: <b class=3D"gmail_sendername"></b> <span dir=3D"ltr">=
+&lt;<a href=3D"mailto:customercare@net-a-porter.com">customercare@net-a-por=
+ter.com</a>&gt;</span><br>Date: 1 March 2013 at 18:38<br>Subject: Your <a h=
+ref=3D"http://NET-A-PORTER.COM">NET-A-PORTER.COM</a> order confirmation - 2=
+776905<br>To: <a href=3D"mailto:mehdi.doghri@gmail.com">mehdi.doghri@gmail.=
+com</a><br><br><br>
+
+<u></u>
+
+=09
+	=09
+=09
+	<div>
+
+	=09
+
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"740" style=3D"table-lay=
+out:fixed">
+    <tbody><tr>
+        <td>
+
+            <table id=3D"m_2954253140796584395header" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"margin-bottom:10px" width=3D"100%">
+                <tbody>
+                    <tr>
+                        <td align=3D"center">
+                            <a href=3D"http://www.net-a-porter.com?cm_mmc=
+=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-NAPLogo" target=
+=3D"_blank">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table id=3D"m_2954253140796584395top-nav" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:#000=
+000;color:#ffffff;width:100%">
+                                <tbody><tr align=3D"left" style=3D"backgrou=
+nd-color:#000000;font-family:&#39;Gill Sans&#39;,&#39;Gill Sans MT&#39;,Cal=
+ibri,sans-serif;text-align:center;text-transform:uppercase;font-size:10px">
+                                    <td valign=3D"middle" width=3D"128" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Shop/Whats-New?cm_mmc=3DE=
+mailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-WhatsNewNav" style=3D=
+"color:#ffffff;display:block;text-decoration:none;white-space:nowrap" title=
+=3D"What&#39;s New" target=3D"_blank">What&#39;s New</a></td>
+                                    <td valign=3D"middle" width=3D"120" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Shop/AZDesigners?cm_mmc=
+=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Designers" style=
+=3D"color:#ffffff;display:block;text-decoration:none;white-space:nowrap" ti=
+tle=3D"Designers" target=3D"_blank">Designers</a></td>
+                                    <td valign=3D"middle" width=3D"120" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Shop/Clothing?cm_mmc=3DEm=
+ailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Clothing" style=3D"col=
+or:#ffffff;display:block;text-decoration:none;white-space:nowrap" title=3D"=
+Clothing" target=3D"_blank">Clothing</a></td>
+                                    <td valign=3D"middle" width=3D"120" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Shop/Bags?cm_mmc=3DEmailP=
+urchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Bags" style=3D"color:#ffff=
+ff;display:block;text-decoration:none;white-space:nowrap" title=3D"Bags" ta=
+rget=3D"_blank">Bags</a></td>
+                                    <td valign=3D"middle" width=3D"128" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Shop/Shoes?cm_mmc=3DEmail=
+PurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Shoes" style=3D"color:#ff=
+ffff;display:block;text-decoration:none;white-space:nowrap" title=3D"Shoes"=
+ target=3D"_blank">Shoes</a></td>
+                                    <td valign=3D"middle" width=3D"auto" he=
+ight=3D"24"><a href=3D"http://www.net-a-porter.com/magazine?cm_mmc=3DEmailP=
+urchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Edit" style=3D"color:#ffff=
+ff;display:block;text-decoration:none;white-space:nowrap" title=3D"emailHea=
+der.theEdit" target=3D"_blank">emailHeader.theEdit</a></td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr><td colspan=3D"2" height=3D"5" style=3D"font-size:1=
+px">=E2=80=8C</td></tr>
+                </tbody>
+            </table>
+
+
+		<table id=3D"m_2954253140796584395desc-main" border=3D"0" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"font-family:Arial,Helvetica,sans-serif;font-s=
+ize:12px;width:100%;table-layout:fixed">
+			<tbody><tr>
+				<td height=3D"30" valign=3D"middle" bgcolor=3D"#ececec" align=3D"left" =
+style=3D"padding-left:10px;font-size:12px" width=3D"322">Order Number: 2776=
+905</td>
+				<td height=3D"30" valign=3D"middle" bgcolor=3D"#ececec" align=3D"right"=
+ style=3D"padding-right:20px;font-size:12px" width=3D"323">Customer Number:=
+ 1603132</td>
+			</tr>
+			<tr>
+				<td colspan=3D"2">
+					<p style=3D"font-family:Georgia,Times New Roman,Times,serif;font-size:=
+30px;padding-top:20px;padding-left:10px;margin:0 0 12px 0;font-style:italic=
+;text-transform:uppercase">
+						 Dear Mehdi,
+					</p>
+					<p style=3D"font:Arial,Helvetica,sans-serif;font-size:12px;margin-top:=
+0;padding-left:10px;margin-bottom:0">Thank you for shopping at <a href=3D"h=
+ttp://NET-A-PORTER.COM" target=3D"_blank">NET-A-PORTER.COM</a>.<br></p>
+					<p style=3D"font:Arial,Helvetica,sans-serif;font-size:12px;margin-top:=
+5px;padding-left:10px;margin-bottom:15px">Here is a summary of the item(s) =
+you have ordered:</p></td>
+			</tr>
+			<tr>
+				<td colspan=3D"2"><table cellpadding=3D"0" cellspacing=3D"0" style=3D"f=
+ont-family:Arial,Helvetica,sans-serif;font-size:12px;width:675px;table-layo=
+ut:fixed" width=3D"675">
+					<tbody><tr>
+						<td style=3D"color:#666666;padding-left:10px;padding-bottom:5px;text-=
+transform:uppercase">Description</td>
+						<td align=3D"center" style=3D"color:#666666;padding-bottom:5px;text-t=
+ransform:uppercase" width=3D"100">Quantity</td>
+						<td style=3D"color:#666666;padding-right:30px;padding-bottom:5px;text=
+-transform:uppercase" width=3D"100" align=3D"right">Price</td>
+					</tr>
+									=09
+									=09
+									=09
+															<tr bgcolor=3D"#ececec">
+						<td style=3D"padding-left:10px;padding-bottom:10px;padding-top:10px">=
+Arty gold-plated glass ring</td>
+						<td align=3D"center" style=3D"padding-bottom:10px;padding-top:10px">1=
+</td>
+						<td align=3D"right" style=3D"padding-right:20px;padding-bottom:10px;p=
+adding-top:10px">=E2=82=AC195.00</td>
+					</tr>
+																			=09
+									=09
+									=09
+									=09
+									=09
+										<tr bgcolor=3D"#ececec"> 						<td style=3D"padding-left:10px;pad=
+ding-bottom:10px;text-transform:uppercase;padding-top:10px">DHL Standard - =
+Europe Group 1</td>
+						<td align=3D"center" style=3D"padding-bottom:10px;padding-top:10px">1=
+</td>
+						<td align=3D"right" style=3D"padding-right:20px;padding-bottom:10px;p=
+adding-top:10px">=E2=82=AC15.00</td>
+					</tr>
+									=09
+				=09
+									=09
+										<tr>
+						<td colspan=3D"3" align=3D"right" style=3D"font-weight:bold;padding-r=
+ight:20px;padding-top:5px">Total
+						=E2=82=AC210.00</td>
+					</tr>
+				</tbody></table></td>
+			</tr>
+			<tr>
+				<td style=3D"padding-top:20px;padding-bottom:10px" colspan=3D"2"><table=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"font-family:Arial,Helvetica,s=
+ans-serif;font-size:12px;width:675px;table-layout:fixed" width=3D"675">
+					<tbody><tr>
+						<td style=3D"color:#666666;padding-left:10px;padding-bottom:5px;text-=
+transform:uppercase">Your Shipping Address</td>
+						<td style=3D"color:#666666;padding-left:10px;padding-bottom:5px;text-=
+transform:uppercase">Your Invoice/Billing Address</td>
+						<td style=3D"color:#666666;padding-right:20px;padding-bottom:5px;text=
+-transform:uppercase" align=3D"right">Shipping Method</td>
+					</tr>
+					<tr bgcolor=3D"#ececec">
+						<td valign=3D"top" style=3D"padding:10px"> 														Mr Mehdi Dog=
+hri
+														 <br>
+							10 Avenue De L&#39;Europe
+														 <br>
+							Aeon Consulting
+														 <br>
+							Ramonville St Agne
+																					 <br>
+							31520
+														 <br>
+							France
+														</td>
+						<td style=3D"padding:10px" valign=3D"top"> 						=09
+							Mr Mehdi Doghri
+														 <br>
+							7 rue Jacques Cros
+																					 <br>
+							Toulouse
+																					 <br>
+							31400
+														 <br>
+							France
+							</td>
+						<td valign=3D"top" align=3D"right" style=3D"padding-right:20px;paddin=
+g-top:10px"> 						=09
+							DHL Standard - Europe Group 1
+							</td>
+					</tr>
+				</tbody></table></td>
+			</tr>
+			<tr>
+				<td colspan=3D"2" valign=3D"top" style=3D"padding-bottom:20px">
+									<p style=3D"padding-left:10px;padding-top:15px;margin:1em 0">To he=
+lp us make sure your order arrives on time, please check that:</p>
+					<p style=3D"padding-left:10px;margin:1em 0">=20
+- Your billing address matches the address shown on your card statement<br>
+- The shipping address is correct as we are unable to re-direct packages on=
+ce dispatched<br>
+- You will be available to sign for your order at the above shipping addres=
+s
+between Monday to Friday, 9am-5pm<br>
+- Your shipping address is either your billing or corporate address if you =
+are shopping with us for the first time					</p>
+										<p style=3D"padding-left:10px;margin:1em 0">Once your order has b=
+een dispatched, we will send you an email with your air waybill number so y=
+ou can follow its progress.<br>In the meantime, if you need to make any cha=
+nges to the above information, please contact us as soon as possible.</p>
+					<p style=3D"padding-left:10px;margin:1em 0">We hope you love your new =
+purchase(s)!</p>
+					<p style=3D"padding-left:10px;margin:1em 0">Kind regards,<br>
+						<span style=3D"font-weight:bold">
+										Customer Care
+												</span>
+				</p>
+			</td>
+			</tr>
+			<tr valign=3D"top">
+				<td colspan=3D"2" style=3D"font-weight:bold;font-size:12px;border-top:1=
+px solid black;padding-top:10px;padding-left:10px">
+				<p><span style=3D"text-decoration:underline;padding-top:10px;padding-bo=
+ttom:0px">Need Help?</span>
+											Call 0800 044 5700 (UK) or <a href=3D"tel:+44%20330%20022%205700=
+" value=3D"+443300225700" target=3D"_blank">+44 330 022 5700</a> (from a mo=
+bile or internationally), 24 hours a day, seven days a week
+											</p>
+					<p style=3D"padding-top:0px">
+								<a href=3D"mailto:customercare@net-a-porter.com" style=3D"color:#00=
+0;text-decoration:none;padding-right:20px" target=3D"_blank">
+						Email Customer Care
+												<img src=3D"http://www.net-a-porter.com/alfresco/nap/webAssets/=
+email/order-confirmation/arrow.gif?v=3D1.0" alt=3D"" title=3D"" width=3D"12=
+" height=3D"9"></a>
+				<a href=3D"http://www.net-a-porter.com/Help/ShippingRatesAndPolicies?cm=
+_mmc=3DEmailPurchaseConfirmation-_-Shipping-_-PC-_-INTL" style=3D"color:#00=
+0;text-decoration:none;padding-right:20px" target=3D"_blank">
+					Shipping Information<img src=3D"http://www.net-a-porter.com/images/ema=
+il/Confirmation/arrow.gif" width=3D"12" height=3D"9" border=3D"0">
+				</a>
+				<a href=3D"http://www.net-a-porter.com/Help/ReturnsAndExchanges?cm_mmc=
+=3DEmailPurchaseConfirmation-_-Returns-_-PC-_-INTL" style=3D"color:#000;tex=
+t-decoration:none;padding-right:20px" target=3D"_blank">
+					Returns Policy<img src=3D"http://www.net-a-porter.com/images/email/Con=
+firmation/arrow.gif" width=3D"12" height=3D"9" border=3D"0">
+				</a>
+				<a href=3D"http://www.net-a-porter.com/Help/FrequentlyAskedQuestions?cm=
+_mmc=3DEmailPurchaseConfirmation-_-FAQ-_-PC-_-INTL" style=3D"color:#000;tex=
+t-decoration:none;padding-right:20px" target=3D"_blank">
+					Help &amp; FAQs<img src=3D"http://www.net-a-porter.com/images/email/Co=
+nfirmation/arrow.gif" width=3D"12" height=3D"9" border=3D"0">
+				</a>
+				</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=3D"2" style=3D"font-weight:bold;font-size:12px;padding-left=
+:10px">
+				<p><a href=3D"http://www.net-a-porter.com?cm_mmc=3DEmailPurchaseConfirm=
+ation-_-ShopNow-_-PC-_-INTL" style=3D"text-transform:uppercase" target=3D"_=
+blank">Shop Now</a><img src=3D"http://www.net-a-porter.com/images/email/Con=
+firmation/arrow.gif" width=3D"12" height=3D"9"></p>
+			</td>
+			</tr>
+			<tr>
+				<td style=3D"height:10px"></td>
+			</tr>
+			<tr>
+				<td colspan=3D"2"><a href=3D"http://www.net-a-porter.com/Shop/List/Back=
+_In_Stock?cm_mmc=3DEmailPurchaseConfirmation-_-PCPromo-_-BISpromo-_-INTL" t=
+arget=3D"_blank"><img src=3D"http://www.net-a-porter.com/alfresco/nap/webAs=
+sets/email/order-confirmation/bottom-promo.jpg?v=3D1.0" alt=3D"" title=3D""=
+ width=3D"740" height=3D"176"></a></td>
+			</tr>
+		</tbody></table>
+
+	=09
+
+            <table id=3D"m_2954253140796584395footer" border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" style=3D"margin-top:10px;width:100%;table-layou=
+t:fixed">
+                <tbody>
+                	<tr><td height=3D"5" style=3D"font-size:1px">=E2=80=8C</td=
+></tr>
+                    <tr>
+                    	<td>
+                        	<table id=3D"m_2954253140796584395bottom-nav" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color:#fff=
+fff;color:#ffffff;width:100%"><tbody>
+                            	<tr>
+                                	<td colspan=3D"5" style=3D"font-size:1px;h=
+eight:10px">=E2=80=8C</td>
+                					<td rowspan=3D"3" align=3D"right" style=3D"background-=
+color:#ffffff" width=3D"32"><a href=3D"http://www.net-a-porter.com/tv?cm_mm=
+c=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-NAPTVFooter" tar=
+get=3D"_blank"><img src=3D"http://www.net-a-porter.com/alfresco/nap/webAsse=
+ts/email/footer/footer-nap-tv.gif?v=3D1.0" style=3D"border-color:transparen=
+t;border-style:none;border-width:0;display:block" alt=3D"NET-A-PORTER TV" t=
+itle=3D"" width=3D"28" height=3D"38"></a></td>
+                                	<td colspan=3D"2" style=3D"font-size:1px;h=
+eight:10px">=E2=80=8C</td>
+                                </tr>
+                                <tr align=3D"left" style=3D"background-colo=
+r:#000000;font-family:&#39;Gill Sans&#39;,&#39;Gill Sans MT&#39;,Calibri,sa=
+ns-serif;font-size:10px;font-weight:bold;text-align:center;text-transform:u=
+ppercase">
+                                	<td valign=3D"middle" width=3D"auto" heigh=
+t=3D"24"><a href=3D"http://www.net-a-porter.com/Help/ShippingRatesAndPolici=
+es?cm_mmc=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Shipping=
+" style=3D"color:#ffffff;text-decoration:none;white-space:nowrap" title=3D"=
+Shipping Options" target=3D"_blank">Shipping Options</a></td>
+                                    <td valign=3D"middle" width=3D"110" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Help/ReturnsAndExchanges?=
+cm_mmc=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Returns" st=
+yle=3D"color:#ffffff;text-decoration:none;white-space:nowrap" title=3D"Retu=
+rns" target=3D"_blank">Returns</a></td>
+                                    <td valign=3D"middle" width=3D"110" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/Help/Contact-Us?cm_mmc=3D=
+EmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Help" style=3D"color=
+:#ffffff;text-decoration:none;white-space:nowrap" title=3D"Help" target=3D"=
+_blank">Help</a></td>
+                                    <td valign=3D"middle" width=3D"110" hei=
+ght=3D"24"><a href=3D"http://www.net-a-porter.com/magazine?cm_mmc=3DEmailPu=
+rchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Magazine" style=3D"color:#f=
+fffff;text-decoration:none;white-space:nowrap" title=3D"Magazine" target=3D=
+"_blank">Magazine</a></td>
+                                    <td valign=3D"middle" width=3D"auto" he=
+ight=3D"24"><a href=3D"https://www.net-a-porter.com/intl/signin.nap?cm_mmc=
+=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Account" style=3D=
+"color:#ffffff;text-decoration:none;white-space:nowrap" title=3D"My Account=
+" target=3D"_blank">My Account</a></td>
+                					<td valign=3D"middle" align=3D"right" style=3D"backgro=
+und-color:#ffffff" width=3D"28" height=3D"24"><a href=3D"http://www.faceboo=
+k.com/netaporter?cm_mmc=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-i=
+ntl-_-Facebook" target=3D"_blank"><img src=3D"http://www.net-a-porter.com/a=
+lfresco/nap/webAssets/email/footer/footer-facebook.gif?v=3D1.0" style=3D"bo=
+rder-color:transparent;border-style:none;border-width:0;display:block" alt=
+=3D"" title=3D"" width=3D"24" height=3D"24"></a></td>
+                					<td valign=3D"middle" align=3D"right" style=3D"backgro=
+und-color:#ffffff" width=3D"28"><a href=3D"http://twitter.com/netaporter?cm=
+_mmc=3DEmailPurchaseConfirmation-_-PCHeaderAndFooter-_-intl-_-Twitter" targ=
+et=3D"_blank"><img src=3D"http://www.net-a-porter.com/alfresco/nap/webAsset=
+s/email/footer/footer-twitter.gif?v=3D1.0" style=3D"border-color:transparen=
+t;border-style:none;border-width:0;display:block" alt=3D"" title=3D"" width=
+=3D"24" height=3D"24"></a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan=3D"5" style=3D"font-size:1p=
+x;height:4px">=E2=80=8C</td>
+                                    <td colspan=3D"2" style=3D"font-size:1p=
+x;height:4px">=E2=80=8C</td>
+                                </tr>
+                            </tbody></table>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td align=3D"center" style=3D"color:#a1a1a1;font-famil=
+y:Georgia,Times,&#39;Times New Roman&#39;,serif;font-size:10px;padding-bott=
+om:8px;padding-left:40px;padding-right:40px;padding-top:12px">
+                            <p style=3D"margin:1em 0">NET-A-PORTER GROUP LT=
+D <br>
+                                1 The Village Offices, Westfield, Ariel Way=
+, London, W12 7GF.<br>
+                                VAT Registration Number: 743 7967 86. Compa=
+ny registered in London number: 3820604</p>
+                            <p style=3D"margin:1em 0">=C2=A9 1999 - 2013 <a=
+ href=3D"http://www.net-a-porter.com" style=3D"color:#a1a1a1;text-decoratio=
+n:underline;white-space:nowrap" title=3D"NET-A-PORTER.COM" target=3D"_blank=
+">NET-A-PORTER.COM</a></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</tbody></table>
+
+
+=09
+<font size=3D"1"><p style=3D"line-height:normal;margin-top:0cm;margin-right=
+:0cm;margin-bottom:10pt;margin-left:0cm" class=3D"MsoNormal"><span><font si=
+ze=3D"2"><br></font></span></p></font><font size=3D"1"><p style=3D"line-hei=
+ght:normal;margin-top:0cm;margin-right:0cm;margin-bottom:10pt;margin-left:0=
+cm" class=3D"MsoNormal"></p><hr><br><p></p><p style=3D"line-height:normal;m=
+argin-top:0cm;margin-right:0cm;margin-bottom:10pt;margin-left:0cm" class=3D=
+"MsoNormal"><span><font size=3D"2">CONFIDENTIALITY NOTICE<br>The informatio=
+n in this email is confidential and is intended solely for the addressee. A=
+ccess to this email by anyone else is unauthorised. If you are not the inte=
+nded recipient, you must not read, use or disseminate the information. Any =
+views expressed in this message are those of the individual sender, except =
+where the sender specifically states them to be the views of Net-A-Porter G=
+roup Limited. </font></span><span></span></p><p style=3D"line-height:normal=
+;margin-top:0cm;margin-right:0cm;margin-bottom:10pt;margin-left:0cm" class=
+=3D"MsoNormal"><span><font size=3D"2">The Net-A-Porter Group Limited is a c=
+ompany registered in England &amp; Wales Number: 3820604 Registered Office:=
+ 1 The Village Offices, Westfield, Ariel Way, London, W12 7GF</font></span>=
+</p><hr><br><p></p><p></p></font>=C2=A0=20
+
+
+
+</div>
+
+</div><br></div>
+
+--001a11424762c1cd740565ad2b26--

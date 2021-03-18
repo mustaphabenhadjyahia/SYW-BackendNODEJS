@@ -1,0 +1,1115 @@
+Delivered-To: syw.orders@gmail.com
+Received: by 2002:a9d:74cb:0:0:0:0:0 with SMTP id a11-v6csp170540otl;
+        Mon, 27 Aug 2018 08:06:39 -0700 (PDT)
+X-Received: by 2002:a5d:4684:: with SMTP id u4-v6mr9356435wrq.76.1535382399783;
+        Mon, 27 Aug 2018 08:06:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1535382399; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Q27VGhbrVWIpeRR0JNAtmzOt6XjkiyqHKIXzjVqfseKIFqg1ITkht8d46PgUN8Aoh6
+         h24/RVS6CSN0cKj06krq1uCBnraRcJi6jh7aQ3MV/CsKLfEyxUdHi7n6LGKaHSsZ5aAv
+         R+c+QOehzcY/4kTZcWDJNdszw999egQU52CE3aayLFsE0ygsJYhDpGmE8fP1xCr1QwNP
+         VOfm/UX6ayOMEf9LEy7Pn8VFG0nlsfkH6NR+nD07pua4EMaPV9rtxlv095pRvAzag8aJ
+         QJhoJrOD2UPzEVK8KkECOLstjnRvoUrNVigEfCa5if9bjOy3NqRg1m5MQr5c0lgyQW0/
+         1AeQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:references:message-id:subject:date:mime-version
+         :content-transfer-encoding:from:dkim-signature
+         :arc-authentication-results;
+        bh=GSEuW6NIRfJFQuaeKnD6DV/vyLpzg4rhsYi9zUkMsMg=;
+        b=d4Bc4OIdHCb6xqG1i4AhJCwgJ7c9nFr1etdeLTxKE5o69YmtqZ+8hCVn+8feoTTkG3
+         wVcrudL9Wjatqem/iKQfOatvOHQuWrYeTxwnZWhvvAd+aDsM0kWkOhXZGbRmSJsL6Zyo
+         7vL5nTK0u2EvkK6qG/QQo+wWdE98cBzy2PLrPtfRq6QzVgfk7GB/YsDvc0xAJtTHlxlo
+         Bk1vt9BnFDHkd8+A/9pok/LevX0K0h3mxEt0rrpwBNGohlJxUMV2Xkh7D5rqQ+o7t5HN
+         MJGYJtW2/8PWFsSre4mU52Cvfue9hEGesaV4wrr4B3VCfG20wv0MZDtHkw7CMiCtGcHg
+         sATA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=O2OfUw8H;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id k12-v6sor3774782wrl.2.2018.08.27.08.06.39
+        for <syw.orders@gmail.com>
+        (Google Transport Security);
+        Mon, 27 Aug 2018 08:06:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=O2OfUw8H;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:content-transfer-encoding:mime-version:date:subject:message-id
+         :references:to;
+        bh=GSEuW6NIRfJFQuaeKnD6DV/vyLpzg4rhsYi9zUkMsMg=;
+        b=O2OfUw8H7i5QGCz0ITjdSsbDWVdf/7Esf4Hy0ZU3Av4NGoXtGTZ9P/4PcS6olVDqd6
+         VjP26+BMq24n3Nlqq8Kpcna0puFQqFzNd1Cp40TbAE+P8murKRzEsH1n5ITXu1Hu80dH
+         q/fHsxRC5cotxX0d3ArqEG871RmAtv7TdIKgE8wwRZBC+7+XiNnSaqeVo/KQXz2Boep2
+         1WYFnDG/TFmWhFzDcgAAq1QvbXGXNzqLrY55m1207bvELZ6Wlm1E1sAefDMWo7yeuhGv
+         1+N9hr75+ski6cHFjhx//01GCvXI7ciU85ZfLgMjBr1MM/xMnbkq/KyEoevUGbuXJAm5
+         hvwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version:date
+         :subject:message-id:references:to;
+        bh=GSEuW6NIRfJFQuaeKnD6DV/vyLpzg4rhsYi9zUkMsMg=;
+        b=dZe599iQ8vavcVajqrSOkE0xVFrZ/i2NXzjvwRk0hsq24gmc1cfQgZMfwqs/t4wG1H
+         DPNPnui5BDAtdE8E9vQw4l8eR5X6zlCjiPn1RtPq4zGRGej8OVr0QpMGriOHgXtxzOx0
+         xar8Ijkr6uL8k6VfTFOeV4NEowpRtZBCq8xl8578ZvGcbPGf3pnJGBh/Cet3YZT0Ff7V
+         HQwu7kYj96KIonJoibY7g3J6L23KEI4gE+V21w2hvnrN/mVhnlAsoPyC6wc1+CCBBYTi
+         kVi33vNQZHKrKHgAQ6cgN6Fhqj2pXTR5uzeWAwjIQXj/Du/uWP7hEGVcZPxH0QFeINdg
+         kmEg==
+X-Gm-Message-State: APzg51A1JXNW5XVDi7obBMGGGM0w2WsuyrHjqhxbJLPACnGAfQ6USN/9
+	QBdli3awWStKcj1FrRp5SrsT7GVy
+X-Google-Smtp-Source: ANB0VdZzwrc3CRs+SWqUWALXfzKHO1VNvWwHSrJojIUKcdBU7mVm0eM2a2qD7SA7mAvWrUz6Q14dHA==
+X-Received: by 2002:adf:f4ce:: with SMTP id h14-v6mr9539819wrp.259.1535382398733;
+        Mon, 27 Aug 2018 08:06:38 -0700 (PDT)
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from [192.168.0.5] (cpc131788-brnt3-2-0-cust126.know.cable.virginm.net. [82.22.52.127])
+        by smtp.gmail.com with ESMTPSA id l5-v6sm7575830wmh.0.2018.08.27.08.06.37
+        for <syw.orders@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 27 Aug 2018 08:06:37 -0700 (PDT)
+From: Mehdi Doghri <mehdi.doghri@gmail.com>
+Content-Type: multipart/alternative;
+	boundary=Apple-Mail-08FA721B-2E23-4824-B376-24BB4F2839D6
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (1.0)
+Date: Mon, 27 Aug 2018 16:06:37 +0100
+Subject: Fwd: Order confirmation
+Message-Id: <AACDDFB9-A3E8-4700-84D6-A625399596E9@gmail.com>
+References: <741838051.20653149.1535382322860.JavaMail.root@srv1-sr.contactlab.lan>
+To: syw.orders@gmail.com
+X-Mailer: iPhone Mail (16A5364a)
+
+
+--Apple-Mail-08FA721B-2E23-4824-B376-24BB4F2839D6
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Mehdi
+
+Begin forwarded message:
+
+> From: H&M <noreply@cs.hm.com>
+> Date: 27 August 2018 at 16:05:22 BST
+> To: Mehdi Doghri <mehdi.doghri@gmail.com>
+> Subject: Order confirmation
+> Reply-To: "noreply@cs.hm.com" <noreply@cs.hm.com>
+>=20
+>=20
+>  	 =09
+> LADIES  MEN  KIDS  HOME  MAGAZINE  MY H&M CUSTOMER SERVICE
+> HI MEHDI
+> Thank you for shopping at H&M. We have received your order and will contac=
+t you when your parcel has been dispatched. Below is your order information.=
+=20
+> As a member of H&M Club, your points balance will be updated when your ord=
+er is shipped.
+>  	YOUR DETAILS
+>  	ORDER NUMBER=20
+> 13125610250
+>=20
+> ORDER DATE=20
+> 27 August 2018
+>=20
+> NAME=20
+> Mehdi Doghri
+>=20
+> EMAIL=20
+> mehdi.doghri@gmail.com=20
+>=20
+> PAYMENT METHOD=20
+> PayPal	HOME ADDRESS=20
+> Mehdi Doghri=20
+> 11A Lexham Mews
+> W8 6JW London
+> United Kingdom=20
+>=20
+> DELIVERY METHOD=20
+> Standard delivery=20
+>=20
+> DELIVERY ADDRESS=20
+> Mehdi Doghri=20
+> 11A Lexham Mews
+> W8 6JW London
+> United Kingdom=20
+>=20
+> CONTACT NUMBER=20
+> +44 7704746553=20
+>=20
+>  	ORDER SUMMARY	DELIVERY 2-3 days=20
+> =20
+>  	ART. NO.	DESC.	SIZE	COLOUR	QTY.	PRICE	DISCOUNT=
+	PRICE AFTER DISCOUNT	=20
+>  	0636587007005	T-shirt	XL	Dark blue	1	=C2=
+=A33.99	- =C2=A30.59	=C2=A33.40	=20
+>  	0636587001005	T-shirt	XL	Black	1	=C2=A33.99=
+	- =C2=A30.60	=C2=A33.39	=20
+>  	0636587012005	T-shirt	XL	Burgundy	1	=C2=
+=A33.99	- =C2=A30.60	=C2=A33.39	=20
+>  	0636587008005	T-shirt	XL	Dark khaki green	1=
+	=C2=A33.99	- =C2=A30.60	=C2=A33.39	=20
+>  	0545449032008	Hooded jacket	4-6Y	Dark blue	1	=C2=
+=A38.99	- =C2=A31.35	=C2=A37.64	=20
+>=20
+>  =09
+> PRODUCTS TOTAL:	=C2=A324.95
+> H&M CLUB REWARDS:	-=C2=A33.74
+> DELIVERY:	FREE
+> TOTAL	=C2=A321.21
+> =20
+>=20
+>=20
+>=20
+>=20
+>=20
+> Note that you cannot reply to this email. If you have further question you=
+ can always   contact us,  For more information on your orders, please log i=
+nto  My H&M. You always have 28 days to decide whether the item is right for=
+ you. For information on returns, please read our return and refund policy. =
+ For more information, please read our  Privacy policy  and terms and condit=
+ions.=20
+>=20
+> Kind Regards, H&M Customer Service
+> VAT number: GB243070692
+> Corporate identification number: 1413450
+> H&M Hennes & Mauritz UK Ltd., 1st Floor 25 Argyll Street, W1F 7TS, London,=
+ United Kingdom, 0344 736 9000  (please check here for information about cal=
+l rates), =20
+> customerservice.uk@hm.com=20
+>=20
+> Authorised and regulated by the Financial Conduct Authority.=20
+
+--Apple-Mail-08FA721B-2E23-4824-B376-24BB4F2839D6
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto"><br><br><div id=3D"AppleMailSignature" dir=3D=
+"ltr">Mehdi</div><div dir=3D"ltr"><br>Begin forwarded message:<br><br></div>=
+<blockquote type=3D"cite"><div dir=3D"ltr"><b>From:</b> H&amp;M &lt;<a href=3D=
+"mailto:noreply@cs.hm.com">noreply@cs.hm.com</a>&gt;<br><b>Date:</b> 27 Augu=
+st 2018 at 16:05:22 BST<br><b>To:</b> Mehdi Doghri &lt;<a href=3D"mailto:meh=
+di.doghri@gmail.com">mehdi.doghri@gmail.com</a>&gt;<br><b>Subject:</b> <b>Or=
+der confirmation</b><br><b>Reply-To:</b> "<a href=3D"mailto:noreply@cs.hm.co=
+m">noreply@cs.hm.com</a>" &lt;<a href=3D"mailto:noreply@cs.hm.com">noreply@c=
+s.hm.com</a>&gt;<br><br></div></blockquote><blockquote type=3D"cite"><div di=
+r=3D"ltr">
+=09
+		<meta http-equiv=3D"Content-Type" content=3D"text/html; cha=
+rset=3Dutf-8">
+		<title>Email template</title>
+=09
+=09
+		<table id=3D"outer" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"28" border=3D"0">
+			<tbody><tr style=3D"font-family: Arial, Helvetica, V=
+erdana, sans-serif;font-size: 11px;">
+				<td align=3D"center" width=3D"100%" style=3D=
+"padding-left: 0;padding-right: 0;margin-top: 0;margin-bottom: 0;color: #000=
+000;line-height: 1.36;">
+					<table id=3D"wrapper" width=3D"700"=
+ cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+							<td width=3D"700" s=
+tyle=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;">
+								<!-- New He=
+ader starts here -->
+<table id=3D"top" width=3D"700" cellspacing=3D"0" cellpadding=3D"0" border=3D=
+"0" style=3D"padding-bottom: 11px;">
+	<tbody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-se=
+rif;font-size: 11px;">
+		<td width=3D"150" style=3D"margin-top: 0;margin-bottom: 0;c=
+olor: #000000;line-height: 1.36;">&nbsp;</td>
+		<td width=3D"400" align=3D"center" style=3D"margin-top: 0;m=
+argin-bottom: 0;color: #000000;line-height: 1.36;">
+			<a href=3D"http://www2.hm.com/" class=3D"logotype-l=
+ink" style=3D"color: #000000;">
+				<img id="mo" src=3D"http://www2.hm.com/_ui/assets/d=
+esktop/images/logotype.png" alt=3D"H&amp;M" title=3D"H&amp;M" width=3D"76" h=
+eight=3D"50" style=3D"display: block;border: none;">
+			</a>
+		</td>
+		<td width=3D"150" align=3D"center" class=3D"read-in-browser=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #939393;line-height: 1.36;t=
+ext-decoration: none;font-size: 10px;">
+	</td></tr>
+</tbody></table>
+<table id=3D"header" width=3D"700" cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" style=3D"border-bottom: 1px solid #c8c8c8;">
+	<tbody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-se=
+rif;font-size: 11px;">
+		<td align=3D"center" width=3D"700" style=3D"margin-top: 0;m=
+argin-bottom: 0;color: #000000;line-height: 1.36;">
+			<table id=3D"header-inner" width=3D"670" cellspacin=
+g=3D"0" cellpadding=3D"16" border=3D"0" class=3D"outer" style=3D"padding: 0 0=
+ 16px 0;">
+				<tbody><tr style=3D"font-family: Arial, Hel=
+vetica, Verdana, sans-serif;font-size: 11px;text-align: center;display: bloc=
+k;">
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">LADIES</span>
+						</a>
+					</td>
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">MEN</span>
+						</a>
+					</td>
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">KIDS</span>
+						</a>
+					</td>
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">HOME</span>
+						</a>
+					</td>
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">MAGAZINE</span>
+						</a>
+					</td>
+					<td width=3D"90" style=3D"margin-to=
+p: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-block=
+;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">MY H&amp;M</span>
+						</a>
+					</td>
+					<td width=3D"130" style=3D"margin-t=
+op: 0;margin-bottom: 0;color: #000000;line-height: 1.36;display: inline-bloc=
+k;width: auto;padding: 16px 16px 0 16px;text-align: center;">
+						<a href=3D"http://www2.hm.c=
+om/en_gb/" class=3D"header-link" style=3D"color: #000 !important;font-weight=
+: bold;font-size: 12px;text-decoration: none;letter-spacing: 1px;white-space=
+: nowrap;text-transform: uppercase;">
+							<span style=3D"colo=
+r: #000000;">CUSTOMER SERVICE</span>
+						</a>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+
+
+								<!-- Image s=
+ection begins -->
+									=
+							<!-- Image section ends -->=
+
+								<table widt=
+h=3D"700" cellspacing=3D"0" cellpadding=3D"54" border=3D"0">
+									<tb=
+ody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;font-siz=
+e: 11px;">
+									=
+	<td width=3D"700" align=3D"center" style=3D"margin-top: 0;margin-bottom: 0;=
+color: #000000;line-height: 1.36;">
+									=
+		<table id=3D"intro" class=3D"text" width=3D"500" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0">
+									=
+			<tbody><tr style=3D"font-family: Arial, Helvetica, Verdana,=
+ sans-serif;font-size: 11px;">
+									=
+				<td align=3D"center" width=3D"500" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;">
+									=
+										=
+								<h1 style=3D"margin=
+-top: 0;margin-bottom: 0;padding-bottom: 11px;font-family: Arial, Helvetica,=
+ Verdana, sans-serif;font-size: 46px;font-weight: bold;line-height: 46px;col=
+or: #000000;text-transform: uppercase;">
+									=
+						Hi Mehdi                           =
+           =20
+                                          				</h=
+1>
+                                          				=
+										=
+			</td>
+									=
+			</tr>
+									=
+			<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-s=
+erif;font-size: 11px;">
+									=
+				<td align=3D"center" width=3D"500" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;">
+									=
+					<p style=3D"margin-top: 0;margin-bottom: 0;=
+color: #000000;line-height: 1.36;padding-bottom: 4px;">
+									=
+					 =09
+	Thank you for shopping at H&amp;M.
+	We have received your order and will contact you when your parcel h=
+as been dispatched.
+    Below is your order information.
+   =20
+    		<br>
+					As a member of H&amp;M Club, your p=
+oints balance will be updated when your order is shipped.
+		=09
+
+
+
+									=
+					</p>
+									=
+					 					=
+								</td>
+									=
+			</tr>
+									=
+		</tbody></table>
+									=
+	</td>
+									</t=
+r>
+								</tbody></t=
+able>
+							</td>
+						</tr>
+					</tbody></table>
+					<table class=3D"headline-table" wid=
+th=3D"700" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-=
+top: 1px solid #c8c8c8;border-bottom: 1px solid #c8c8c8;background-color: #f=
+8f8f8;">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+							<td width=3D"30" st=
+yle=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;paddi=
+ng-top: 14px;padding-bottom: 12px;">&nbsp;</td>
+							<td width=3D"670" c=
+lass=3D"headline" align=3D"left" style=3D"margin-top: 0;margin-bottom: 0;col=
+or: #000000;line-height: 1;font-size: 16px;font-weight: bold;text-transform:=
+ uppercase;padding-top: 14px;padding-bottom: 12px;"> YOUR DETAILS</td>
+						</tr>
+					</tbody></table>
+					<table width=3D"700" cellspacing=3D=
+"0" cellpadding=3D"20" border=3D"0">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+							<td width=3D"660" a=
+lign=3D"left" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-he=
+ight: 1.36;">
+								<table widt=
+h=3D"660" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+									<tb=
+ody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;font-siz=
+e: 11px;">
+									=
+	<td width=3D"10" class=3D"user-data" valign=3D"top" style=3D"margin-top: 0;=
+margin-bottom: 0;color: #000000;line-height: 17px;">&nbsp;</td>
+									=
+	<td width=3D"320" class=3D"user-data" valign=3D"top" style=3D"margin-top: 0=
+;margin-bottom: 0;color: #000000;line-height: 17px;">
+									=
+		<strong style=3D"font-weight: bold;text-transform: uppercase;">ORDE=
+R NUMBER </strong>
+						                  	<br=
+>13125610250<br>
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">=20
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">ORDER DATE</stro=
+ng>
+						                  	<br=
+>27 August 2018<br>   =20
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">NAME</strong>
+						                  	<br=
+>Mehdi Doghri<br>
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">EMAIL</strong>
+						                  	<br=
+>
+						                  	<sp=
+an class=3D"username" style=3D"text-decoration: none !important;color: #000 !=
+important;"><a href=3D"mailto:mehdi.doghri@gmail.com">mehdi.doghri@gmail.com=
+</a></span>
+						                  	<br=
+>
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">PAYMENT METHOD</=
+strong>
+						                  	<br=
+>
+						                  	=
+						                  		=
+						                  		Pay=
+Pal
+						                  	=
+										=
+		                                          			=
+			               	</td>
+									=
+	<td width=3D"330" class=3D"user-data" valign=3D"top" style=3D"margin-top: 0=
+;margin-bottom: 0;color: #000000;line-height: 17px;">
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">HOME ADDRESS</st=
+rong>
+						                  	<br=
+>
+									=
+		Mehdi Doghri=20
+						                  	<br=
+>                                                                           =
+                                                                            =
+                                                              =20
+						                  	11A=
+ Lexham Mews<br>W8 6JW&nbsp;London<br>United Kingdom
+						                  	<br=
+>                                                                           =
+                                    =20
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">
+						                  	<st=
+rong style=3D"font-weight: bold;text-transform: uppercase;">DELIVERY METHOD<=
+/strong>
+						                  	<br=
+>
+						                  	Sta=
+ndard delivery
+						                  	=
+						                    		=
+										=
+										<br=
+>
+						                  	<br=
+ class=3D"user-data-separator" style=3D"line-height: 19px;">
+									=
+		<strong style=3D"font-weight: bold;text-transform: uppercase;"> =20=
+
+							                  =
+							                  	=
+		DELIVERY ADDRESS
+						                  	=
+										=
+		</strong>  =20
+						                  	<br=
+>
+						                  	Meh=
+di Doghri
+						                  	<br=
+>
+						                  	11A=
+ Lexham Mews<br>W8 6JW&nbsp;London<br>United Kingdom
+									=
+		<br>
+									=
+								               =
+										   =
+            	<br class=3D"user-data-separator" style=3D"line-height: 19p=
+x;">
+							               =
+		<strong style=3D"font-weight: bold;text-transform: uppercase;">Cont=
+act number</strong>
+							                  =
+	<br>
+							                  =
+	+44 7704746553
+							                  =
+	<br>
+						               	=
+										=
+		<br>
+						               </td>	=
+					               			=
+		             =20
+						       		</t=
+r>
+								</tbody></t=
+able>
+							</td>
+						</tr>
+					</tbody></table>
+				=09
+					<table class=3D"headline-table" wid=
+th=3D"700" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" style=3D"border-=
+top: 1px solid #c8c8c8;border-bottom: 1px solid #c8c8c8;background-color: #f=
+8f8f8;">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+							<td width=3D"30" st=
+yle=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;paddi=
+ng-top: 14px;padding-bottom: 12px;">&nbsp;</td>
+	                      	<td width=3D"320" valign=3D"top" class=3D"h=
+eadline" align=3D"left" style=3D"margin-top: 0;margin-bottom: 0;color: #0000=
+00;line-height: 1;font-size: 16px;font-weight: bold;text-transform: uppercas=
+e;padding-top: 14px;padding-bottom: 12px;">ORDER SUMMARY</td>
+	                      	<td width=3D"320" align=3D"left" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;padding-top: 1=
+4px;padding-bottom: 12px;font-weight: bold;">
+		                  		                          =
+	DELIVERY 2-3  days 	                        	                   =
+     <br>
+	                      </td>
+	                      <td width=3D"30" style=3D"margin-top: 0;margi=
+n-bottom: 0;color: #000000;line-height: 1.36;padding-top: 14px;padding-botto=
+m: 12px;">&nbsp;</td>
+	                   </tr>
+	                </tbody></table>
+	               =20
+	                <table class=3D"items-table" width=3D"700" cellspac=
+ing=3D"0" cellpadding=3D"7" border=3D"0" style=3D"text-align: right;">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 10px;">
+	                  		<th width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"width: 9px;border-bottom=
+: 1px solid #c8c8c8;padding-top: 12px;padding-bottom: 12px;text-align: left;=
+font-weight: bold;text-transform: uppercase;">&nbsp;</th>
+		              		<th align=3D"left" valign=3D"middle=
+" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-bottom=
+: 12px;text-align: left;font-weight: bold;text-transform: uppercase;">ART. N=
+O.</th>
+	                  		<th align=3D"left" valign=3D"middle=
+" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-bottom=
+: 12px;text-align: left;font-weight: bold;text-transform: uppercase;">DESC.<=
+/th>
+	                  		<th align=3D"left" valign=3D"middle=
+" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-bottom=
+: 12px;text-align: left;font-weight: bold;text-transform: uppercase;">SIZE</=
+th>
+	                  		<th align=3D"left" valign=3D"middle=
+" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-bottom=
+: 12px;text-align: left;font-weight: bold;text-transform: uppercase;">COLOUR=
+</th>
+	                  		<th align=3D"left" valign=3D"middle=
+" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-bottom=
+: 12px;text-align: left;font-weight: bold;text-transform: uppercase;">QTY.</=
+th>
+	                  		<th width=3D"65" align=3D"left" val=
+ign=3D"middle" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;p=
+adding-bottom: 12px;text-align: left;font-weight: bold;text-transform: upper=
+case;">PRICE</th>
+	                  		<th width=3D"65" align=3D"left" val=
+ign=3D"middle" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;p=
+adding-bottom: 12px;text-align: left;font-weight: bold;text-transform: upper=
+case;">DISCOUNT</th>
+					 			    	=
+				<th class=3D"item-price" align=3D"right" valign=3D"=
+middle" style=3D"border-bottom: 1px solid #c8c8c8;padding-top: 12px;padding-=
+bottom: 12px;text-align: right;font-weight: bold;text-transform: uppercase;"=
+>PRICE AFTER DISCOUNT</th>
+		              		<th width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"width: 9px;border-bottom=
+: 1px solid #c8c8c8;text-transform: uppercase;padding-top: 12px;padding-bott=
+om: 12px;text-align: left;font-weight: bold;">&nbsp;</th>
+		               </tr>
+	               =20
+	                						=
+		<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;fon=
+t-size: 10px;">
+								<td width=3D=
+"9" class=3D"item-table-padding" align=3D"left" valign=3D"middle" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;width: 9px;bo=
+rder-bottom: 1px solid #c8c8c8;">&nbsp;</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">0636587007005</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;"> T-shirt</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">XL</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">Dark blue</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">1</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">=C2=A33.99</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">
+									=
+										- =C2=
+=A30.59
+									=
+		                      	</td>
+		                     		                          =
+	<td class=3D"item-price" align=3D"right" valign=3D"middle" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;border-bottom: 1px s=
+olid #c8c8c8;text-align: right;">=C2=A33.40</td>
+	                          	<td width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"margin-top: 0;margin-bot=
+tom: 0;color: #000000;line-height: 1.36;width: 9px;border-bottom: 1px solid #=
+c8c8c8;">&nbsp;</td>
+	                    	</tr>
+	               						=
+			<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-s=
+erif;font-size: 10px;">
+								<td width=3D=
+"9" class=3D"item-table-padding" align=3D"left" valign=3D"middle" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;width: 9px;bo=
+rder-bottom: 1px solid #c8c8c8;">&nbsp;</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">0636587001005</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;"> T-shirt</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">XL</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">Black</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">1</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">=C2=A33.99</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">
+									=
+										- =C2=
+=A30.60
+									=
+		                      	</td>
+		                     		                          =
+	<td class=3D"item-price" align=3D"right" valign=3D"middle" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;border-bottom: 1px s=
+olid #c8c8c8;text-align: right;">=C2=A33.39</td>
+	                          	<td width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"margin-top: 0;margin-bot=
+tom: 0;color: #000000;line-height: 1.36;width: 9px;border-bottom: 1px solid #=
+c8c8c8;">&nbsp;</td>
+	                    	</tr>
+	               						=
+			<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-s=
+erif;font-size: 10px;">
+								<td width=3D=
+"9" class=3D"item-table-padding" align=3D"left" valign=3D"middle" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;width: 9px;bo=
+rder-bottom: 1px solid #c8c8c8;">&nbsp;</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">0636587012005</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;"> T-shirt</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">XL</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">Burgundy</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">1</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">=C2=A33.99</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">
+									=
+										- =C2=
+=A30.60
+									=
+		                      	</td>
+		                     		                          =
+	<td class=3D"item-price" align=3D"right" valign=3D"middle" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;border-bottom: 1px s=
+olid #c8c8c8;text-align: right;">=C2=A33.39</td>
+	                          	<td width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"margin-top: 0;margin-bot=
+tom: 0;color: #000000;line-height: 1.36;width: 9px;border-bottom: 1px solid #=
+c8c8c8;">&nbsp;</td>
+	                    	</tr>
+	               						=
+			<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-s=
+erif;font-size: 10px;">
+								<td width=3D=
+"9" class=3D"item-table-padding" align=3D"left" valign=3D"middle" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;width: 9px;bo=
+rder-bottom: 1px solid #c8c8c8;">&nbsp;</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">0636587008005</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;"> T-shirt</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">XL</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">Dark khaki green</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">1</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">=C2=A33.99</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">
+									=
+										- =C2=
+=A30.60
+									=
+		                      	</td>
+		                     		                          =
+	<td class=3D"item-price" align=3D"right" valign=3D"middle" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;border-bottom: 1px s=
+olid #c8c8c8;text-align: right;">=C2=A33.39</td>
+	                          	<td width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"margin-top: 0;margin-bot=
+tom: 0;color: #000000;line-height: 1.36;width: 9px;border-bottom: 1px solid #=
+c8c8c8;">&nbsp;</td>
+	                    	</tr>
+	               						=
+			<tr style=3D"font-family: Arial, Helvetica, Verdana, sans-s=
+erif;font-size: 10px;">
+								<td width=3D=
+"9" class=3D"item-table-padding" align=3D"left" valign=3D"middle" style=3D"m=
+argin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;width: 9px;bo=
+rder-bottom: 1px solid #c8c8c8;">&nbsp;</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">0545449032008</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;"> Hooded jacket</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">4-6Y</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">Dark blue</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">1</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">=C2=A38.99</td>
+	                      		<td align=3D"left" valign=3D"middle=
+" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;b=
+order-bottom: 1px solid #c8c8c8;">
+									=
+										- =C2=
+=A31.35
+									=
+		                      	</td>
+		                     		                          =
+	<td class=3D"item-price" align=3D"right" valign=3D"middle" style=3D"margin-=
+top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;border-bottom: 1px s=
+olid #c8c8c8;text-align: right;">=C2=A37.64</td>
+	                          	<td width=3D"9" class=3D"item-table=
+-padding" align=3D"left" valign=3D"middle" style=3D"margin-top: 0;margin-bot=
+tom: 0;color: #000000;line-height: 1.36;width: 9px;border-bottom: 1px solid #=
+c8c8c8;">&nbsp;</td>
+	                    	</tr>
+	               						=
+	</tbody></table>
+					<br class=3D"table-separator" style=
+=3D"line-height: 20px;">
+				=09
+					<table width=3D"700" cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+							<td width=3D"390" s=
+tyle=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 1.36;">&n=
+bsp;</td>
+							<td width=3D"285" a=
+lign=3D"left" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-he=
+ight: 1.36;">
+								<br><table c=
+lass=3D"total-table" width=3D"285" align=3D"right" cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" style=3D"text-transform: uppercase;">
+				    					=
+				   			=09
+					   			=09
+									<tb=
+ody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;font-siz=
+e: 11px;">
+									=
+	<td style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 16p=
+x;">PRODUCTS TOTAL:</td>
+									=
+	<td align=3D"right" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;=
+line-height: 16px;">=C2=A324.95</td>
+									</t=
+r>
+									=
+										=
+										=
+					=09
+									=
+										=
+									<tr style=3D=
+"font-family: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+					               		<td=
+ style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 16px;">=
+H&amp;M CLUB REWARDS:</td>
+						                    <td ali=
+gn=3D"right" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-hei=
+ght: 16px;">
+			                    			-=C2=A33.74=
+</td>
+									=
+	</tr>
+									=
+										=
+								<tr style=3D"font-f=
+amily: Arial, Helvetica, Verdana, sans-serif;font-size: 11px;">
+					               		<td=
+ style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 16px;ve=
+rtical-align: top;">
+					                    		=
+				                    		DELIVERY:=20
+					                    		=
+				                    </td>
+					                    <td align=3D"ri=
+ght" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line-height: 16p=
+x;vertical-align: top;">
+		                    					=
+										=
+	FREE
+									=
+										=
+		</td>
+									</t=
+r>
+									=
+								=09
+									=
+									<tr class=3D=
+"total" style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;font-siz=
+e: 11px;">
+									=
+	<td nowrap=3D"" style=3D"margin-top: 0;margin-bottom: 0;color: #000000;line=
+-height: 16px;border-top: 1px solid #c8c8c8;padding-top: 11px;font-weight: b=
+old;">
+									=
+										=
+				TOTAL
+									=
+										=
+		</td>
+									=
+	<td nowrap=3D"" align=3D"right" style=3D"margin-top: 0;margin-bottom: 0;col=
+or: #000000;line-height: 16px;border-top: 1px solid #c8c8c8;padding-top: 11p=
+x;font-weight: bold;">
+									=
+		=C2=A321.21
+									=
+										=
+		</td>
+									</t=
+r>
+									=
+				               	    			=
+		</tbody></table>
+				=09
+				</td>
+				<td width=3D"25">&nbsp;</td>
+			</tr>
+		</tbody></table>
+	=09
+		<br class=3D"table-separator" style=3D"line-height: 20px;">=
+
+	=09
+									=
+		<br class=3D"table-separator" style=3D"line-height: 40px;">
+						<table width=3D"700" cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0">
+							<tbody>
+								<tr>
+									<td=
+ width=3D"390" align=3D"center">
+									=
+	<table align=3D"center" width=3D"390" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0">
+									=
+		<tbody>
+									=
+										=
+				<!--
+									=
+			<tr>
+									=
+				<td width=3D"390" align=3D"center">
+									=
+					<strong style=3D"fontfamily: Arial, Helveti=
+ca, Verdana, sansserif; fontsize: 11px;">BARCODE FOR RETURN IN STORE</strong=
+>
+									=
+				</td>
+									=
+			</tr>
+									=
+			-->
+									=
+										=
+			<tr>
+									=
+		  								=
+				<td width=3D"390" align=3D"center">
+									=
+				<img src=3D"http://www2.hm.com/en_gb/medias/2018082=
+7087025610250?context=3DbWFzdGVyfGludGVybGVhdmVkYmFyY29kZXN8MTEyMHxpbWFnZS9w=
+bmd8aW50ZXJsZWF2ZWRiYXJjb2Rlcy9oM2MvaGRlLzI4MDk1MTU1Njk5NzQyLnBuZ3xiYjZjYTMw=
+NmFkYzNhYzMwNmVmZjcyMTk1YTJiYzQyOWNlZjFhZmJjYTQ0OTUwYmU4NDY0Y2ZkZmFlMmVlNzk2=
+">
+									=
+			</td>
+									=
+		  								=
+			</tr>
+									=
+		</tbody>
+									=
+	</table>
+									</t=
+d>
+								</tr>    =20=
+
+						   </tbody>
+						</table>
+									=
+		=09
+					<br class=3D"table-separator" style=
+=3D"line-height: 20px;">
+	=09
+									=
+						<!-- New Footer begins -->
+									=
+	<table id=3D"footer" width=3D"700" cellspacing=3D"0" cellpadding=3D"27" bor=
+der=3D"0" style=3D"border-top: 1px solid #c8c8c8;">
+						<tbody><tr style=3D"font-fa=
+mily: Arial, Helvetica, Verdana, sans-serif;font-size: 10px;">
+							<td width=3D"700" a=
+lign=3D"center" style=3D"padding-bottom: 0;margin-top: 0;margin-bottom: 0;co=
+lor: #000000;line-height: 1.36;">
+								<table clas=
+s=3D"text" width=3D"600" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+									<tb=
+ody><tr style=3D"font-family: Arial, Helvetica, Verdana, sans-serif;font-siz=
+e: 10px;">
+									=
+	<td align=3D"center" width=3D"600" style=3D"margin-top: 0;margin-bottom: 0;=
+color: #000000;line-height: 1.36;">
+									=
+										=
+			<p style=3D"margin-top: 0;margin-bottom: 0;color: #000000;l=
+ine-height: 1.36;padding-bottom: 21px;">
+									=
+			<br>
+Note that you cannot reply to this email. If you have further question you c=
+an always &nbsp;
+<a style=3D"color: #000000;" href=3D"http://www2.hm.com/en_gb/customer-servi=
+ce/contact.html">contact us</a>,&nbsp;
+	For more information on your orders, please log into&nbsp;
+	<a style=3D"color: #000000;" href=3D"http://www2.hm.com/en_gb//my-a=
+ccount">My H&amp;M</a>.
+You always have 28 days to decide whether the item is right for you. For inf=
+ormation on returns, please
+<a style=3D"color: #000000;" href=3D"http://www2.hm.com/en_gb/customer-servi=
+ce/returns.html">read our return and refund policy</a>.&nbsp;
+For more information, please read our&nbsp;
+<a style=3D"color: #000000;" href=3D"http://www2.hm.com/en_gb/customer-servi=
+ce/legal-and-privacy/privacy-link.html">Privacy policy</a>&nbsp;
+and <a style=3D"color: #000000;" href=3D"http://www2.hm.com/en_gb/customer-s=
+ervice/legal-and-privacy/terms-and-conditions.html">terms and conditions</a>=
+.
+<br>
+<br>
+Kind Regards, H&amp;M Customer Service<br>
+VAT number: GB243070692<br>
+Corporate identification number: 1413450<br>
+H&amp;M Hennes &amp; Mauritz UK Ltd.,&nbsp;1st Floor 25&nbsp;Argyll Street,&=
+nbsp;W1F 7TS,&nbsp;London,&nbsp;United Kingdom,&nbsp;0344 736 9000&nbsp;
+	(please check <a style=3D"color: #000000;" href=3D"http://www2.hm.c=
+om/en_gb/customer-service/contact.html">here</a> for information about call r=
+ates),&nbsp;
+<br>
+<a href=3D"mailto:customerservice.uk@hm.com">customerservice.uk@hm.com</a>
+<br>
+<br>
+Authorised and regulated by the Financial Conduct Authority.
+<br>
+
+
+
+
+									=
+		</p>
+									=
+	</td>
+									</t=
+r>
+								</tbody></t=
+able>
+							</td>
+						</tr>
+					</tbody></table>
+					=09
+									=
+										=
+										=
+						=09
+</td></tr></tbody></table></div></blockquote></body></html>=
+
+--Apple-Mail-08FA721B-2E23-4824-B376-24BB4F2839D6--

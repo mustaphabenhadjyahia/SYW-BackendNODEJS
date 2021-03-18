@@ -1,0 +1,2845 @@
+Delivered-To: syw.orders@gmail.com
+Received: by 2002:a9d:74cb:0:0:0:0:0 with SMTP id a11-v6csp1071518otl;
+        Fri, 31 Aug 2018 11:28:07 -0700 (PDT)
+X-Received: by 2002:a5d:4e0a:: with SMTP id p10-v6mr11592999wrt.48.1535740087558;
+        Fri, 31 Aug 2018 11:28:07 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1535740087; cv=none;
+        d=google.com; s=arc-20160816;
+        b=GqbVHpZITaaY0z5Ld4RfhPUKdOh4GUyLAQsffT6z7aKia3271yvBSayS0s8dQsWYiO
+         6bzqY0vPUOxXobmxVFpAxmVlEv1HLSvPdYUesNJZliH8VPKS1BkEeI3gN/796IZyLupt
+         i3QE9zGNxMw+2o/KiMtPZnDqHoTUwBoYNLQsfoI4BVxtv1gEQVRldgDLhz7Y75ZeUNE6
+         X0+K1LCCJETCu/wZg9U/mORvblfZd1aWD8K054rBZo6ydTcTjvuYutJKUOcTW1Alklt4
+         Uw2kRl9VztHJ1PN1LSnUHEJ/FMDNJ6aBfG3eXR0LoBLpUOMWN1Ct4RqTeufy2NXNtEoU
+         bK6w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:references:message-id:subject:date:mime-version
+         :content-transfer-encoding:from:dkim-signature;
+        bh=k60+vSSYG7ueD7kkZxFxyfhSuh6Z2h+UQSQKsbpoFW4=;
+        b=vfPSumZMjxJ57S3YvAKdezaTF37Qsq3Z4tY+/HKrpbjsgTu24pi4Hvz3EqwrcB7txl
+         MVRnYc2rDrw4C2Rq9QuEqMWwO6aUK3OJxuuz3cqKeZK5z2mVV+1ugtOi7g/8jp8wl9wy
+         L/S0cde8NjehdiJxcXqdo7bUFTt5lxOrwVzk4pIvmhIOydX6qTq9elMoE07yeElZUFf6
+         MJLe/Pf5qZwCnolGWMJiyZreEV1N2CorOWmDbc/1BOVGyE4XexU2xRKGCYee1pfKsTbN
+         uWBlnD42rZ1ShjsOOA+S0PLKi9M5taIdO8nchiT/sK7LupC8Ob69qVzoWfRH3Jsi0HB7
+         p7Vw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=onLsQNS1;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id o133-v6sor3037565wmg.8.2018.08.31.11.28.06
+        for <syw.orders@gmail.com>
+        (Google Transport Security);
+        Fri, 31 Aug 2018 11:28:07 -0700 (PDT)
+Received-SPF: pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=onLsQNS1;
+       spf=pass (google.com: domain of mehdi.doghri@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=mehdi.doghri@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=from:content-transfer-encoding:mime-version:date:subject:message-id
+         :references:to;
+        bh=k60+vSSYG7ueD7kkZxFxyfhSuh6Z2h+UQSQKsbpoFW4=;
+        b=onLsQNS1o6BTL25NmcLaKOHv0hBErVL42xuqqfP+qXhpJWLLwK2Jh5iconP9/vN0AT
+         bkDFHeZaVoSALNjOa0Kt5Bn9noDJEDCvQxpLxYdAiWUjR4KvSQugUV5NMsLAktGcq/LM
+         usmQ7znLKTy62FtISmexcrRTe4cRqjBSdMuqNaAyR7Voym7fggj7qst39kJORz2ZlHzY
+         Acec+1VNioME8oX8vgS3Cto3oYjGdBVmPFB/+eP1nHLxwd3W8WPsB7TGpr4mWKIjRV9X
+         dn7373UyF6+fjj+pUs0CWK0lYpqVXmigglIOdQ95MaJIzqfVYKtHEjvSmU8ugootNinG
+         92sA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:content-transfer-encoding:mime-version:date
+         :subject:message-id:references:to;
+        bh=k60+vSSYG7ueD7kkZxFxyfhSuh6Z2h+UQSQKsbpoFW4=;
+        b=kM/+xjC246NyjnXeQ0iVe7NEsUK4ymmNC8BokG3ocbkae/RVGrf3UKozZq/G1UkIQJ
+         STNmvP2Fzpk8C4MRiZYk+DA72sTviXI6ikyDwCeFuq1b7MVTnjqydx0rdKEPhYrwjwHa
+         W2xsmpTZUmoIDrAwoxW2xZgWekKGwLDvKZuPDfMMKuuowP8YGWkLpiEpFSxlT6ahF3N5
+         1N7C4FzkBoy9PIPtyczcJXX5NTot9E/nnkbwfJNebgCDFmudghi5HBKw6AH9RMm4t566
+         gdgryXNFkNYz+lO06GxHUcHEpjn3BcKCPrKPcd9Nye/3BgMoZzUf6WK84wfkTYppOiUP
+         EZnw==
+X-Gm-Message-State: APzg51A6Oer6wackNZkw/R19D5x7sPdJKS5q1MLB11+LWeOnnZ1AR/xu
+	aq4h5NsuRv3/OkabL22UK4Oiv/G7
+X-Google-Smtp-Source: ANB0VdYMCvjPasutdkyjl1Z+kbSpL/hGsedBg65SEXzqi2NVbXRza+8HLH9v6kyMqpzHbnv4L5vGgA==
+X-Received: by 2002:a1c:5d55:: with SMTP id r82-v6mr5389710wmb.152.1535740086340;
+        Fri, 31 Aug 2018 11:28:06 -0700 (PDT)
+Return-Path: <mehdi.doghri@gmail.com>
+Received: from [192.168.0.5] (cpc131788-brnt3-2-0-cust126.know.cable.virginm.net. [82.22.52.127])
+        by smtp.gmail.com with ESMTPSA id c10-v6sm23781880wrb.17.2018.08.31.11.28.01
+        for <syw.orders@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 31 Aug 2018 11:28:05 -0700 (PDT)
+From: Mehdi Doghri <mehdi.doghri@gmail.com>
+Content-Type: multipart/alternative;
+	boundary=Apple-Mail-14DC2F13-BD6F-4927-8544-5E7ED8F2E035
+Content-Transfer-Encoding: 7bit
+Mime-Version: 1.0 (1.0)
+Date: Fri, 31 Aug 2018 19:28:00 +0100
+Subject: Fwd: Thank you for placing your order. Here's what you can expect next
+Message-Id: <138B77C1-1068-49EA-A2EC-FB400798B7A5@gmail.com>
+References: <0.1.4.1.1D441577C2674B6.0@omptrans.email.farfetch.com>
+To: syw.orders@gmail.com
+X-Mailer: iPhone Mail (16A5366a)
+
+
+--Apple-Mail-14DC2F13-BD6F-4927-8544-5E7ED8F2E035
+Content-Type: text/plain;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+
+Mehdi
+
+Begin forwarded message:
+
+> From: Farfetch <farfetch@email.farfetch.com>
+> Date: 31 August 2018 at 19:21:50 BST
+> To: mehdi.doghri@gmail.com
+> Subject: Thank you for placing your order. Here's what you can expect next=
+
+> Reply-To: Farfetch <farfetch@support.farfetch.com>
+>=20
+>=20
+> =20
+> YOU=E2=80=99VE MADE A GREAT CHOICE
+> Order no: 79NBTZ
+> View Account
+> PLACED
+> IN PROGRESS
+> SHIPPED
+> =09
+> Dear Mehdi Doghri,
+> Thanks for shopping with us =E2=80=93 your Farfetch order will be with you=
+ soon.
+>=20
+> Shopped pieces from multiple locations?
+> We=E2=80=99ll confirm when each item is carefully packaged and sent on its=
+ way to you.
+>=20
+> All the details you need are below. We hope you love your new find.
+>=20
+> FARFETCH
+> Your delivery information
+> 11A Lexham Mews=20
+> London=20
+> London=20
+> W8 6JW=20
+> United Kingdom=20
+> Your order summary
+> =20
+> Shipping from Vivetta
+> VIVETTA
+> Silhouette Embroidered Sweatshirt
+> =C2=A3215.24
+> Shipping
+> Total
+> Payment method
+> =C2=A310.00
+> =C2=A3225.24
+> PAYPALEXP
+> WHAT HAPPENS NEXT?
+>=20
+> NOT LONG TO WAIT
+> Your order has been placed and can take up to 48 hours to confirm
+>=20
+> WRAPPED JUST FOR YOU
+> It=E2=80=99s then carefully packaged with a personal touch
+>=20
+> IT=E2=80=99S ON ITS WAY!
+> You=E2=80=99ll receive dispatch confirmation and an estimated arrival date=
+
+>=20
+> CHANGED YOUR MIND?
+> Rest assured, we offer free returns within 14 days             =09
+> NEED FURTHER HELP?
+> Contact our friendly Customer Service team =E2=80=93 remember we=E2=80=99l=
+l need your order number.
+>    Email
+> Click here to send
+> us an email
+>    Phone
+> US +1 (213) 375-0858
+> AU and NZ +61871001758
+> UK and rest of world
+> +44 (0) 20 3750 1250
+>    FAQ
+> Find the answers you
+> need in our FAQs
+> Shop women                                 	Shop men                   =
+              	Shop kids                                 	Shop new in=
+ today                                =20
+> FARFETCH DISCOVER APP
+>=20
+> Our shopping app for iOS and Android
+> FOLLOW US
+>  	 	 	 	=20
+> My Account                 	Help & Contact Us                =20
+> Farfetch UK Limited, The Bower, 211 Old Street, London, EC1V 9NR
+> UK company number 06400760
+> Please note this is our registered office and returns cannot be accepted h=
+ere.
+> =C2=A9 2016 Farfetch UK Limited
+
+--Apple-Mail-14DC2F13-BD6F-4927-8544-5E7ED8F2E035
+Content-Type: text/html;
+	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
+utf-8"></head><body dir=3D"auto"><br><br><div id=3D"AppleMailSignature" dir=3D=
+"ltr">Mehdi</div><div dir=3D"ltr"><br>Begin forwarded message:<br><br></div>=
+<blockquote type=3D"cite"><div dir=3D"ltr"><b>From:</b> Farfetch &lt;<a href=
+=3D"mailto:farfetch@email.farfetch.com">farfetch@email.farfetch.com</a>&gt;<=
+br><b>Date:</b> 31 August 2018 at 19:21:50 BST<br><b>To:</b> <a href=3D"mail=
+to:mehdi.doghri@gmail.com">mehdi.doghri@gmail.com</a><br><b>Subject:</b> <b>=
+Thank you for placing your order. Here's what you can expect next</b><br><b>=
+Reply-To:</b> Farfetch &lt;<a href=3D"mailto:farfetch@support.farfetch.com">=
+farfetch@support.farfetch.com</a>&gt;<br><br></div></blockquote><blockquote t=
+ype=3D"cite"><div dir=3D"ltr">
+   <title>Untitled</title>
+ =20
+  <table cellpadding=3D"0" cellspacing=3D"0" style=3D"border: 0px; padding: 0=
+px; margin: 0px; position: absolute; display: none; float: left">
+<tbody><tr>
+<td height=3D"1" style=3D"font-size: 1px; line-height: 1px; padding: 0px;">
+<img src=3D"https://email.farfetch.com/pub/as?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQG=
+seo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXHkMX%3Dw&amp;_ei_=3D=
+EolaGGF4SNMvxFF7KucKuWNLKRDj7groXDIQe6lGxSr1RnVEPRTlQwxcdvnx2cA3I7hZL_j3u9zG=
+nmGljzD6IezfIJTpOrrXjfC76bLvPU7g61jwjRuzhjbAzUERG_0A5YxrGqSD2VCf_Dic1Yu06WAp=
+HN4-TPx6e5jRUz1gvvlrkvv4Hsozcxqr.">
+<!--Start BK pixel--><img src=3D"https://tags.bluekai.com/site/64751?e_id_s6=
+4751=3D10e642b579254a1240dec42439cad391d5c01509ecae0ce08bc4307d1b927447&amp;=
+e_id_m64751=3D92e56d6b4e7b0a87c2000911cd206051" height=3D"1" width=3D"1"><br=
+><br><!--End BK pixel-->
+<img border=3D"0" width=3D"1" height=3D"1" src=3D"https://ib.adnxs.com/getui=
+d?https://a.adrsp.net/dsp/ci/2/E36dyIQFo2Cgc9cuy82ihgbtEi3ZBTezn-C-77AcdHVUU=
+7oSvpMerykFLpkURMwvvQVSm_qUD0uowVlq54IzxY4HAm3B0GIsVw16SwUE-mMbmbhiWn_iRrhSl=
+QggBxs0HI4SEKBcSMWyJaAF06wSpGi9E-s3BFZxjaY3-OZ8kcM/%24UID">
+</td>
+</tr>
+</tbody></table>
+
+=20
+
+   =20
+        <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dut=
+f-8">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">=20
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">=20
+        <meta name=3D"format-detection" content=3D"telephone=3Dno">
+        <meta name=3D"format-detection" content=3D"date=3Dno">
+        <meta name=3D"format-detection" content=3D"address=3Dno">
+        <meta name=3D"format-detection" content=3D"email=3Dno">
+
+        <title>Farfetch UK</title>
+        <!--[if gte mso 12]>
+        <style type=3D"text/css">
+            body, table.MsoNormalTable, th, td, span, p, h1, h2, h3, h4, h5,=
+ a  {
+             font-family: Helvetica, Arial, sans-serif!important;
+            }
+            .mso-no-img {display: none !important;visibility: hidden !import=
+ant;mso-hide: all !important;width:0 !important;height:0 !important;overflow=
+: hidden !important;max-height: 0 !important;font-size: 0 !important;line-he=
+ight: 0 !important;}
+            </style> =20
+        <![endif]-->
+       =20
+   =20
+   =20
+        <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" height=3D"10=
+0%" width=3D"100%" class=3D"body" style=3D"mso-table-rspace: 0pt; border-spa=
+cing: 0; padding: 0; vertical-align: top; mso-table-lspace: 0pt; height: 100=
+%; text-align: left; background: #ffffff; font-weight: normal; width: 100%; c=
+olor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; li=
+ne-height: 20px; font-size: 13px; Margin: 0; border-collapse: collapse;" val=
+ign=3D"top" align=3D"left">
+            <tbody><tr style=3D"padding: 0; vertical-align: top; text-align:=
+ left;" valign=3D"top" align=3D"left">
+                <td class=3D"float-center" align=3D"center" valign=3D"top" s=
+tyle=3D"mso-table-lspace: 0pt; font-weight: normal; padding: 0; vertical-ali=
+gn: top; font-size: 13px; line-height: 20px; mso-table-rspace: 0pt; font-fam=
+ily: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; float: no=
+ne; margin: 0 auto; text-align: center; Margin: 0 auto;">
+                    <center data-parsed=3D"" style=3D"width: 100%; min-width=
+: 640px;">
+                       =20
+   =20
+	<table bgcolor=3D"#f8f8f8" align=3D"inherit" class=3D"container ala=
+baster-bg float-center" style=3D"mso-table-lspace: 0pt; border-spacing: 0; b=
+order-collapse: collapse; padding: 0; vertical-align: top; mso-table-rspace:=
+ 0pt; background-color: #f8f8f8; margin: 0 auto; Margin: 0 auto; float: none=
+; width: 640px; text-align: inherit;" width=3D"640" valign=3D"top"><tbody><t=
+r style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top=
+" align=3D"left"><td style=3D"color: #222222; mso-table-lspace: 0pt; padding=
+: 0; vertical-align: top; text-align: left; mso-table-rspace: 0pt; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-si=
+ze: 13px; Margin: 0; font-weight: normal;" valign=3D"top" align=3D"left">
+       =20
+		<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-alig=
+n: top; text-align: left; padding: 0; width: 100%; position: relative; displ=
+ay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left">
+	<th class=3D"pt30 pb20 text-center small-12 large-12 columns first l=
+ast" style=3D"font-weight: normal; font-size: 13px; line-height: 20px; font-=
+family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; paddin=
+g-bottom: 20px; padding-top: 30px; width: 624px; Margin: 0 auto; margin: 0 a=
+uto; text-align: center; padding-left: 16px; padding-right: 16px;" align=3D"=
+center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border=
+-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; tex=
+t-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><t=
+body><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=
+=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-B=
+ook', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; fon=
+t-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+		<center data-parsed=3D"" style=3D"width: 100%; min-width: 5=
+92px;">
+			<a href=3D"https://email.farfetch.com/pub/cc?_ri_=3D=
+X0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnv=
+rJVXtpKX%3DYABWWAY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkU=
+K0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKX=
+wNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." a=
+lign=3D"center" class=3D"float-center" style=3D"color: #222222; text-decorat=
+ion: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; font-s=
+ize: 13px; line-height: 20px; text-align: left; Margin: 0; font-weight: norm=
+al;">
+		  		<img src=3D"http://static.cdn.responsys.net=
+/i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/resource=
+s/images/logotipo.png" width=3D"130" height=3D"17" class=3D"float-center" al=
+t=3D"farfetch logo" style=3D"display: block; outline: none; -ms-interpolatio=
+n-mode: bicubic; width: auto; max-width: 100%; clear: both; text-decoration:=
+ none; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: c=
+enter;">
+		  	</a>
+		</center>
+	</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+
+       =20
+	 	<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-alig=
+n: top; text-align: left; padding: 0; width: 100%; position: relative; displ=
+ay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left">
+        	<th class=3D"pb10 pt10 small-12 large-12 columns first last=
+" style=3D"font-weight: normal; font-size: 13px; text-align: left; line-heig=
+ht: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #=
+222222; padding-top: 10px; padding-bottom: 10px; Margin: 0 auto; margin: 0 a=
+uto; width: 624px; padding-right: 16px; padding-left: 16px;" align=3D"left">=
+<table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing=
+: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align:=
+ left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top"=
+ align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', He=
+lvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 1=
+3px; Margin: 0; font-weight: normal;" align=3D"left">
+				<h1 class=3D"text-center uppercase" style=3D=
+"color: #222222; font-family: 'PolarisCondensed-Bold', 'Arial Narrow', sans-=
+serif; line-height: 35px; font-size: 24px; Margin: 0; font-weight: bold; let=
+ter-spacing: 2px; text-transform: uppercase; text-align: center;">
+		 			YOU=E2=80=99VE MADE A GREAT CHOICE=20=
+
+		 		</h1>
+		 	</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+		</tr></tbody></table>
+       =20
+		<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-alig=
+n: top; text-align: left; padding: 0; width: 100%; position: relative; displ=
+ay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left">
+	<th class=3D"pt5 pb5 small-12 large-12 columns first last" style=3D=
+"font-weight: normal; font-size: 13px; text-align: left; line-height: 20px; f=
+ont-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; pa=
+dding-top: 5px; padding-bottom: 5px; Margin: 0 auto; margin: 0 auto; width: 6=
+24px; padding-right: 16px; padding-left: 16px;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+  		<p class=3D"text-center" style=3D"color: #222222; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-si=
+ze: 13px; Margin: 0; font-weight: normal; text-align: center;">
+	      	Order no:  79NBTZ
+	    </p>
+	</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; width: 100%; position: relative; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+	<th class=3D"pb20 small-12 large-12 columns first last" style=3D"co=
+lor: #222222; font-weight: normal; font-size: 13px; text-align: left; line-h=
+eight: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; padd=
+ing-bottom: 20px; margin: 0 auto; width: 624px; Margin: 0 auto; padding-righ=
+t: 16px; padding-left: 16px;" align=3D"left"><table style=3D"mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse;=
+ padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"1=
+00%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-=
+align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"co=
+lor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; lin=
+e-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: n=
+ormal;" align=3D"left">
+		<p class=3D"text-center" style=3D"color: #222222; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-si=
+ze: 13px; Margin: 0; font-weight: normal; text-align: center;">
+	    	<a class=3D"my-account" href=3D"https://email.farfetch.com/=
+pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJ=
+MTfWbzbzgUzfnvrJVXtpKX%3DYABWWCY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRI=
+FyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzf=
+bzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbk=
+E0m5gZRk7x8." style=3D"font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-=
+weight: normal; color: #222222; text-decoration: underline;">View Account</a=
+>
+	    </p>
+	</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+         =20
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; width: 100%; position: relative; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"no-gutter pb10 vertical-bottom pt20 small-4 large-4 columns=
+ first" style=3D"font-weight: normal; font-size: 13px; text-align: left; lin=
+e-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; c=
+olor: #222222; vertical-align: bottom; padding-top: 20px; padding-bottom: 10=
+px; width: 197.33333px; padding-right: 0; padding-left: 0; Margin: 0 auto; m=
+argin: 0 auto;" valign=3D"bottom" align=3D"left"><table style=3D"mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: colla=
+pse; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+         =20
+                <p class=3D"progress-bar-selected bold text-right small-text=
+-center " style=3D"Margin: 0; color: #000001; font-family: 'PolarisCondensed=
+-Bold', 'Arial Narrow', sans-serif; line-height: 18px; font-size: 12px; font=
+-weight: bold; text-transform: uppercase; letter-spacing: 2px; text-align: r=
+ight;">
+                    Placed
+                </p>
+           =20
+    </th></tr></tbody></table></th>
+    <th class=3D"no-gutter pb10 vertical-bottom pt20 small-4 large-4 columns=
+" style=3D"font-weight: normal; font-size: 13px; text-align: left; line-heig=
+ht: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #=
+222222; vertical-align: bottom; padding-top: 20px; padding-bottom: 10px; wid=
+th: 197.33333px; padding-right: 0; padding-left: 0; Margin: 0 auto; margin: 0=
+ auto;" valign=3D"bottom" align=3D"left"><table style=3D"mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; pad=
+ding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100%"=
+ valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-alig=
+n: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"color:=
+ #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-he=
+ight: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: norma=
+l;" align=3D"left">
+         =20
+                <p class=3D"progress-bar-disable bold text-center" style=3D"=
+Margin: 0; color: #cccccc; font-family: 'PolarisCondensed-Bold', 'Arial Narr=
+ow', sans-serif; line-height: 18px; font-size: 12px; font-weight: bold; text=
+-transform: uppercase; letter-spacing: 2px; text-align: center;">
+                    In Progress
+                </p>
+           =20
+    </th></tr></tbody></table></th>
+    <th class=3D"no-gutter pb10 vertical-bottom pt20 small-4 large-4 columns=
+ last" style=3D"font-weight: normal; font-size: 13px; text-align: left; line=
+-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; co=
+lor: #222222; vertical-align: bottom; padding-top: 20px; padding-bottom: 10p=
+x; width: 197.33333px; padding-right: 0; padding-left: 0; Margin: 0 auto; ma=
+rgin: 0 auto;" valign=3D"bottom" align=3D"left"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+         =20
+                <p class=3D"progress-bar-disable bold text-left small-text-c=
+enter" style=3D"Margin: 0; color: #cccccc; font-family: 'PolarisCondensed-Bo=
+ld', 'Arial Narrow', sans-serif; line-height: 18px; font-size: 12px; font-we=
+ight: bold; text-transform: uppercase; letter-spacing: 2px; text-align: left=
+;">
+                    Shipped
+                </p>
+           =20
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; width: 100%; position: relative; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"no-gutter show-for-large text-center white-bg img-no-pad sm=
+all-12 large-12 columns first last" bgcolor=3D"#ffffff" style=3D"font-weight=
+: normal; font-size: 13px; line-height: 20px; font-family: 'Polaris-Book', H=
+elvetica, Arial, sans-serif; color: #222222; padding: 0; background-color: #=
+ffffff; text-align: center; width: 624px; padding-right: 0; padding-left: 0;=
+ Margin: 0 auto; margin: 0 auto;" align=3D"center"><table style=3D"mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: col=
+lapse; padding: 0; vertical-align: top; text-align: left; width: 100%;" widt=
+h=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; ver=
+tical-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=
+=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-wei=
+ght: normal; padding: 0;" align=3D"left">
+       =20
+                <img src=3D"http://static.cdn.responsys.net/i5/responsysimag=
+es/farfetch/contentlibrary/ff_transactional_emails/resources/images/pbar_pla=
+ced_dtp.png" width=3D"640" alt=3D"placed step image" border=3D"0" =3D""=3D""=
+ style=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicu=
+bic; width: auto; max-width: 100%; clear: both; display: block; border: 0;">=
+
+           =20
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; width: 100%; position: relative; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"no-gutter hide-for-large text-center white-bg img-no-pad sm=
+all-12 large-12 columns first last" bgcolor=3D"#ffffff" style=3D"color: #222=
+222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; font-weight:=
+ normal; line-height: 0; mso-hide: all; visibility: hidden; display: none; p=
+adding: 0; max-height: 0; background-color: #ffffff; font-size: 0; overflow:=
+ hidden; width: 624px; text-align: center; padding-right: 0; padding-left: 0=
+; Margin: 0 auto; margin: 0 auto;" align=3D"center"><table style=3D"mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: co=
+llapse; padding: 0; vertical-align: top; text-align: left; width: 100%; mso-=
+hide: all;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left; mso-hide: all;" valign=3D=
+"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book=
+', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-s=
+ize: 13px; Margin: 0; font-weight: normal; mso-hide: all; padding: 0;" align=
+=3D"left">
+       =20
+                <img src=3D"http://static.cdn.responsys.net/i5/responsysimag=
+es/farfetch/contentlibrary/ff_transactional_emails/resources/images/pbar_pla=
+ced_mob.png" alt=3D"in progress steps image" class=3D"float-center" border=3D=
+"0" =3D""=3D"" style=3D"display: block; outline: none; -ms-interpolation-mod=
+e: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: none=
+; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: center=
+; mso-hide: all;">
+           =20
+    </th>
+<th class=3D"expander" style=3D"line-height: 20px; font-weight: normal; colo=
+r: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margi=
+n: 0; text-align: left; font-size: 13px; mso-hide: all; width: 0; visibility=
+: hidden; padding: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+           =20
+           =20
+           =20
+           =20
+
+           =20
+    </td></tr></tbody></table>
+   =20
+
+   =20
+    <table bgcolor=3D"#ffffff" align=3D"inherit" class=3D"container small-co=
+ntainer white-bg float-center" style=3D"mso-table-lspace: 0pt; border-spacin=
+g: 0; border-collapse: collapse; padding: 0; vertical-align: top; mso-table-=
+rspace: 0pt; background-color: #ffffff; margin: 0 auto; Margin: 0 auto; floa=
+t: none; text-align: inherit; width: 544px; padding-left: 64px; padding-righ=
+t: 64px;" width=3D"544" valign=3D"top"><tbody><tr style=3D"padding: 0; verti=
+cal-align: top; text-align: left;" valign=3D"top" align=3D"left"><td style=3D=
+"color: #222222; mso-table-lspace: 0pt; padding: 0; vertical-align: top; tex=
+t-align: left; mso-table-rspace: 0pt; font-family: 'Polaris-Book', Helvetica=
+, Arial, sans-serif; line-height: 20px; font-size: 13px; Margin: 0; font-wei=
+ght: normal;" valign=3D"top" align=3D"left">
+		<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-alig=
+n: top; text-align: left; padding: 0; width: 100%; position: relative; displ=
+ay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left">
+			<th class=3D"small-12 large-12 columns first last" s=
+tyle=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: le=
+ft; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; Margin: 0 auto; width: 624px; margin: 0 auto; padding-right: 16px; pad=
+ding-left: 16px;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D=
+"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; te=
+xt-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; f=
+ont-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px;=
+ text-align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D=
+"left">
+				<table class=3D"row" style=3D"mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collaps=
+e; vertical-align: top; text-align: left; padding: 0; position: relative; wi=
+dth: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tb=
+ody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+    <th class=3D"pt40 small-12 large-12 columns first last" style=3D"color: #=
+222222; font-weight: normal; font-size: 13px; text-align: left; line-height:=
+ 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; padding-to=
+p: 40px; margin: 0 auto; Margin: 0 auto; width: 100%; padding-right: 0; padd=
+ing-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; ver=
+tical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"t=
+op" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text=
+-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; t=
+ext-align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"=
+left">
+        <p style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; line-height: 20px; text-align: left; font-size: 13px; Marg=
+in: 0; font-weight: normal;">Dear Mehdi Doghri,</p>
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+				<table class=3D"row" style=3D"mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collaps=
+e; vertical-align: top; text-align: left; padding: 0; position: relative; wi=
+dth: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tb=
+ody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+					<th class=3D"pb10 pt20 small-12 lar=
+ge-12 columns first last" style=3D"font-weight: normal; font-size: 13px; tex=
+t-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Ar=
+ial, sans-serif; color: #222222; padding-top: 20px; padding-bottom: 10px; Ma=
+rgin: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left: 0=
+;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align=
+: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D=
+"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left=
+;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: '=
+Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: l=
+eft; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                        <p style=3D"color: #222222; font-family: 'Polaris-Bo=
+ok', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font=
+-size: 13px; Margin: 0; font-weight: normal;">Thanks for shopping with us =E2=
+=80=93 your Farfetch order will be with you soon.<br><br><span class=3D"bold=
+" style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sa=
+ns-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; f=
+ont-weight: bold;">Shopped pieces from multiple locations?</span><br>We=E2=80=
+=99ll confirm when each item is carefully packaged and sent on its way to yo=
+u.<br><br> All the details you need are below. We hope you love your new fin=
+d.<br></p>
+                        <br>
+                        <p style=3D"color: #222222; font-family: 'Polaris-Bo=
+ok', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font=
+-size: 13px; Margin: 0; font-weight: normal;">FARFETCH</p>
+					</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+				</tr></tbody></table>
+			</th></tr></tbody></table></th>
+		</tr></tbody></table>
+    </td></tr></tbody></table>
+
+   =20
+	<table bgcolor=3D"#ffffff" align=3D"inherit" class=3D"container sma=
+ll-container white-bg float-center" style=3D"mso-table-lspace: 0pt; border-s=
+pacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; mso-t=
+able-rspace: 0pt; background-color: #ffffff; margin: 0 auto; Margin: 0 auto;=
+ float: none; text-align: inherit; width: 544px; padding-left: 64px; padding=
+-right: 64px;" width=3D"544" valign=3D"top"><tbody><tr style=3D"padding: 0; v=
+ertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><td sty=
+le=3D"color: #222222; mso-table-lspace: 0pt; padding: 0; vertical-align: top=
+; text-align: left; mso-table-rspace: 0pt; font-family: 'Polaris-Book', Helv=
+etica, Arial, sans-serif; line-height: 20px; font-size: 13px; Margin: 0; fon=
+t-weight: normal;" valign=3D"top" align=3D"left">
+	<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; width: 100%; position: relative; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+		<th class=3D"pt30 pb35 small-12 large-12 columns first last=
+" style=3D"font-weight: normal; font-size: 13px; text-align: left; line-heig=
+ht: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #=
+222222; padding-top: 30px; padding-bottom: 35px; Margin: 0 auto; margin: 0 a=
+uto; width: 624px; padding-right: 16px; padding-left: 16px;" align=3D"left">=
+<table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing=
+: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align:=
+ left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top"=
+ align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', He=
+lvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 1=
+3px; Margin: 0; font-weight: normal;" align=3D"left">
+			<h3 class=3D"text-left" style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; f=
+ont-size: 16px; Margin: 0; font-weight: normal; text-align: left;">
+			=09
+            Your delivery information
+       =20
+			</h3>
+		</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+	</tr></tbody></table>
+</td></tr></tbody></table>
+
+<table bgcolor=3D"#f8f8f8" align=3D"inherit" class=3D"container alabaster-bg=
+ float-center" style=3D"mso-table-lspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; mso-table-rspace: 0pt; bac=
+kground-color: #f8f8f8; margin: 0 auto; Margin: 0 auto; float: none; width: 6=
+40px; text-align: inherit;" width=3D"640" valign=3D"top"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left"><td style=3D"color: #222222; mso-table-lspace: 0pt; padding: 0; verti=
+cal-align: top; text-align: left; mso-table-rspace: 0pt; font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; M=
+argin: 0; font-weight: normal;" valign=3D"top" align=3D"left">
+	<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; width: 100%; position: relative; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+		<th class=3D"small-container alabaster-bg pb40 pt35 small-1=
+2 large-12 columns first last" bgcolor=3D"#f8f8f8" style=3D"font-weight: nor=
+mal; font-size: 13px; text-align: left; line-height: 20px; font-family: 'Pol=
+aris-Book', Helvetica, Arial, sans-serif; color: #222222; background-color: #=
+f8f8f8; padding-top: 35px; padding-bottom: 40px; Margin: 0 auto; margin: 0 a=
+uto; padding-right: 64px; padding-left: 64px; width: 544px;" align=3D"left">=
+<table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing=
+: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align:=
+ left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top"=
+ align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', He=
+lvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 1=
+3px; Margin: 0; font-weight: normal;" align=3D"left">
+			<table class=3D"row" style=3D"mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; verti=
+cal-align: top; text-align: left; padding: 0; position: relative; width: 100=
+%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr s=
+tyle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left">
+				<th class=3D"pb20-xs small-12 large-6 colum=
+ns first" style=3D"color: #222222; font-weight: normal; font-size: 13px; tex=
+t-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Ar=
+ial, sans-serif; Margin: 0 auto; margin: 0 auto; width: 50%; padding-right: 0=
+; padding-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0=
+; vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=
+=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top;=
+ text-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #22222=
+2; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 2=
+0px; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;" ali=
+gn=3D"left">
+					<p style=3D"color: #222222; font-fa=
+mily: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-=
+align: left; font-size: 13px; Margin: 0; font-weight: normal;">11A Lexham Me=
+ws
+<br>London
+<br>London
+<br>W8 6JW
+<br>United Kingdom
+<br></p>
+				</th></tr></tbody></table></th>
+					<th class=3D"small-12 large-6 colum=
+ns last" style=3D"color: #222222; font-weight: normal; font-size: 13px; text=
+-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Ari=
+al, sans-serif; Margin: 0 auto; margin: 0 auto; width: 50%; padding-right: 0=
+; padding-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0=
+; vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=
+=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top;=
+ text-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #22222=
+2; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 2=
+0px; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;" ali=
+gn=3D"left">
+						<p style=3D"color: #222222;=
+ font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20p=
+x; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;"></p>
+					</th></tr></tbody></table></th>
+			</tr></tbody></table>
+		</th></tr></tbody></table></th>
+	</tr></tbody></table>
+</td></tr></tbody></table>
+       =20
+
+    <table bgcolor=3D"#ffffff" align=3D"inherit" class=3D"container small-co=
+ntainer white-bg float-center" style=3D"mso-table-lspace: 0pt; border-spacin=
+g: 0; border-collapse: collapse; padding: 0; vertical-align: top; mso-table-=
+rspace: 0pt; background-color: #ffffff; margin: 0 auto; Margin: 0 auto; floa=
+t: none; text-align: inherit; width: 544px; padding-left: 64px; padding-righ=
+t: 64px;" width=3D"544" valign=3D"top"><tbody><tr style=3D"padding: 0; verti=
+cal-align: top; text-align: left;" valign=3D"top" align=3D"left"><td style=3D=
+"color: #222222; mso-table-lspace: 0pt; padding: 0; vertical-align: top; tex=
+t-align: left; mso-table-rspace: 0pt; font-family: 'Polaris-Book', Helvetica=
+, Arial, sans-serif; line-height: 20px; font-size: 13px; Margin: 0; font-wei=
+ght: normal;" valign=3D"top" align=3D"left">
+       =20
+    	<table bgcolor=3D"#ffffff" class=3D"row white-bg" style=3D"vertical=
+-align: top; mso-table-lspace: 0pt; border-spacing: 0; border-collapse: coll=
+apse; text-align: left; mso-table-rspace: 0pt; background-color: #ffffff; pa=
+dding: 0; width: 100%; position: relative; display: table;" width=3D"100%" v=
+align=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align:=
+ top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"small-12 large-12 columns first last" style=3D"color: #2222=
+22; font-weight: normal; font-size: 13px; text-align: left; line-height: 20p=
+x; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin: 0 auto=
+; width: 624px; margin: 0 auto; padding-right: 16px; padding-left: 16px;" al=
+ign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+            <th class=3D"pb20 border-bottom pl20 pr20 pt50 small-12 large-12=
+ columns first last" style=3D"font-weight: normal; font-size: 13px; text-ali=
+gn: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, s=
+ans-serif; color: #222222; border-bottom: 1px solid #cccccc; padding-top: 50=
+px; padding-bottom: 20px; Margin: 0 auto; margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"left"><table style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"=
+100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical=
+-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"c=
+olor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; li=
+ne-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: n=
+ormal;" align=3D"left">
+                <h3 style=3D"color: #222222; font-family: 'Polaris-Book', He=
+lvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 1=
+6px; Margin: 0; font-weight: normal;">
+                  =20
+    			Your order summary
+    	=09
+                </h3>
+            </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+        </tr></tbody></table>
+           =20
+           =20
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"small-12 large-12 columns first last" style=
+=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: left; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ Margin: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left=
+: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-al=
+ign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" alig=
+n=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-alig=
+n: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                        <table class=3D"row" style=3D"mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertic=
+al-align: top; text-align: left; padding: 0; position: relative; width: 100%=
+; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr s=
+tyle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left">
+                            <th class=3D"pb20 pt15 border-bottom small-12 la=
+rge-12 columns first last" style=3D"font-weight: normal; font-size: 13px; te=
+xt-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; color: #222222; border-bottom: 1px solid #cccccc; padding-=
+top: 15px; padding-bottom: 20px; Margin: 0 auto; margin: 0 auto; width: 100%=
+; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D"mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: c=
+ollapse; padding: 0; vertical-align: top; text-align: left; width: 100%;" wi=
+dth=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; v=
+ertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><th sty=
+le=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-se=
+rif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-w=
+eight: normal;" align=3D"left">
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"small-4 large-3 columns" st=
+yle=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: lef=
+t; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-se=
+rif; Margin: 0 auto; margin: 0 auto; width: 25%; padding-right: 0; padding-l=
+eft: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical=
+-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" a=
+lign=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-alig=
+n: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-fa=
+mily: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-=
+align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left=
+">
+                                       <a href=3D"https://email.farfetch.com=
+/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2s=
+JMTfWbzbzgUzfnvrJVXtpKX%3DTUTWDCRY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0l=
+RIFyzesU1zlHWE1scQDnpmPMk8n6mbj4nbu5Akmwn27eWTwmbmKJB4UZGtsYPLqk2Zgs4UWFXYWd=
+5BHgpU6EH5p2emRE8zZIESywegQlL9AJ7UWI1Gsa9x6TJbl0s95hKrfft4fLBVqaTlUcsFK4diBs=
+UX6kvzEClYqRx-m-jktkkavb6hOyicGI2YG09vOe7jmhMApG64JIp_6QQyrgBXZYEUTvjPq4LHqn=
+uAUJ_x72TzUDZuPBcsKOU." style=3D"color: #222222; text-decoration: none; font=
+-family: 'Polaris-Book', Helvetica, Arial, sans-serif; font-size: 13px; line=
+-height: 20px; text-align: left; Margin: 0; font-weight: normal;">
+                                          <img src=3D"https://cdn-images.far=
+fetch.com/12/54/85/65/12548565_11949849_200.jpg" width=3D"92" height=3D"110"=
+ class=3D"text-left" style=3D"outline: none; text-decoration: none; -ms-inte=
+rpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; display:=
+ block; border: 0;">
+                                        </a>
+                                    </th></tr></tbody></table></th>
+                                    <th class=3D"small-8 large-9 columns las=
+t" style=3D"color: #222222; font-weight: normal; font-size: 13px; text-align=
+: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sa=
+ns-serif; Margin: 0 auto; margin: 0 auto; width: 75%; padding-right: 0; padd=
+ing-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; ver=
+tical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"t=
+op" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text=
+-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; t=
+ext-align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"=
+left">
+                                        <table class=3D"row" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: c=
+ollapse; vertical-align: top; text-align: left; padding: 0; position: relati=
+ve; width: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left">
+                                            <th class=3D"pb15 pb10-xs small-=
+12 large-12 columns first last" style=3D"color: #222222; font-weight: normal=
+; font-size: 13px; text-align: left; line-height: 20px; font-family: 'Polari=
+s-Book', Helvetica, Arial, sans-serif; padding-bottom: 15px; margin: 0 auto;=
+ Margin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"l=
+eft"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-sp=
+acing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-a=
+lign: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbod=
+y><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book=
+', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-s=
+ize: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                                                <p class=3D"pl10-xs Items-no=
+rmal" style=3D"color: #222222; Margin: 0; font-family: 'Polaris-Book', Helve=
+tica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 13p=
+x; font-weight: normal;">
+                                                   =20
+                Shipping from
+             Vivetta
+                                                </p>
+                                            </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                        </tr></tbody></table>
+                                        <table class=3D"row" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: c=
+ollapse; vertical-align: top; text-align: left; padding: 0; position: relati=
+ve; width: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left">
+                                            <th class=3D"small-12 large-6 co=
+lumns first" style=3D"color: #222222; font-weight: normal; font-size: 13px; t=
+ext-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; Margin: 0 auto; margin: 0 auto; width: 50%; padding-right:=
+ 0; padding-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding:=
+ 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100%" vali=
+gn=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: to=
+p; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222=
+222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height:=
+ 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;" a=
+lign=3D"left">
+                                                <table class=3D"row" style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; vertical-align: top; text-align: left; padding: 0; position=
+: relative; width: 100%; display: table;" width=3D"100%" valign=3D"top" alig=
+n=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left">
+                                                    <th class=3D"pb5 small-1=
+2 large-12 columns first last" style=3D"color: #222222; font-weight: normal;=
+ font-size: 13px; text-align: left; line-height: 20px; font-family: 'Polaris=
+-Book', Helvetica, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; M=
+argin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"lef=
+t"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spac=
+ing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-ali=
+gn: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody>=
+<tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"t=
+op" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                                                        <p class=3D"Items-br=
+and bold pl10-xs" style=3D"color: #222222; Margin: 0; font-family: 'PolarisC=
+ondensed-Bold', 'Arial Narrow', sans-serif; line-height: 20px; text-align: l=
+eft; font-size: 16px; font-weight: bold; text-transform: uppercase; letter-s=
+pacing: 2px;">
+                                                            VIVETTA
+                                                        </p>
+                                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                                </tr></tbody></table>
+                                                <table class=3D"row" style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; vertical-align: top; text-align: left; padding: 0; position=
+: relative; width: 100%; display: table;" width=3D"100%" valign=3D"top" alig=
+n=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left">
+                                                    <th class=3D"pb5 small-1=
+2 large-12 columns first last" style=3D"color: #222222; font-weight: normal;=
+ font-size: 13px; text-align: left; line-height: 20px; font-family: 'Polaris=
+-Book', Helvetica, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; M=
+argin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"lef=
+t"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spac=
+ing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-ali=
+gn: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody>=
+<tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"t=
+op" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                                                        <p class=3D"Items-no=
+rmal pl10-xs capitalize" style=3D"color: #222222; Margin: 0; font-family: 'P=
+olaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: l=
+eft; font-size: 13px; font-weight: normal; text-transform: capitalize;">
+                                                            silhouette embro=
+idered sweatshirt
+                                                        </p>
+                                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                                </tr></tbody></table>
+                                            </th></tr></tbody></table></th>
+                                            <th class=3D"vertical-middle bol=
+d small-12 large-6 columns last" style=3D"color: #222222; font-size: 13px; t=
+ext-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; vertical-align: middle; font-weight: bold; margin: 0 auto;=
+ Margin: 0 auto; width: 50%; padding-right: 0; padding-left: 0;" valign=3D"m=
+iddle" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-a=
+lign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" ali=
+gn=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align:=
+ left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-al=
+ign: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">=
+
+                                                <p class=3D"Items-price pl10=
+-xs text-right small-text-left" style=3D"color: #222222; Margin: 0; font-fam=
+ily: 'Polaris-Bold', Helvetica, Arial, sans-serif; line-height: 20px; font-s=
+ize: 13px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase=
+; text-align: right;">
+                                                    =C2=A3215.24
+                                                </p>
+                                            </th></tr></tbody></table></th>
+                                        </tr></tbody></table>
+                                    </th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                            </th></tr></tbody></table></th>
+                        </tr></tbody></table>
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+           =20
+           =20
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+    	=09
+           =20
+
+       =20
+    	<table bgcolor=3D"#ffffff" class=3D"row white-bg" style=3D"vertical=
+-align: top; mso-table-lspace: 0pt; border-spacing: 0; border-collapse: coll=
+apse; text-align: left; mso-table-rspace: 0pt; background-color: #ffffff; pa=
+dding: 0; width: 100%; position: relative; display: table;" width=3D"100%" v=
+align=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align:=
+ top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"small-12 large-12 columns first last" style=3D"color: #2222=
+22; font-weight: normal; font-size: 13px; text-align: left; line-height: 20p=
+x; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin: 0 auto=
+; width: 624px; margin: 0 auto; padding-right: 16px; padding-left: 16px;" al=
+ign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+            <th class=3D"small-12 large-12 columns first last" style=3D"colo=
+r: #222222; font-weight: normal; font-size: 13px; text-align: left; line-hei=
+ght: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin=
+: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" a=
+lign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"pt20 pb20 small-12 large-12 columns first l=
+ast" style=3D"font-weight: normal; font-size: 13px; text-align: left; line-h=
+eight: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; colo=
+r: #222222; padding-top: 20px; padding-bottom: 20px; Margin: 0 auto; margin:=
+ 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><ta=
+ble style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0=
+; border-collapse: collapse; padding: 0; vertical-align: top; text-align: le=
+ft; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr st=
+yle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" al=
+ign=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', Helve=
+tica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 13p=
+x; Margin: 0; font-weight: normal;" align=3D"left">
+                        <table class=3D"row" style=3D"mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertic=
+al-align: top; text-align: left; padding: 0; position: relative; width: 100%=
+; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr s=
+tyle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left">
+                            <th class=3D"small-6 large-6 columns first" styl=
+e=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: left;=
+ line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; Margin: 0 auto; margin: 0 auto; width: 50%; padding-right: 0; padding-lef=
+t: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-a=
+lign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" ali=
+gn=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align:=
+ left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-al=
+ign: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">=
+
+                           =20
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pb5 small-12 large-12 colum=
+ns first last" style=3D"color: #222222; font-weight: normal; font-size: 13px=
+; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; Margin: 0 auto; w=
+idth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p class=3D"color-gold capitalize" s=
+tyle=3D"font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-heig=
+ht: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;=
+ color: #e5c7a5; text-transform: capitalize;">
+                                            Shipping
+                                        </p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                               =20
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pb5 small-12 large-12 colum=
+ns first last" style=3D"color: #222222; font-weight: normal; font-size: 13px=
+; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; Margin: 0 auto; w=
+idth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p class=3D"bold" style=3D"color: #2=
+22222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-heigh=
+t: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: bold;">
+                                            Total
+                                        </p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pt10 small-12 large-12 colu=
+mns first last" style=3D"color: #222222; font-weight: normal; font-size: 13p=
+x; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helveti=
+ca, Arial, sans-serif; padding-top: 10px; margin: 0 auto; Margin: 0 auto; wi=
+dth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p style=3D"color: #222222; font-fam=
+ily: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-a=
+lign: left; font-size: 13px; Margin: 0; font-weight: normal;">
+                                            Payment method
+                                        </p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                            </th></tr></tbody></table></th>
+                            <th class=3D"small-6 large-6 columns last" style=
+=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: left; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ Margin: 0 auto; margin: 0 auto; width: 50%; padding-right: 0; padding-left:=
+ 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-ali=
+gn: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=
+=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-alig=
+n: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pb5 small-12 large-12 colum=
+ns first last" style=3D"color: #222222; font-weight: normal; font-size: 13px=
+; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; Margin: 0 auto; w=
+idth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p class=3D"text-right color-gold pb=
+5" style=3D"font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-=
+height: 20px; font-size: 13px; Margin: 0; font-weight: normal; padding-botto=
+m: 5px; color: #e5c7a5; text-align: right;">=C2=A310.00</p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pb5 small-12 large-12 colum=
+ns first last" style=3D"color: #222222; font-weight: normal; font-size: 13px=
+; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; padding-bottom: 5px; margin: 0 auto; Margin: 0 auto; w=
+idth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p class=3D"text-right bold" style=3D=
+"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; font-size: 13px; Margin: 0; font-weight: bold; text-align:=
+ right;">=C2=A3225.24</p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                                <table class=3D"row" style=3D"mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0; position: relative; wid=
+th: 100%; display: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbo=
+dy><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left">
+                                    <th class=3D"pt10 small-12 large-12 colu=
+mns first last" style=3D"color: #222222; font-weight: normal; font-size: 13p=
+x; text-align: left; line-height: 20px; font-family: 'Polaris-Book', Helveti=
+ca, Arial, sans-serif; padding-top: 10px; margin: 0 auto; Margin: 0 auto; wi=
+dth: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                                        <p class=3D"text-right uppercase" st=
+yle=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; line-height: 20px; font-size: 13px; Margin: 0; font-weight: normal; te=
+xt-transform: uppercase; text-align: right;">PayPalExp</p>
+                                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                                </tr></tbody></table>
+                            </th></tr></tbody></table></th>
+                        </tr></tbody></table>
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+        </tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+
+    </td></tr></tbody></table>
+   =20
+
+
+    <table bgcolor=3D"#ffffff" align=3D"inherit" class=3D"container white-bg=
+ float-center" style=3D"mso-table-lspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; mso-table-rspace: 0pt; bac=
+kground-color: #ffffff; margin: 0 auto; Margin: 0 auto; float: none; width: 6=
+40px; text-align: inherit;" width=3D"640" valign=3D"top"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left"><td style=3D"color: #222222; mso-table-lspace: 0pt; padding: 0; verti=
+cal-align: top; text-align: left; mso-table-rspace: 0pt; font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; M=
+argin: 0; font-weight: normal;" valign=3D"top" align=3D"left">
+       =20
+    	<table bgcolor=3D"#ffffff" class=3D"row white-bg" style=3D"vertical=
+-align: top; mso-table-lspace: 0pt; border-spacing: 0; border-collapse: coll=
+apse; text-align: left; mso-table-rspace: 0pt; background-color: #ffffff; pa=
+dding: 0; width: 100%; position: relative; display: table;" width=3D"100%" v=
+align=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align:=
+ top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"small-12 large-12 columns first last" style=3D"color: #2222=
+22; font-weight: normal; font-size: 13px; text-align: left; line-height: 20p=
+x; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin: 0 auto=
+; width: 624px; margin: 0 auto; padding-right: 16px; padding-left: 16px;" al=
+ign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+        <hr class=3D"line" style=3D"border: 0; border-top: solid 1px #cccccc=
+; color: #eeeeee; background: #eeeeee; margin: 0; padding: 0;">
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+             <th class=3D"pb20 pt40 small-12 large-12 columns first last" st=
+yle=3D"font-weight: normal; font-size: 13px; text-align: left; line-height: 2=
+0px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #2222=
+22; padding-top: 40px; padding-bottom: 20px; Margin: 0 auto; margin: 0 auto;=
+ width: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table styl=
+e=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border=
+-collapse: collapse; padding: 0; vertical-align: top; text-align: left; widt=
+h: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"p=
+adding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"l=
+eft"><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Ar=
+ial, sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margi=
+n: 0; font-weight: normal;" align=3D"left">
+                <h2 class=3D"uppercase text-center" style=3D"color: #222222;=
+ font-family: 'PolarisCondensed-Bold', 'Arial Narrow', sans-serif; line-heig=
+ht: 25px; font-size: 18px; Margin: 0; font-weight: bold; letter-spacing: 2px=
+; text-transform: uppercase; text-align: center;">
+                    What happens next?
+                </h2>
+            </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+        </tr></tbody></table>
+        <table class=3D"row collapse" style=3D"mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-alig=
+n: top; text-align: left; padding: 0; position: relative; width: 100%; displ=
+ay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left">
+            <th class=3D"text-center pb20 small-6 large-3 columns first" sty=
+le=3D"font-weight: normal; font-size: 13px; line-height: 20px; font-family: '=
+Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; padding-bottom:=
+ 20px; text-align: center; Margin: 0 auto; margin: 0 auto; width: 25%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center pb20 plr10-imp small-12 large-1=
+2 columns first last" style=3D"font-weight: normal; font-size: 13px; line-he=
+ight: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color=
+: #222222; padding-bottom: 20px; text-align: center; Margin: 0 auto; margin:=
+ 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><=
+table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing:=
+ 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: l=
+eft; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr s=
+tyle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', Helv=
+etica, Arial, sans-serif; line-height: 20px; text-align: left; font-size: 13=
+px; Margin: 0; font-weight: normal; padding: 0 10px;" align=3D"left">
+                       =20
+    			<center data-parsed=3D"" style=3D"width: 100%; min-=
+width: none;">
+            		<img border=3D"0" src=3D"http://static.cdn.responsy=
+s.net/i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/res=
+ources/images/four_steps_1.png" width=3D"57" height=3D"73" =3D""=3D"" class=3D=
+"float-center" alt=3D"Step 1 - order placed" align=3D"center" style=3D"displ=
+ay: block; outline: none; -ms-interpolation-mode: bicubic; width: auto; max-=
+width: 100%; clear: both; text-decoration: none; border: 0; margin: 0 auto; M=
+argin: 0 auto; float: none; text-align: center;">
+            	</center>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+	            <h3 class=3D"what-next-title-selected bold pb5" style=3D=
+"Margin: 0; padding-bottom: 5px; color: #000001; font-family: 'PolarisConden=
+sed-Bold', 'Arial Narrow', sans-serif; line-height: 20px; text-align: center=
+; font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: u=
+ppercase;">
+	                NOT LONG TO WAIT
+	            </h3>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+        		<p class=3D"font-xxsmall line-height-xsmall text-ce=
+nter" style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial=
+, sans-serif; Margin: 0; font-weight: normal; font-size: 11px; text-align: c=
+enter; line-height: 16px;">
+            		Your order has been placed and can take up to 48 ho=
+urs to confirm
+            	</p>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+            <th class=3D"text-center pb20 small-6 large-3 columns" style=3D"=
+font-weight: normal; font-size: 13px; line-height: 20px; font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; color: #222222; padding-bottom: 20px=
+; text-align: center; Margin: 0 auto; margin: 0 auto; width: 25%; padding-ri=
+ght: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; p=
+adding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100=
+%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-al=
+ign: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"colo=
+r: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-=
+height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: nor=
+mal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center pb20 small-12 large-12 columns f=
+irst last" style=3D"font-weight: normal; font-size: 13px; line-height: 20px;=
+ font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; p=
+adding-bottom: 20px; text-align: center; Margin: 0 auto; margin: 0 auto; wid=
+th: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                       =20
+        		<center data-parsed=3D"" style=3D"width: 100%; min-=
+width: none;">
+            		<img border=3D"0" src=3D"http://static.cdn.responsy=
+s.net/i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/res=
+ources/images/four_steps_2.png" width=3D"57" height=3D"73" =3D""=3D"" class=3D=
+"float-center" alt=3D"Step 2 - order wrapped" align=3D"center" style=3D"disp=
+lay: block; outline: none; -ms-interpolation-mode: bicubic; width: auto; max=
+-width: 100%; clear: both; text-decoration: none; border: 0; margin: 0 auto;=
+ Margin: 0 auto; float: none; text-align: center;">
+            	</center>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+	            <h3 class=3D"what-next-title-normal bold pb5" style=3D"=
+Margin: 0; padding-bottom: 5px; color: #888888; font-family: 'PolarisCondens=
+ed-Bold', 'Arial Narrow', sans-serif; line-height: 20px; text-align: center;=
+ font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: up=
+percase;">
+	                WRAPPED JUST FOR YOU
+	            </h3>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+        		<p class=3D"font-xxsmall line-height-xsmall color-g=
+ray text-center" style=3D"font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; Margin: 0; font-weight: normal; color: #888888; font-size: 11px; te=
+xt-align: center; line-height: 16px;">
+            		It=E2=80=99s then carefully packaged with a persona=
+l touch
+            	</p>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+            <th class=3D"text-center pb20 small-6 large-3 columns" style=3D"=
+font-weight: normal; font-size: 13px; line-height: 20px; font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; color: #222222; padding-bottom: 20px=
+; text-align: center; Margin: 0 auto; margin: 0 auto; width: 25%; padding-ri=
+ght: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; p=
+adding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100=
+%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-al=
+ign: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"colo=
+r: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-=
+height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: nor=
+mal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center pb20 small-12 large-12 columns f=
+irst last" style=3D"font-weight: normal; font-size: 13px; line-height: 20px;=
+ font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; p=
+adding-bottom: 20px; text-align: center; Margin: 0 auto; margin: 0 auto; wid=
+th: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                       =20
+        		<center data-parsed=3D"" style=3D"width: 100%; min-=
+width: none;">
+            		<img border=3D"0" src=3D"http://static.cdn.responsy=
+s.net/i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/res=
+ources/images/four_steps_3.png" width=3D"57" height=3D"73" =3D""=3D"" class=3D=
+"float-center" alt=3D"Step 3 - order on the way" align=3D"center" style=3D"d=
+isplay: block; outline: none; -ms-interpolation-mode: bicubic; width: auto; m=
+ax-width: 100%; clear: both; text-decoration: none; border: 0; margin: 0 aut=
+o; Margin: 0 auto; float: none; text-align: center;">
+            	</center>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+	            <h3 class=3D"what-next-title-normal bold pb5" style=3D"=
+Margin: 0; padding-bottom: 5px; color: #888888; font-family: 'PolarisCondens=
+ed-Bold', 'Arial Narrow', sans-serif; line-height: 20px; text-align: center;=
+ font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: up=
+percase;">
+	                IT=E2=80=99S ON ITS WAY!
+	            </h3>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+        		<p class=3D"font-xxsmall line-height-xsmall color-g=
+ray text-center" style=3D"font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; Margin: 0; font-weight: normal; color: #888888; font-size: 11px; te=
+xt-align: center; line-height: 16px;">
+            		You=E2=80=99ll receive dispatch confirmation and an=
+ estimated arrival date
+            	</p>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+            <th class=3D"text-center pb20 small-6 large-3 columns last" styl=
+e=3D"font-weight: normal; font-size: 13px; line-height: 20px; font-family: '=
+Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; padding-bottom:=
+ 20px; text-align: center; Margin: 0 auto; margin: 0 auto; width: 25%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center pb20 small-12 large-12 columns f=
+irst last" style=3D"font-weight: normal; font-size: 13px; line-height: 20px;=
+ font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; p=
+adding-bottom: 20px; text-align: center; Margin: 0 auto; margin: 0 auto; wid=
+th: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+                       =20
+        		<center data-parsed=3D"" style=3D"width: 100%; min-=
+width: none;">
+            		<img border=3D"0" src=3D"http://static.cdn.responsy=
+s.net/i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/res=
+ources/images/four_steps_4.png" width=3D"57" height=3D"73" =3D""=3D"" class=3D=
+"float-center" alt=3D"Step 4 - retun service" align=3D"center" style=3D"disp=
+lay: block; outline: none; -ms-interpolation-mode: bicubic; width: auto; max=
+-width: 100%; clear: both; text-decoration: none; border: 0; margin: 0 auto;=
+ Margin: 0 auto; float: none; text-align: center;">
+            	</center>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+	            <h3 class=3D"what-next-title-normal bold pb5" style=3D"=
+Margin: 0; padding-bottom: 5px; color: #888888; font-family: 'PolarisCondens=
+ed-Bold', 'Arial Narrow', sans-serif; line-height: 20px; text-align: center;=
+ font-size: 13px; font-weight: bold; letter-spacing: 2px; text-transform: up=
+percase;">
+	                CHANGED YOUR MIND?
+	            </h3>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"text-center plr10-imp small-12 large-12 col=
+umns first last" style=3D"font-weight: normal; font-size: 13px; line-height:=
+ 20px; color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; margin: 0 auto; text-align: center; Margin: 0 auto; width: 100%; paddi=
+ng-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-table-ls=
+pace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collap=
+se; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal; padding: 0 10px;" align=3D"left">
+                       =20
+        		<p class=3D"font-xxsmall line-height-xsmall color-g=
+ray text-center" style=3D"font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; Margin: 0; font-weight: normal; color: #888888; font-size: 11px; te=
+xt-align: center; line-height: 16px;">
+            		Rest assured, we offer free returns within 14 days
+            	</p>
+        =09
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+        </tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+           =20
+    	=09
+        =09
+        =09
+
+        =09
+        =09
+        =09
+
+        =09
+        =09
+        =09
+
+        =09
+        =09
+        =09
+       =20
+
+       =20
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; width: 100%; position: relative; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"small-12 large-12 columns first last" style=3D"color: #2222=
+22; font-weight: normal; font-size: 13px; text-align: left; line-height: 20p=
+x; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin: 0 auto=
+; width: 624px; margin: 0 auto; padding-right: 16px; padding-left: 16px;" al=
+ign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+       =20
+                <hr class=3D"line" style=3D"border: 0; border-top: solid 1px=
+ #cccccc; color: #eeeeee; background: #eeeeee; margin: 0; padding: 0;">
+           =20
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+            <th class=3D"pt40 pb10 small-12 large-12 columns first last" sty=
+le=3D"font-weight: normal; font-size: 13px; text-align: left; line-height: 2=
+0px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #2222=
+22; padding-top: 40px; padding-bottom: 10px; Margin: 0 auto; margin: 0 auto;=
+ width: 100%; padding-right: 0; padding-left: 0;" align=3D"left"><table styl=
+e=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border=
+-collapse: collapse; padding: 0; vertical-align: top; text-align: left; widt=
+h: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"p=
+adding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"l=
+eft"><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Ar=
+ial, sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margi=
+n: 0; font-weight: normal;" align=3D"left">
+                <h2 class=3D" text-center" style=3D"color: #222222; font-fam=
+ily: 'PolarisCondensed-Bold', 'Arial Narrow', sans-serif; line-height: 25px;=
+ font-size: 18px; Margin: 0; font-weight: bold; letter-spacing: 2px; text-al=
+ign: center;">NEED FURTHER HELP?</h2>
+            </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+        </tr></tbody></table>
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+            <th class=3D"small-12 large-12 columns first last" style=3D"colo=
+r: #222222; font-weight: normal; font-size: 13px; text-align: left; line-hei=
+ght: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin=
+: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" a=
+lign=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+               <p class=3D"text-center" style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size=
+: 13px; Margin: 0; font-weight: normal; text-align: center;">
+                    Contact our friendly Customer Service team =E2=80=93 rem=
+ember we=E2=80=99ll need your order number.
+                </p>
+            </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+        </tr></tbody></table>
+
+        <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; t=
+ext-align: left; padding: 0; position: relative; width: 100%; display: table=
+;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+            <th class=3D"text-center pb40 pt20 pb10-xs pt10-xs small-12 larg=
+e-4 columns first" style=3D"font-weight: normal; font-size: 13px; line-heigh=
+t: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #=
+222222; padding-bottom: 40px; padding-top: 20px; Margin: 0 auto; margin: 0 a=
+uto; text-align: center; width: 33.33333%; padding-left: 0; padding-right: 0=
+;" align=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-ali=
+gn: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=
+=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-alig=
+n: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"vertical-middle pb10 text-center small-12 l=
+arge-12 columns first last" style=3D"font-weight: normal; font-size: 13px; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ color: #222222; padding-bottom: 10px; vertical-align: middle; Margin: 0 aut=
+o; margin: 0 auto; text-align: center; width: 100%; padding-left: 0; padding=
+-right: 0;" valign=3D"middle" align=3D"center"><table style=3D"mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collaps=
+e; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+                        <center data-parsed=3D"" style=3D"width: 100%; min-w=
+idth: none;">
+                                <img src=3D"http://static.cdn.responsys.net/=
+i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/resources=
+/images/email.png" class=3D"inline-block float-center" =3D""=3D"" alt=3D"ema=
+il icon" align=3D"center" style=3D"outline: none; -ms-interpolation-mode: bi=
+cubic; width: auto; max-width: 100%; clear: both; text-decoration: none; bor=
+der: 0; text-align: center; margin: 0 auto; Margin: 0 auto; float: none; dis=
+play: inline-block;">
+                            <span align=3D"center" class=3D"float-center" st=
+yle=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-=
+weight: normal;">
+                                <img src=3D"http://static.cdn.responsys.net/=
+i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/resources=
+/images/spacer.png" width=3D"5" height=3D"5" class=3D"inline-block vertical-=
+middle" =3D""=3D"" alt=3D"spacer icon" style=3D"outline: none; text-decorati=
+on: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; cle=
+ar: both; border: 0; vertical-align: middle; display: inline-block;">
+                            </span>
+                            <span class=3D"bold font-small vertical-middle f=
+loat-center" align=3D"center" style=3D"color: #222222; font-family: 'Polaris=
+-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; M=
+argin: 0; vertical-align: middle; font-size: 13px; font-weight: bold;">
+                                Email
+                            </span>
+                        </center>
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"small-12 large-12 columns first last" style=
+=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: left; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ Margin: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left=
+: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-al=
+ign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" alig=
+n=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-alig=
+n: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                        <p class=3D"text-center" style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; f=
+ont-size: 13px; Margin: 0; font-weight: normal; text-align: center;">
+                          <a href=3D"https://email.farfetch.com/pub/cc?_ri_=3D=
+X0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnv=
+rJVXtpKX%3DYABWBWY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkU=
+K0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKX=
+wNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." c=
+lass=3D"underline" style=3D"color: #222222; font-family: 'Polaris-Book', Hel=
+vetica, Arial, sans-serif; font-size: 13px; line-height: 20px; text-align: l=
+eft; Margin: 0; font-weight: normal; text-decoration: underline;">Click here=
+</a> to send<br> us an email
+                        </p>
+                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+            <th class=3D"text-center pb40 pt20 pb10-xs pt10-xs small-12 larg=
+e-4 columns" style=3D"font-weight: normal; font-size: 13px; line-height: 20p=
+x; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222=
+; padding-bottom: 40px; padding-top: 20px; Margin: 0 auto; margin: 0 auto; t=
+ext-align: center; width: 33.33333%; padding-left: 0; padding-right: 0;" ali=
+gn=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"lef=
+t"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" v=
+align=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Pola=
+ris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: left=
+; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"vertical-middle pb10 text-center small-12 l=
+arge-12 columns first last" style=3D"font-weight: normal; font-size: 13px; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ color: #222222; padding-bottom: 10px; vertical-align: middle; Margin: 0 aut=
+o; margin: 0 auto; text-align: center; width: 100%; padding-left: 0; padding=
+-right: 0;" valign=3D"middle" align=3D"center"><table style=3D"mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collaps=
+e; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+                        <center data-parsed=3D"" style=3D"width: 100%; min-w=
+idth: none;">
+                            <img src=3D"http://static.cdn.responsys.net/i5/r=
+esponsysimages/farfetch/contentlibrary/ff_transactional_emails/resources/ima=
+ges/phone.png" class=3D"inline-block float-center" =3D""=3D"" alt=3D"phone i=
+con" align=3D"center" style=3D"outline: none; -ms-interpolation-mode: bicubi=
+c; width: auto; max-width: 100%; clear: both; text-decoration: none; border:=
+ 0; text-align: center; margin: 0 auto; Margin: 0 auto; float: none; display=
+: inline-block;">
+                            <span align=3D"center" class=3D"float-center" st=
+yle=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-=
+weight: normal;">
+                                <img src=3D"http://static.cdn.responsys.net/=
+i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/resources=
+/images/spacer.png" width=3D"5" height=3D"5" class=3D"inline-block" =3D""=3D=
+"" alt=3D"spacer icon" style=3D"outline: none; text-decoration: none; -ms-in=
+terpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; border=
+: 0; display: inline-block;">
+                            </span>
+                            <span class=3D"bold font-small float-center" ali=
+gn=3D"center" style=3D"color: #222222; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; line-height: 20px; text-align: left; Margin: 0; font-s=
+ize: 13px; font-weight: bold;">
+                                Phone
+                            </span>
+                        </center>
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+               =20
+               =20
+               =20
+               =20
+               =20
+               =20
+               =20
+               =20
+               =20
+               =20
+                   =20
+                    <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-a=
+lign: top; text-align: left; padding: 0; position: relative; width: 100%; di=
+splay: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=
+=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=
+=3D"left">
+                        <th class=3D"small-12 large-12 columns first last" s=
+tyle=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: le=
+ft; line-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; Margin: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding=
+-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-r=
+space: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertic=
+al-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top"=
+ align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-al=
+ign: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-=
+family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; tex=
+t-align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"le=
+ft">
+                            <p class=3D"text-center" style=3D"color: #222222=
+; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20=
+px; font-size: 13px; Margin: 0; font-weight: normal; text-align: center;">
+                                <span class=3D"bold" style=3D"color: #222222=
+; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20=
+px; text-align: left; font-size: 13px; Margin: 0; font-weight: bold;">US</sp=
+an>
+                                <a href=3D"https://email.farfetch.com/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbz=
+bzgUzfnvrJVXtpKX%3DTSTCWRRY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzes=
+U1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUP=
+ZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5g=
+ZRk7x8." class=3D"underline" style=3D"color: #222222; font-family: 'Polaris-=
+Book', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; tex=
+t-align: left; Margin: 0; font-weight: normal; text-decoration: underline;">=
++1 (213) 375-0858</a><br>
+                                <span class=3D"bold" style=3D"color: #222222=
+; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20=
+px; text-align: left; font-size: 13px; Margin: 0; font-weight: bold;">AU and=
+ NZ</span>
+                                 <a href=3D"https://email.farfetch.com/pub/c=
+c?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWb=
+zbzgUzfnvrJVXtpKX%3DTSTCWRTY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyze=
+sU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjU=
+PZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5=
+gZRk7x8." class=3D"underline" style=3D"color: #222222; font-family: 'Polaris=
+-Book', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; te=
+xt-align: left; Margin: 0; font-weight: normal; text-decoration: underline;"=
+>+61871001758</a><br>
+                                <span class=3D"bold" style=3D"color: #222222=
+; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20=
+px; text-align: left; font-size: 13px; Margin: 0; font-weight: bold;">UK and=
+ rest of world</span><br>
+                                <a href=3D"https://email.farfetch.com/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbz=
+bzgUzfnvrJVXtpKX%3DTSTCWRWY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzes=
+U1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUP=
+ZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5g=
+ZRk7x8." class=3D"underline" style=3D"color: #222222; font-family: 'Polaris-=
+Book', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; tex=
+t-align: left; Margin: 0; font-weight: normal; text-decoration: underline;">=
++44 (0) 20 3750 1250</a>
+                            </p>
+                        </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                    </tr></tbody></table>
+               =20
+                   =20
+               =20
+              =20
+            </th></tr></tbody></table></th>
+            <th class=3D"text-center pb40 pt20 pb10-xs pt10-xs small-12 larg=
+e-4 columns last" style=3D"font-weight: normal; font-size: 13px; line-height=
+: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #2=
+22222; padding-bottom: 40px; padding-top: 20px; Margin: 0 auto; margin: 0 au=
+to; text-align: center; width: 33.33333%; padding-left: 0; padding-right: 0;=
+" align=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align=
+: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D=
+"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left=
+;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: '=
+Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: l=
+eft; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                     <th class=3D"vertical-middle pb10 text-center small-12 l=
+arge-12 columns first last" style=3D"font-weight: normal; font-size: 13px; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ color: #222222; padding-bottom: 10px; vertical-align: middle; Margin: 0 aut=
+o; margin: 0 auto; text-align: center; width: 100%; padding-left: 0; padding=
+-right: 0;" valign=3D"middle" align=3D"center"><table style=3D"mso-table-lsp=
+ace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collaps=
+e; padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"=
+color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight:=
+ normal;" align=3D"left">
+                        <center data-parsed=3D"" style=3D"width: 100%; min-w=
+idth: none;">
+                            <img src=3D"http://static.cdn.responsys.net/i5/r=
+esponsysimages/farfetch/contentlibrary/ff_transactional_emails/resources/ima=
+ges/faq.png" class=3D"inline-block float-center" =3D""=3D"" alt=3D"faq icon"=
+ align=3D"center" style=3D"outline: none; -ms-interpolation-mode: bicubic; w=
+idth: auto; max-width: 100%; clear: both; text-decoration: none; border: 0; t=
+ext-align: center; margin: 0 auto; Margin: 0 auto; float: none; display: inl=
+ine-block;">
+                            <span align=3D"center" class=3D"float-center" st=
+yle=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-s=
+erif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-=
+weight: normal;">
+                                <img src=3D"http://static.cdn.responsys.net/=
+i5/responsysimages/farfetch/contentlibrary/ff_transactional_emails/resources=
+/images/spacer.png" width=3D"5" height=3D"5" class=3D"inline-block" =3D""=3D=
+"" alt=3D"spacer icon" style=3D"outline: none; text-decoration: none; -ms-in=
+terpolation-mode: bicubic; width: auto; max-width: 100%; clear: both; border=
+: 0; display: inline-block;">
+                            </span>
+                            <span class=3D"bold font-small float-center" ali=
+gn=3D"center" style=3D"color: #222222; font-family: 'Polaris-Book', Helvetic=
+a, Arial, sans-serif; line-height: 20px; text-align: left; Margin: 0; font-s=
+ize: 13px; font-weight: bold;">
+                                FAQ
+                            </span>
+                        </center>
+                    </th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"small-12 large-12 columns first last" style=
+=3D"color: #222222; font-weight: normal; font-size: 13px; text-align: left; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ Margin: 0 auto; margin: 0 auto; width: 100%; padding-right: 0; padding-left=
+: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-al=
+ign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" alig=
+n=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family=
+: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-alig=
+n: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                        <p class=3D"text-center" style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; f=
+ont-size: 13px; Margin: 0; font-weight: normal; text-align: center;">
+                            Find the answers you<br> need in our=20
+                            <a href=3D"https://email.farfetch.com/pub/cc?_ri=
+_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgU=
+zfnvrJVXtpKX%3DYABWYRY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlH=
+WEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NH=
+pzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x=
+8." class=3D"underline" style=3D"color: #222222; font-family: 'Polaris-Book'=
+, Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; text-ali=
+gn: left; Margin: 0; font-weight: normal; text-decoration: underline;">FAQs<=
+/a>
+                        </p>
+                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                </tr></tbody></table>
+            </th></tr></tbody></table></th>
+        </tr></tbody></table>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+           =20
+       =20
+    </td></tr></tbody></table>   =20
+
+   =20
+    <!--FOOTER-->
+<table bgcolor=3D"#f8f8f8" align=3D"inherit" class=3D"container off-white fl=
+oat-center" style=3D"vertical-align: top; mso-table-lspace: 0pt; border-spac=
+ing: 0; border-collapse: collapse; padding: 0; mso-table-rspace: 0pt; text-a=
+lign: inherit; margin: 0 auto; Margin: 0 auto; float: none; width: 640px;" w=
+idth=3D"640" valign=3D"top"><tbody><tr style=3D"padding: 0; vertical-align: t=
+op; text-align: left;" valign=3D"top" align=3D"left"><td style=3D"color: #22=
+2222; mso-table-lspace: 0pt; padding: 0; vertical-align: top; text-align: le=
+ft; mso-table-rspace: 0pt; font-family: 'Polaris-Book', Helvetica, Arial, sa=
+ns-serif; line-height: 20px; font-size: 13px; Margin: 0; font-weight: normal=
+;" valign=3D"top" align=3D"left">
+    <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; border-spacing: 0; border-collapse: collapse; vertical-align: top; text-=
+align: left; padding: 0; width: 100%; position: relative; display: table;" w=
+idth=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; v=
+ertical-align: top; text-align: left;" valign=3D"top" align=3D"left">
+        <th class=3D"small-12 large-12 columns first last" style=3D"color: #=
+222222; font-weight: normal; font-size: 13px; text-align: left; line-height:=
+ 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margin: 0 a=
+uto; width: 624px; margin: 0 auto; padding-right: 16px; padding-left: 16px;"=
+ align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt=
+; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: t=
+op; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"l=
+eft"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;"=
+ valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Po=
+laris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: le=
+ft; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+                    <th class=3D"pt30 pt20-xs text-center small-12 large-12 c=
+olumns first last" style=3D"font-weight: normal; font-size: 13px; line-heigh=
+t: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #=
+222222; padding-top: 30px; text-align: center; Margin: 0 auto; margin: 0 aut=
+o; width: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><table s=
+tyle=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; bor=
+der-collapse: collapse; padding: 0; vertical-align: top; text-align: left; w=
+idth: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D=
+"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; line-height: 20px; text-align: left; font-size: 13px; Marg=
+in: 0; font-weight: normal;" align=3D"left">
+                        <center data-parsed=3D"" style=3D"width: 100%; min-w=
+idth: none;">
+                            <table align=3D"center" class=3D"menu small-vert=
+ical float-center" style=3D"vertical-align: top; mso-table-lspace: 0pt; bord=
+er-spacing: 0; border-collapse: collapse; padding: 0; mso-table-rspace: 0pt;=
+ text-align: center; margin: 0 auto; Margin: 0 auto; float: none; width: aut=
+o;" valign=3D"top"><tbody><tr style=3D"padding: 0; vertical-align: top; text=
+-align: center;" valign=3D"top" align=3D"center"><td style=3D"color: #222222=
+; mso-table-lspace: 0pt; padding: 0; vertical-align: top; Margin: 0; mso-tab=
+le-rspace: 0pt; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; l=
+ine-height: 20px; font-size: 13px; font-weight: normal; text-align: center;"=
+ valign=3D"top" align=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D=
+"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; te=
+xt-align: center;" valign=3D"top" align=3D"center">
+                                <th class=3D"menu-item footer-link border-ri=
+ght border-footer-xs no-break float-center" style=3D"font-weight: normal; co=
+lor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; lin=
+e-height: 20px; font-size: 13px; hyphens: none; overflow-wrap: break-word; b=
+order-right: 1px solid #cccccc; -ms-word-break: break-all; word-break: break=
+-word; -ms-hyphens: none; -moz-hyphens: none; -webkit-hyphens: none; word-wr=
+ap: break-word; text-align: center; margin: 0 auto; float: none; Margin: 0 a=
+uto; padding: 10px;" align=3D"center"><a href=3D"https://email.farfetch.com/=
+pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJ=
+MTfWbzbzgUzfnvrJVXtpKX%3DYABWYTY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRI=
+FyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzf=
+bzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbk=
+E0m5gZRk7x8." style=3D"Margin: 0; font-weight: normal; overflow-wrap: break-=
+word; -moz-hyphens: none; -ms-hyphens: none; word-break: break-word; hyphens=
+: none; -webkit-hyphens: none; -ms-word-break: break-all; word-wrap: break-w=
+ord; text-decoration: none; text-align: center; line-height: 20px; font-size=
+: 16px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #9=
+99999;">
+                                    Shop women
+                                </a></th>
+                                <th class=3D"menu-item footer-link border-ri=
+ght border-footer-xs no-break float-center" style=3D"font-weight: normal; co=
+lor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; lin=
+e-height: 20px; font-size: 13px; hyphens: none; overflow-wrap: break-word; b=
+order-right: 1px solid #cccccc; -ms-word-break: break-all; word-break: break=
+-word; -ms-hyphens: none; -moz-hyphens: none; -webkit-hyphens: none; word-wr=
+ap: break-word; text-align: center; margin: 0 auto; float: none; Margin: 0 a=
+uto; padding: 10px;" align=3D"center"><a href=3D"https://email.farfetch.com/=
+pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJ=
+MTfWbzbzgUzfnvrJVXtpKX%3DYABWYWY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRI=
+FyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzf=
+bzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbk=
+E0m5gZRk7x8." style=3D"Margin: 0; font-weight: normal; overflow-wrap: break-=
+word; -moz-hyphens: none; -ms-hyphens: none; word-break: break-word; hyphens=
+: none; -webkit-hyphens: none; -ms-word-break: break-all; word-wrap: break-w=
+ord; text-decoration: none; text-align: center; line-height: 20px; font-size=
+: 16px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #9=
+99999;">
+                                    Shop men
+                                </a></th>
+                                <th class=3D"menu-item footer-link border-ri=
+ght border-footer-xs no-break float-center" style=3D"font-weight: normal; co=
+lor: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; lin=
+e-height: 20px; font-size: 13px; hyphens: none; overflow-wrap: break-word; b=
+order-right: 1px solid #cccccc; -ms-word-break: break-all; word-break: break=
+-word; -ms-hyphens: none; -moz-hyphens: none; -webkit-hyphens: none; word-wr=
+ap: break-word; text-align: center; margin: 0 auto; float: none; Margin: 0 a=
+uto; padding: 10px;" align=3D"center"><a href=3D"https://email.farfetch.com/=
+pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJ=
+MTfWbzbzgUzfnvrJVXtpKX%3DYABWYAY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRI=
+FyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzf=
+bzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbk=
+E0m5gZRk7x8." style=3D"Margin: 0; font-weight: normal; overflow-wrap: break-=
+word; -moz-hyphens: none; -ms-hyphens: none; word-break: break-word; hyphens=
+: none; -webkit-hyphens: none; -ms-word-break: break-all; word-wrap: break-w=
+ord; text-decoration: none; text-align: center; line-height: 20px; font-size=
+: 16px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #9=
+99999;">
+                                    Shop kids
+                                </a></th>
+                                <th class=3D"menu-item footer-link border-fo=
+oter-xs border-footer-xs no-break float-center" style=3D"font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; f=
+ont-weight: normal; color: #222222; word-wrap: break-word; overflow-wrap: br=
+eak-word; -ms-word-break: break-all; word-break: break-word; -ms-hyphens: no=
+ne; -moz-hyphens: none; -webkit-hyphens: none; hyphens: none; Margin: 0 auto=
+; text-align: center; margin: 0 auto; float: none; padding: 10px;" align=3D"=
+center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglL=
+jHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DYABWY=
+CY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnunCmuw=
+5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOSDU9R=
+AdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"Margin:=
+ 0; font-weight: normal; overflow-wrap: break-word; -moz-hyphens: none; -ms-=
+hyphens: none; word-break: break-word; hyphens: none; -webkit-hyphens: none;=
+ -ms-word-break: break-all; word-wrap: break-word; text-decoration: none; te=
+xt-align: center; line-height: 20px; font-size: 16px; font-family: 'Polaris-=
+Book', Helvetica, Arial, sans-serif; color: #999999;">
+                                    Shop new in today
+                                </a></th>
+                            </tr></tbody></table></td></tr></tbody></table>
+                      </center>
+                    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+                </tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+    <th class=3D"hide-for-large text-center pt30 small-12 large-12 columns f=
+irst last" style=3D"font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-weight: normal; color: #222222; mso-hide: all; visibility: hidden; d=
+isplay: none; padding-top: 30px; overflow: hidden; font-size: 0; line-height=
+: 0; max-height: 0; text-align: center; Margin: 0 auto; margin: 0 auto; widt=
+h: 100%; padding-right: 0; padding-left: 0;" align=3D"center"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%; mso-hide: all;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: left; mso-hide: all;"=
+ valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-family: 'Po=
+laris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-align: le=
+ft; font-size: 13px; Margin: 0; font-weight: normal; mso-hide: all;" align=3D=
+"left">
+       <img src=3D"http://static.cdn.responsys.net/i5/responsysimages/farfet=
+ch/contentlibrary/ff_transactional_emails/resources/images/phones.png" width=
+=3D"39" height=3D"33" class=3D"vertical-middle float-center" =3D""=3D"" alt=3D=
+"phone icon" style=3D"border: 0; outline: none; -ms-interpolation-mode: bicu=
+bic; width: auto; max-width: 100%; clear: both; display: block; text-decorat=
+ion: none; vertical-align: middle; margin: 0 auto; Margin: 0 auto; float: no=
+ne; text-align: center; mso-hide: all;">
+    </th>
+<th class=3D"expander" style=3D"line-height: 20px; font-weight: normal; colo=
+r: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; Margi=
+n: 0; text-align: left; font-size: 13px; mso-hide: all; width: 0; padding: 0=
+; visibility: hidden;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; position: relative; width: 100%; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"pt40 pt10-xs small-12 large-12 columns first last" style=3D=
+"color: #222222; font-weight: normal; font-size: 13px; text-align: left; lin=
+e-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; p=
+adding-top: 40px; margin: 0 auto; Margin: 0 auto; width: 100%; padding-right=
+: 0; padding-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; border-spacing: 0; border-collapse: collapse; paddin=
+g: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100%" va=
+lign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: t=
+op; text-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #22=
+2222; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height=
+: 20px; text-align: left; font-size: 13px; Margin: 0; font-weight: normal;" a=
+lign=3D"left">
+        <h3 class=3D"discover-title text-center" style=3D"Margin: 0; color: #=
+aaaaaa; font-family: 'PolarisCondensed-Bold', 'Arial Narrow', sans-serif; li=
+ne-height: 20px; font-size: 16px; font-weight: bold; text-transform: upperca=
+se; letter-spacing: 2px; text-align: center;">FARFETCH DISCOVER APP</h3>
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; position: relative; width: 100%; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"text-right pt10 show-for-large small-3 large-4 columns firs=
+t" style=3D"font-weight: normal; font-size: 13px; line-height: 20px; font-fa=
+mily: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; padding-=
+top: 10px; text-align: right; Margin: 0 auto; margin: 0 auto; width: 33.3333=
+3%; padding-right: 0; padding-left: 0;" align=3D"right"><table style=3D"mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse=
+: collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;"=
+ width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0=
+; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><th s=
+tyle=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-=
+serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font=
+-weight: normal;" align=3D"left">
+        <p class=3D"text-right" style=3D"color: #222222; font-family: 'Polar=
+is-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px; M=
+argin: 0; font-weight: normal; text-align: right;">
+            <img src=3D"http://static.cdn.responsys.net/i5/responsysimages/f=
+arfetch/contentlibrary/ff_transactional_emails/resources/images/phones.png" w=
+idth=3D"39" height=3D"33" class=3D"vertical-middle float-right" =3D""=3D"" a=
+lt=3D"phone icon" style=3D"clear: both; outline: none; -ms-interpolation-mod=
+e: bicubic; width: auto; max-width: 100%; text-decoration: none; display: bl=
+ock; border: 0; vertical-align: middle; float: right; text-align: right;">
+        </p>
+    </th></tr></tbody></table></th>
+    <th class=3D"vertical-middle small-12 large-8 columns last" style=3D"col=
+or: #222222; font-weight: normal; font-size: 13px; text-align: left; line-he=
+ight: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; verti=
+cal-align: middle; margin: 0 auto; Margin: 0 auto; width: 66.66667%; padding=
+-right: 0; padding-left: 0;" valign=3D"middle" align=3D"left"><table style=3D=
+"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-col=
+lapse: collapse; padding: 0; vertical-align: top; text-align: left; width: 1=
+00%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"=
+><th style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial,=
+ sans-serif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0=
+; font-weight: normal;" align=3D"left">
+        <p class=3D"text-left discover-text small-text-center" style=3D"Marg=
+in: 0; font-weight: normal; color: #aaaaaa; font-family: 'Polaris-Book', Hel=
+vetica, Arial, sans-serif; line-height: 20px; font-size: 13px; text-align: l=
+eft;">
+            Our shopping app for <a href=3D"https://email.farfetch.com/pub/c=
+c?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWb=
+zbzgUzfnvrJVXtpKX%3DYABWARY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzes=
+U1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUP=
+ZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5g=
+ZRk7x8." style=3D"font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-weigh=
+t: normal; color: #999999; text-decoration: underline;">iOS</a> and <a href=3D=
+"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqu=
+dh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DYABWATY&amp;_ei_=3DEq2t=
+f9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kx=
+n4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI=
+6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"font-family: 'Polaris-Boo=
+k', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 20px; text-a=
+lign: left; Margin: 0; font-weight: normal; color: #999999; text-decoration:=
+ underline;">Android</a>
+        </p>
+    </th></tr></tbody></table></th>
+</tr></tbody></table>
+
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+    <th class=3D"pt30 small-12 large-12 columns first last" style=3D"color: #=
+222222; font-weight: normal; font-size: 13px; text-align: left; line-height:=
+ 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; padding-to=
+p: 30px; margin: 0 auto; Margin: 0 auto; width: 100%; padding-right: 0; padd=
+ing-left: 0;" align=3D"left"><table style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; ver=
+tical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"t=
+op" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text=
+-align: left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; fo=
+nt-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; t=
+ext-align: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"=
+left">
+        <h3 class=3D"discover-title text-center" style=3D"Margin: 0; color: #=
+aaaaaa; font-family: 'PolarisCondensed-Bold', 'Arial Narrow', sans-serif; li=
+ne-height: 20px; font-size: 16px; font-weight: bold; text-transform: upperca=
+se; letter-spacing: 2px; text-align: center;">FOLLOW US</h3>
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+
+
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; position: relative; width: 100%; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+    <th class=3D"text-center small-12 large-12 columns first last" style=3D"=
+font-weight: normal; font-size: 13px; line-height: 20px; color: #222222; fon=
+t-family: 'Polaris-Book', Helvetica, Arial, sans-serif; margin: 0 auto; text=
+-align: center; Margin: 0 auto; width: 100%; padding-right: 0; padding-left:=
+ 0;" align=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-a=
+lign: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" ali=
+gn=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align:=
+ left;" valign=3D"top" align=3D"left"><th style=3D"color: #222222; font-fami=
+ly: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px; text-al=
+ign: left; font-size: 13px; Margin: 0; font-weight: normal;" align=3D"left">=
+
+        <center data-parsed=3D"" style=3D"width: 100%; min-width: none;">
+            <table align=3D"center" class=3D"menu float-center" style=3D"ver=
+tical-align: top; mso-table-lspace: 0pt; border-spacing: 0; border-collapse:=
+ collapse; padding: 0; mso-table-rspace: 0pt; text-align: center; margin: 0 a=
+uto; Margin: 0 auto; float: none; width: auto;" valign=3D"top"><tbody><tr st=
+yle=3D"padding: 0; vertical-align: top; text-align: center;" valign=3D"top" a=
+lign=3D"center"><td style=3D"color: #222222; mso-table-lspace: 0pt; padding:=
+ 0; vertical-align: top; Margin: 0; mso-table-rspace: 0pt; font-family: 'Pol=
+aris-Book', Helvetica, Arial, sans-serif; line-height: 20px; font-size: 13px=
+; font-weight: normal; text-align: center;" valign=3D"top" align=3D"center">=
+<table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spacing=
+: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-align:=
+ left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: center;" valign=3D"to=
+p" align=3D"center">
+                <th class=3D"menu-item text-center menu-social float-center"=
+ style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; line-height: 20px; font-size: 13px; font-weight: normal; text-align=
+: center; margin: 0 auto; Margin: 0 auto; float: none; padding: 15px;" align=
+=3D"center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQ=
+pglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DY=
+ABWAWY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnun=
+Cmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOS=
+DU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"tex=
+t-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-wei=
+ght: normal; color: #999999;">
+                    <img src=3D"http://static.cdn.responsys.net/i5/responsys=
+images/farfetch/contentlibrary/ff_transactional_emails/resources/images/inst=
+agram.png" width=3D"37" height=3D"37" class=3D"float-center" =3D""=3D"" alt=3D=
+"instagram icon" style=3D"display: block; outline: none; -ms-interpolation-m=
+ode: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: no=
+ne; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: cent=
+er;">
+                </a></th>
+                <th class=3D"menu-item text-center menu-social float-center"=
+ style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; line-height: 20px; font-size: 13px; font-weight: normal; text-align=
+: center; margin: 0 auto; Margin: 0 auto; float: none; padding: 15px;" align=
+=3D"center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQ=
+pglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DY=
+ABWAAY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnun=
+Cmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOS=
+DU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"tex=
+t-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-wei=
+ght: normal; color: #999999;">
+                    <img src=3D"http://static.cdn.responsys.net/i5/responsys=
+images/farfetch/contentlibrary/ff_transactional_emails/resources/images/face=
+book.png" width=3D"37" height=3D"37" class=3D"float-center" =3D""=3D"" alt=3D=
+"facebook icon" style=3D"display: block; outline: none; -ms-interpolation-mo=
+de: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: non=
+e; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: cente=
+r;">
+                </a></th>
+                <th class=3D"menu-item text-center menu-social float-center"=
+ style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; line-height: 20px; font-size: 13px; font-weight: normal; text-align=
+: center; margin: 0 auto; Margin: 0 auto; float: none; padding: 15px;" align=
+=3D"center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQ=
+pglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DY=
+ABWACY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnun=
+Cmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOS=
+DU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"tex=
+t-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-wei=
+ght: normal; color: #999999;">
+                    <img src=3D"http://static.cdn.responsys.net/i5/responsys=
+images/farfetch/contentlibrary/ff_transactional_emails/resources/images/snap=
+chat.png" width=3D"37" height=3D"37" class=3D"float-center" =3D""=3D"" alt=3D=
+"snapchat icon" style=3D"display: block; outline: none; -ms-interpolation-mo=
+de: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: non=
+e; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: cente=
+r;">
+                </a></th>
+                <th class=3D"menu-item text-center menu-social float-center"=
+ style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; line-height: 20px; font-size: 13px; font-weight: normal; text-align=
+: center; margin: 0 auto; Margin: 0 auto; float: none; padding: 15px;" align=
+=3D"center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQ=
+pglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DY=
+ABWBRY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnun=
+Cmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOS=
+DU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"tex=
+t-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-wei=
+ght: normal; color: #999999;">
+                    <img src=3D"http://static.cdn.responsys.net/i5/responsys=
+images/farfetch/contentlibrary/ff_transactional_emails/resources/images/twit=
+ter.png" width=3D"37" height=3D"37" class=3D"float-center" =3D""=3D"" alt=3D=
+"twitter icon" style=3D"display: block; outline: none; -ms-interpolation-mod=
+e: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: none=
+; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: center=
+;">
+                </a></th>=20
+                <th class=3D"menu-item text-center menu-social float-center"=
+ style=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, san=
+s-serif; line-height: 20px; font-size: 13px; font-weight: normal; text-align=
+: center; margin: 0 auto; Margin: 0 auto; float: none; padding: 15px;" align=
+=3D"center"><a href=3D"https://email.farfetch.com/pub/cc?_ri_=3DX0Gzc2X%3DYQ=
+pglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbzbzgUzfnvrJVXtpKX%3DY=
+ABWBTY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU1zlHWEkUK0NgFsrnOnun=
+Cmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZT3NHpzKXwNUhkJbcpoOS=
+DU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZRk7x8." style=3D"tex=
+t-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-seri=
+f; font-size: 13px; line-height: 20px; text-align: left; Margin: 0; font-wei=
+ght: normal; color: #999999;">
+                    <img src=3D"http://static.cdn.responsys.net/i5/responsys=
+images/farfetch/contentlibrary/ff_transactional_emails/resources/images/pint=
+rest.png" width=3D"37" height=3D"37" class=3D"float-center" =3D""=3D"" alt=3D=
+"pintrest icon" style=3D"display: block; outline: none; -ms-interpolation-mo=
+de: bicubic; width: auto; max-width: 100%; clear: both; text-decoration: non=
+e; border: 0; margin: 0 auto; Margin: 0 auto; float: none; text-align: cente=
+r;">
+                </a></th>
+            </tr></tbody></table></td></tr></tbody></table>
+      </center>
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+                <table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-spacing: 0; border-collapse: collapse; vertical-align=
+: top; text-align: left; padding: 0; position: relative; width: 100%; displa=
+y: table;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"=
+padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left">
+    <th class=3D"pt30 pt20-xs text-center small-12 large-12 columns first la=
+st" style=3D"font-weight: normal; font-size: 13px; line-height: 20px; font-f=
+amily: 'Polaris-Book', Helvetica, Arial, sans-serif; color: #222222; padding=
+-top: 30px; text-align: center; Margin: 0 auto; margin: 0 auto; width: 100%;=
+ padding-right: 0; padding-left: 0;" align=3D"center"><table style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; border-spacing: 0; border-collapse: c=
+ollapse; padding: 0; vertical-align: top; text-align: left; width: 100%;" wi=
+dth=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; v=
+ertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><th sty=
+le=3D"color: #222222; font-family: 'Polaris-Book', Helvetica, Arial, sans-se=
+rif; line-height: 20px; text-align: left; font-size: 13px; Margin: 0; font-w=
+eight: normal;" align=3D"left">
+        <center data-parsed=3D"" style=3D"width: 100%; min-width: none;">
+            <table align=3D"center" class=3D"menu small-vertical float-cente=
+r" style=3D"vertical-align: top; mso-table-lspace: 0pt; border-spacing: 0; b=
+order-collapse: collapse; padding: 0; mso-table-rspace: 0pt; text-align: cen=
+ter; margin: 0 auto; Margin: 0 auto; float: none; width: auto;" valign=3D"to=
+p"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: center;"=
+ valign=3D"top" align=3D"center"><td style=3D"color: #222222; mso-table-lspa=
+ce: 0pt; padding: 0; vertical-align: top; Margin: 0; mso-table-rspace: 0pt; f=
+ont-family: 'Polaris-Book', Helvetica, Arial, sans-serif; line-height: 20px;=
+ font-size: 13px; font-weight: normal; text-align: center;" valign=3D"top" a=
+lign=3D"center"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt=
+; border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: t=
+op; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"l=
+eft"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: center=
+;" valign=3D"top" align=3D"center">
+                <th class=3D"menu-item vertical-middle footer-credits-link m=
+enu-credits border-right border-right-xs-none float-center" style=3D"font-fa=
+mily: 'Polaris-Book', Helvetica, Arial, sans-serif; font-weight: normal; fon=
+t-size: 13px; line-height: 20px; color: #222222; border-right: 1px solid #cc=
+cccc; vertical-align: middle; margin: 0 auto; text-align: center; float: non=
+e; Margin: 0 auto; padding: 0; padding-right: 20px; padding-left: 20px;" val=
+ign=3D"middle" align=3D"center"><a href=3D"https://email.farfetch.com/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA2sJMTfWbz=
+bzgUzfnvrJVXtpKX%3DYABWWCY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0lRIFyzesU=
+1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWakzfbzjUPZ=
+T3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2nMbkE0m5gZ=
+Rk7x8." style=3D"Margin: 0; font-weight: normal; color: #999999; text-decora=
+tion: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif; font-=
+size: 13px; line-height: 20px; text-align: center;">
+                    My Account
+                </a></th>
+                <th class=3D"menu-item vertical-middle footer-credits-link m=
+enu-credits float-center" style=3D"font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; font-weight: normal; font-size: 13px; line-height: 20px; c=
+olor: #222222; vertical-align: middle; margin: 0 auto; text-align: center; f=
+loat: none; Margin: 0 auto; padding: 0; padding-right: 20px; padding-left: 2=
+0px;" valign=3D"middle" align=3D"center"><a href=3D"https://email.farfetch.c=
+om/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJlYQGseo8O8Rzcqudh3df5d4uoWMFh5v6CsBbMMIA=
+2sJMTfWbzbzgUzfnvrJVXtpKX%3DYABWBWY&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9Bbl6fWEZ0=
+lRIFyzesU1zlHWEkUK0NgFsrnOnunCmuw5eiKHAYiw1R8oz1_Kxn4yCju9I35NzQsaMLoeduqRWa=
+kzfbzjUPZT3NHpzKXwNUhkJbcpoOSDU9RAdrDEIy9-fOPgb5cgI6BnWfL8pmuVzR4-QHI1Vhzv2n=
+MbkE0m5gZRk7x8." style=3D"Margin: 0; font-weight: normal; color: #999999; te=
+xt-decoration: none; font-family: 'Polaris-Book', Helvetica, Arial, sans-ser=
+if; font-size: 13px; line-height: 20px; text-align: center;">
+                    Help &amp; Contact Us
+                </a></th>
+            </tr></tbody></table></td></tr></tbody></table>
+      </center>
+    </th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+<table class=3D"row" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; b=
+order-spacing: 0; border-collapse: collapse; vertical-align: top; text-align=
+: left; padding: 0; position: relative; width: 100%; display: table;" width=3D=
+"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left">
+	<th class=3D"pl20 pr20 pt30 pb20 pt20-xs small-12 large-12 columns f=
+irst last" style=3D"font-weight: normal; font-size: 13px; text-align: left; l=
+ine-height: 20px; font-family: 'Polaris-Book', Helvetica, Arial, sans-serif;=
+ color: #222222; padding-top: 30px; padding-bottom: 20px; Margin: 0 auto; ma=
+rgin: 0 auto; width: 100%; padding-right: 0; padding-left: 0;" align=3D"left=
+"><table style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-spaci=
+ng: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-alig=
+n: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><=
+tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"to=
+p" align=3D"left"><th style=3D"color: #222222; font-family: 'Polaris-Book', H=
+elvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-size:=
+ 13px; Margin: 0; font-weight: normal;" align=3D"left">
+		<p class=3D"credits-text text-center " style=3D"Margin: 0; f=
+ont-weight: normal; color: #999999; font-family: 'Polaris-Book', Helvetica, A=
+rial, sans-serif; line-height: 18px; font-size: 11px; text-align: center;">
+        Farfetch UK Limited, The Bower, 211 Old Street, London, EC1V 9NR<br>=
+UK company number 06400760<br>Please note this is our registered office and r=
+eturns cannot be accepted here.<br>=C2=A9 2016 Farfetch UK Limited
+        </p>
+       =20
+	</th>
+<th class=3D"expander" style=3D"color: #222222; font-family: 'Polaris-Book',=
+ Helvetica, Arial, sans-serif; line-height: 20px; text-align: left; font-siz=
+e: 13px; Margin: 0; font-weight: normal; visibility: hidden; width: 0; paddi=
+ng: 0;" align=3D"left"></th></tr></tbody></table></th>
+</tr></tbody></table>
+        </th></tr></tbody></table></th>
+    </tr></tbody></table>
+</td></tr></tbody></table>
+
+<!--END FOOTER-->
+   =20
+
+                    </center>
+                </td>
+            </tr>
+        </tbody></table>
+   =20
+     =20
+
+
+
+</div></blockquote></body></html>=
+
+--Apple-Mail-14DC2F13-BD6F-4927-8544-5E7ED8F2E035--
